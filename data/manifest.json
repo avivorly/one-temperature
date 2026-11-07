@@ -1,0 +1,2868 @@
+{
+ "title": "Per-question correct counts behind the figures and tables of the paper",
+ "written_utc": "2026-11-07",
+ "format": {
+  "file": "counts.jsonl: one JSON object per line, one per (benchmark, model, question, setting)",
+  "keys": {
+   "benchmark": "livecodebench | math500 | hitom",
+   "model": "Hugging Face repo id",
+   "id": "question id: LiveCodeBench question_id, MATH-500 unique_id, Hi-ToM s<sample_id>_o<question_order>_<prompting_type>",
+   "temperature": "sampling temperature tau (for a min_p sweep, its fixed tau)",
+   "min_p": "min_p value; null for the temperature sweeps (0.0 inside a min_p sweep is plain sampling)",
+   "n": "number of samples (question_n parse: the question-level n, see n_cell)",
+   "c": "number of correct samples",
+   "n_cell": "optional, question_n files only: the cell's own sample count where it differs from n"
+  },
+  "setting": "the temperature for a temperature sweep, the min_p value for a min_p sweep",
+  "weighting": "instance-weighted: every sample counts",
+  "populations": "every file holds every question the paper's analysis code read for that study, in that order; 'included' is the subset its inclusion rule keeps (the analyses apply the rule themselves; included_ids.json lists it for checking)",
+  "question_order": "each use records the order its analysis read the questions in: 'file' (the file's own order, that of the source the paper's code loaded) or 'sorted ids' (the ids sorted as strings, which is how the Appendix I comparisons, profiles, hardness, KL and protection analyses read the min_p and Hi-ToM questions); seeded draws, splits and tie breaks follow that order"
+ },
+ "studies": [
+  {
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "questions": 975,
+   "included": 359
+  },
+  {
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "questions": 975,
+   "included": 359
+  },
+  {
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "questions": 975,
+   "included": 766
+  },
+  {
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__cell_n.jsonl",
+   "questions": 975,
+   "included": 766
+  },
+  {
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "questions": 975,
+   "included": 647
+  },
+  {
+   "file": "counts/livecodebench/Qwen3-8B__temperature__cell_n.jsonl",
+   "questions": 975,
+   "included": 677
+  },
+  {
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "questions": 110,
+   "included": 85
+  },
+  {
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__cell_n.jsonl",
+   "questions": 110,
+   "included": 86
+  },
+  {
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "questions": 500,
+   "included": 455
+  },
+  {
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "questions": 500,
+   "included": 500
+  },
+  {
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "questions": 500,
+   "included": 496
+  },
+  {
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "questions": 500,
+   "included": 492
+  },
+  {
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "questions": 617,
+   "included": 615
+  },
+  {
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "questions": 678,
+   "included": 678
+  },
+  {
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "questions": 471,
+   "included": 466
+  },
+  {
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "questions": 743,
+   "included": 743
+  },
+  {
+   "file": "counts/hitom/Qwen3-0.6B__temperature__topup1000.jsonl",
+   "questions": 743,
+   "included": 642
+  },
+  {
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "questions": 648,
+   "included": 648
+  },
+  {
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__stage2_nu400.jsonl",
+   "questions": 648,
+   "included": 648
+  },
+  {
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "questions": 648,
+   "included": 648
+  },
+  {
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "questions": 617,
+   "included": 598
+  },
+  {
+   "file": "selection/hitom/gpt-oss-20b__temperature__screen500.jsonl",
+   "questions": 1200,
+   "included": 678
+  },
+  {
+   "file": "selection/hitom/Qwen3-8B__temperature__screen500.jsonl",
+   "questions": 1200,
+   "included": 471
+  },
+  {
+   "file": "selection/hitom/Qwen3-0.6B__temperature__screen500.jsonl",
+   "questions": 1200,
+   "included": 743
+  },
+  {
+   "file": "selection/hitom/Qwen3-0.6B__min_p_tau1.5__screen100.jsonl",
+   "questions": 1200,
+   "included": 648
+  }
+ ],
+ "files": [
+  {
+   "path": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 15600,
+   "questions": 975,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    2.0
+   ],
+   "settings_count": 16,
+   "n_min": 1500,
+   "n_max": 14834,
+   "rows_with_n_cell": 50,
+   "samples_drawn": 81955793,
+   "correct": 2281416,
+   "included": {
+    "n": 359,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's question_n counts",
+    "ids_sha256": "90bdf765a9f90555a771198564c121c88cb91b62b8960a056724f0b70e944447"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "6800bb592b7755f8f64ca928039f6ceb22a2ef6183b359f294a6aaf34affa125",
+   "bytes": 2123445,
+   "sha256": "f4a5779ad41c26394d6de5f5058fd4bf129cae6c7e0e60560fdb80342e9a6441",
+   "study": "temperature sweep",
+   "parse": "question_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 15600,
+   "questions": 975,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    2.0
+   ],
+   "settings_count": 16,
+   "n_min": 1500,
+   "n_max": 14834,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 81955793,
+   "correct": 2281416,
+   "included": {
+    "n": 359,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's cell_n counts",
+    "ids_sha256": "90bdf765a9f90555a771198564c121c88cb91b62b8960a056724f0b70e944447"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "6800bb592b7755f8f64ca928039f6ceb22a2ef6183b359f294a6aaf34affa125",
+   "bytes": 2122695,
+   "sha256": "09a241d14f6a65e1425a97d35d06d98bcd68e9c248a07bc2389ea7c5af21c535",
+   "study": "temperature sweep",
+   "parse": "cell_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "openai/gpt-oss-20b",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 15600,
+   "questions": 975,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    2.0
+   ],
+   "settings_count": 16,
+   "n_min": 1500,
+   "n_max": 12500,
+   "rows_with_n_cell": 297,
+   "samples_drawn": 63258750,
+   "correct": 7680412,
+   "included": {
+    "n": 766,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's question_n counts",
+    "ids_sha256": "eedd855061b76cd175df42fb881ff75d6be1af47fa220298218a50c53e17e399"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "fbff6d503aa726eadb3858bf8f1970d0eb9e1fdaa8b081006d54ffafe4527804",
+   "bytes": 1890513,
+   "sha256": "089aabcb38d02cf1d0259ea40ed84f9a35620ddcfadbfc7694d4aa944d1786a5",
+   "study": "temperature sweep",
+   "parse": "question_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/gpt-oss-20b__temperature__cell_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "openai/gpt-oss-20b",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 15600,
+   "questions": 975,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    2.0
+   ],
+   "settings_count": 16,
+   "n_min": 1500,
+   "n_max": 12500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 63258750,
+   "correct": 7680412,
+   "included": {
+    "n": 766,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's cell_n counts",
+    "ids_sha256": "eedd855061b76cd175df42fb881ff75d6be1af47fa220298218a50c53e17e399"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "fbff6d503aa726eadb3858bf8f1970d0eb9e1fdaa8b081006d54ffafe4527804",
+   "bytes": 1886340,
+   "sha256": "8de28539a0034a616e4d9ab53805685e49510083e795104974e23189b028d2ec",
+   "study": "temperature sweep",
+   "parse": "cell_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "Qwen/Qwen3-8B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 37050,
+   "questions": 975,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7,
+    1.8,
+    1.9,
+    2.0,
+    2.1,
+    2.2,
+    2.3,
+    2.4,
+    2.5,
+    2.6,
+    2.7,
+    2.8,
+    2.9,
+    3.0,
+    3.1,
+    3.2,
+    3.3,
+    3.4,
+    3.5,
+    3.7,
+    4.0,
+    4.2
+   ],
+   "settings_count": 38,
+   "n_min": 1500,
+   "n_max": 19000,
+   "rows_with_n_cell": 5197,
+   "samples_drawn": 119228250,
+   "correct": 17344744,
+   "included": {
+    "n": 647,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's question_n counts",
+    "ids_sha256": "4ad1e3c429c2b0f7ce2fe9c97a0fa3fae68edd8a0eed00331dc847d2f80e9082"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "5e87e198ebcfd12c8fd8ba852d41135785a27966ed4d6e17d4a263fa5e001d0d",
+   "bytes": 4358041,
+   "sha256": "3553b96a1ae272007b525f5b04ec399f4d85d183391ee0957288eb3c44ebcb1b",
+   "study": "temperature sweep",
+   "parse": "question_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/Qwen3-8B__temperature__cell_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "Qwen/Qwen3-8B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 37050,
+   "questions": 975,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7,
+    1.8,
+    1.9,
+    2.0,
+    2.1,
+    2.2,
+    2.3,
+    2.4,
+    2.5,
+    2.6,
+    2.7,
+    2.8,
+    2.9,
+    3.0,
+    3.1,
+    3.2,
+    3.3,
+    3.4,
+    3.5,
+    3.7,
+    4.0,
+    4.2
+   ],
+   "settings_count": 38,
+   "n_min": 1500,
+   "n_max": 19000,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 119228250,
+   "correct": 17344744,
+   "included": {
+    "n": 677,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's cell_n counts",
+    "ids_sha256": "60e83808aa6660816194d437c0ac19d0f565e76febd8a74c03e6703704a89f83"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "5e87e198ebcfd12c8fd8ba852d41135785a27966ed4d6e17d4a263fa5e001d0d",
+   "bytes": 4280561,
+   "sha256": "2bbb2a09f969da6f2814d4883b87ef209bd1f67b732594828da854054405fb18",
+   "study": "temperature sweep",
+   "parse": "cell_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 2200,
+   "questions": 110,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7,
+    1.8,
+    1.9,
+    2.0
+   ],
+   "settings_count": 20,
+   "n_min": 9996,
+   "n_max": 127496,
+   "rows_with_n_cell": 237,
+   "samples_drawn": 42823700,
+   "correct": 384830,
+   "included": {
+    "n": 85,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's question_n counts",
+    "ids_sha256": "acc0f4648d698a54be6001cb039f7172c9e5918604262b4d8b1a934e5e99a41c"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "a7175c8808113496e7d0f869be68abb4167a05f12e8bb0ba3b7127b5ebc90191",
+   "bytes": 262568,
+   "sha256": "5a642d46d40d8c7524a4120e1e73192d31c04f3a075683f3073c6291925d45a8",
+   "study": "temperature sweep",
+   "parse": "question_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/livecodebench/Qwen3-0.6B__temperature__cell_n.jsonl",
+   "benchmark": "livecodebench",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 2200,
+   "questions": 110,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7,
+    1.8,
+    1.9,
+    2.0
+   ],
+   "settings_count": 20,
+   "n_min": 9996,
+   "n_max": 127496,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 42823700,
+   "correct": 384830,
+   "included": {
+    "n": 86,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter), on this file's cell_n counts",
+    "ids_sha256": "f535c59ee633513be5355716962d1adda5f0f3d9cab320dcc6608e1fdb4a3fd7"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "a7175c8808113496e7d0f869be68abb4167a05f12e8bb0ba3b7127b5ebc90191",
+   "bytes": 258942,
+   "sha256": "c15ca7a95d5a2923513439fa4faa97a02f44e4dd0f2f2263d626e81a50cb7e09",
+   "study": "temperature sweep",
+   "parse": "cell_n",
+   "samples": "~1.5k per cell, harder questions ~10k (Qwen3-0.6B: about doubled on some hard questions)"
+  },
+  {
+   "path": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "benchmark": "math500",
+   "model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 8000,
+   "questions": 500,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    2.0
+   ],
+   "settings_count": 16,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 12000000,
+   "correct": 1103165,
+   "included": {
+    "n": 455,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "c2f20051d9d4ba8cf1399a9c6e6aa9c86771656acd66c692a86b76ddce821ea0"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "4f0616553efe403619e244ac11cbd24ac50cd244fb44adadc5862bc24bb33114",
+   "bytes": 1206989,
+   "sha256": "8623a6f3a0a2ccd08cb550f49c5b99e4f1aba1ce4624b9a756e3c0f39f587606",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the 500 MATH-500 questions"
+  },
+  {
+   "path": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "benchmark": "math500",
+   "model": "openai/gpt-oss-20b",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 8000,
+   "questions": 500,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    2.0
+   ],
+   "settings_count": 16,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 12000000,
+   "correct": 7194409,
+   "included": {
+    "n": 500,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "f59cccea6ec23dc33ee15d110c013a2eac63fad91327b4d3ac4ba3445d874e53"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "09e7e5e95b712f2159a9397083b482874edce06fadef231d23841e30885f30fe",
+   "bytes": 1089690,
+   "sha256": "db20e94336e498ef25452ceec25291df5e1eb50c2967cf8a11ddc58e8f690bda",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the 500 MATH-500 questions"
+  },
+  {
+   "path": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "benchmark": "math500",
+   "model": "Qwen/Qwen3-8B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 10000,
+   "questions": 500,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7,
+    1.8,
+    1.9,
+    2.0
+   ],
+   "settings_count": 20,
+   "n_min": 750,
+   "n_max": 750,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 7500000,
+   "correct": 5213014,
+   "included": {
+    "n": 496,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "0068633cdc1174955a53ce7db881978ddec298597656660376354b1fd32ac668"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "8ee38dd497639add27dcf22cd872f96d45ea0c24d8ef706d057f3a24d930b190",
+   "bytes": 1296910,
+   "sha256": "55ddc3a7ad6acee9667661226a1c94fbfa03a4a06a93ac08e3c825f1b0180393",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the 500 MATH-500 questions"
+  },
+  {
+   "path": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "benchmark": "math500",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 10000,
+   "questions": 500,
+   "settings": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7,
+    1.8,
+    1.9,
+    2.0
+   ],
+   "settings_count": 20,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 15000000,
+   "correct": 4784482,
+   "included": {
+    "n": 492,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "b664e9be47e1a9d6d13031e1cad4f8ecf2e108abe219df2e684bf1564198eec4"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "98e6b321e62133e69b65e3b880448a4447da5459b4d9a886e59eebac0746c1f7",
+   "bytes": 1325220,
+   "sha256": "6d7273e81758a844ca5dd49ad3950ffa70f8e63ce4e43b684f9be95307f47c5f",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the 500 MATH-500 questions"
+  },
+  {
+   "path": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "benchmark": "hitom",
+   "model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 19127,
+   "questions": 617,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 28690500,
+   "correct": 929856,
+   "included": {
+    "n": 615,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "551d373df2258ad3d3531c702060d12bebc3463394a565230e615acefc570b2a"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "aae4640af969ea72d5f4892fad11e1f5f6dc84ed38701c0d5e0c410a85c26a47",
+   "bytes": 2560489,
+   "sha256": "2867189562271292a03c49709cd0e1b4275a6baa89bdfb5fe61da742be63daea",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the questions kept by the first-stage screen (best single-temperature pass rate below 0.30)"
+  },
+  {
+   "path": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "benchmark": "hitom",
+   "model": "openai/gpt-oss-20b",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 21018,
+   "questions": 678,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 31527000,
+   "correct": 1653545,
+   "included": {
+    "n": 678,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "4d265794a050cecc6622c4e030a72ae3abbfb2da44d1391dc9edc5c4251b9c41"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "ba996a2a01ef148cca02dfea516f4a46944709b1bab145e497806c6aa69f7adc",
+   "bytes": 2483969,
+   "sha256": "1390f9b267df6fd922172e922ebfd6cbafdd29f6f061a2d3d8924eece72a61fc",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the questions kept by the first-stage screen (best single-temperature pass rate below 0.30)"
+  },
+  {
+   "path": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-8B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 14601,
+   "questions": 471,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 21901500,
+   "correct": 793656,
+   "included": {
+    "n": 466,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "6f543212331b44ec5c8d13bfb0394ef68507f867e720a2b38d4ec415acd5b723"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "368be4584b63b0fd5ad7e7c66cc012501910d07573bb72c7b20d6ab4bb2a9f68",
+   "bytes": 1647297,
+   "sha256": "c035fd5c44cd6daf7528f4c3803c45d69d24dd40b3eee5b74eb7f7a95e12b2db",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the questions kept by the first-stage screen (best single-temperature pass rate below 0.30)"
+  },
+  {
+   "path": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 23033,
+   "questions": 743,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 34549500,
+   "correct": 1829707,
+   "included": {
+    "n": 743,
+    "rule": "fitted peak >= 0.1 %: the degree-10 Bernstein profile fit of the question's counts peaks at a pass rate of at least 1e-3 (the paper's filter)",
+    "ids_sha256": "30373ea5cc8419bd02c7d2655bfa0c60e3ff44317c43c4464e3224a681c7d0a9"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "a141d013d1f0dc7fc31567f586332ee1836b85b1f80ad3cdda438a04246d11b8",
+   "bytes": 2652731,
+   "sha256": "564b94ad609db3f32543ba8088d365cc8c3b1f5d6ce2615e0d62d7f2ecc6bf6d",
+   "study": "temperature sweep",
+   "parse": "question_n = cell_n (every cell has the question's n)",
+   "population": "the questions kept by the first-stage screen (best single-temperature pass rate below 0.30)"
+  },
+  {
+   "path": "counts/hitom/Qwen3-0.6B__temperature__topup1000.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 23033,
+   "questions": 743,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 1000,
+   "n_max": 1000,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 23033000,
+   "correct": 1221015,
+   "included": {
+    "n": 642,
+    "rule": "also kept by the min_p screen at tau = 1.5 (642 questions; the Appendix I comparison uses their sorted ids)",
+    "ids_sha256": "5463190cfecc278f7971491d6662ce5f8b01682d2bd9791c5dad2cd72ea54bef"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "1d6589fc98c3db60c9ed5e151f100c865d948dda52d950d0423748c364050828",
+   "bytes": 2649599,
+   "sha256": "0e336930df4fa34cfae2df9502109766b619f4c765cba12cc8f49d4d544d132c",
+   "study": "temperature sweep, second-stage samples only (1,000 per cell; the 500 screen samples left out)",
+   "parse": "both"
+  },
+  {
+   "path": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "min_p",
+   "fixed": {
+    "temperature": 1.5
+   },
+   "rows": 6480,
+   "questions": 648,
+   "settings": [
+    0.0,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7
+   ],
+   "settings_count": 10,
+   "n_min": 500,
+   "n_max": 500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 3240000,
+   "correct": 233897,
+   "included": {
+    "n": 648,
+    "rule": "best measured pass rate over the grid >= 0.1 % (all 648)",
+    "ids_sha256": "4835b11a888fa4493f772c5d9bc1f192cfe42c4068d1e9393bee450cf74a932f"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "154b1447ebb9010562ad2f63176ea051b0f409feb7fb30974cd4afe38188104a",
+   "bytes": 728832,
+   "sha256": "a631fd787827ee7d3be15bed9b5bc87831ea9eeb889b204d5c067ff1285a4033",
+   "study": "min_p sweep at tau = 1.5, nu = 500 = 100 screen + 400 second-stage samples",
+   "parse": "both"
+  },
+  {
+   "path": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__stage2_nu400.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "min_p",
+   "fixed": {
+    "temperature": 1.5
+   },
+   "rows": 6480,
+   "questions": 648,
+   "settings": [
+    0.0,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7
+   ],
+   "settings_count": 10,
+   "n_min": 400,
+   "n_max": 400,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 2592000,
+   "correct": 186996,
+   "included": {
+    "n": 648,
+    "rule": "best measured pass rate over the grid >= 0.1 % (all 648)",
+    "ids_sha256": "4835b11a888fa4493f772c5d9bc1f192cfe42c4068d1e9393bee450cf74a932f"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "d3cd9d1ac0400657a86c6aabb31ce33301bbc102ea110c4b6e671707eb7e2f95",
+   "bytes": 728357,
+   "sha256": "4ae2a5b9aabc0c5bcde4a046280afa2b0517805e778442e0fa5165eca4b7f892",
+   "study": "min_p sweep at tau = 1.5, the 400 second-stage samples only",
+   "parse": "both"
+  },
+  {
+   "path": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "min_p",
+   "fixed": {
+    "temperature": 2.0
+   },
+   "rows": 3240,
+   "questions": 648,
+   "settings": [
+    0.0056,
+    0.0128,
+    0.0316,
+    0.0721,
+    0.178
+   ],
+   "settings_count": 5,
+   "n_min": 400,
+   "n_max": 400,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 1296000,
+   "correct": 121474,
+   "included": {
+    "n": 648,
+    "rule": "best measured pass rate over the grid >= 0.1 % (all 648)",
+    "ids_sha256": "4835b11a888fa4493f772c5d9bc1f192cfe42c4068d1e9393bee450cf74a932f"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "1f9fa397fc5b2143424df42c3d592ca5a668c0c911d018a2826240f1a0da8a94",
+   "bytes": 372016,
+   "sha256": "da8b48458176be91a90e5c4097807407bd84d45e146645e1a1d3722ecea19eaf",
+   "study": "min_p sweep at tau = 2.0, nu = 400",
+   "parse": "both"
+  },
+  {
+   "path": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "benchmark": "hitom",
+   "model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "axis": "min_p",
+   "fixed": {
+    "temperature": 2.0
+   },
+   "rows": 3085,
+   "questions": 617,
+   "settings": [
+    0.0056,
+    0.0128,
+    0.0316,
+    0.0721,
+    0.178
+   ],
+   "settings_count": 5,
+   "n_min": 1500,
+   "n_max": 1500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 4627500,
+   "correct": 320242,
+   "included": {
+    "n": 598,
+    "rule": "best measured pass rate over the grid >= 0.1 % (19 of 617 fall below it, 8 with no correct sample)",
+    "ids_sha256": "315f13304ff588f2fe5be022fa9feebcaec3afefe00d56e452026bdee39b9212"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "3e32460e262fb753a45b54d6d14898c81743a73319ca22b7c8eba8ae0e54f735",
+   "bytes": 416638,
+   "sha256": "c650ffd41eadfd5d0234ddc879bd41afbc996505bd14a2c4d49d5bc88620b708",
+   "study": "min_p sweep at tau = 2.0, nu = 1,500",
+   "parse": "both"
+  },
+  {
+   "path": "selection/hitom/gpt-oss-20b__temperature__screen500.jsonl",
+   "benchmark": "hitom",
+   "model": "openai/gpt-oss-20b",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 37200,
+   "questions": 1200,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 500,
+   "n_max": 500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 18600000,
+   "correct": 4080740,
+   "included": {
+    "n": 678,
+    "rule": "kept by the screen: best single-temperature pass rate below 0.30 (the questions of the Hi-ToM study file)",
+    "ids_sha256": "4d265794a050cecc6622c4e030a72ae3abbfb2da44d1391dc9edc5c4251b9c41"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "dbf44e7217e995fa84f203d9e1e7b8df0cd94f9c3839e2416da43be507513d40",
+   "bytes": 4358976,
+   "sha256": "340c4d260e73555adae672f9724489ba4728565f70827a4e9b252eb1acc07dc9",
+   "study": "first-stage screen of the Hi-ToM temperature sweep, 500 samples per cell",
+   "parse": "both"
+  },
+  {
+   "path": "selection/hitom/Qwen3-8B__temperature__screen500.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-8B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 37200,
+   "questions": 1200,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 500,
+   "n_max": 500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 18600000,
+   "correct": 9305792,
+   "included": {
+    "n": 471,
+    "rule": "kept by the screen: best single-temperature pass rate below 0.30 (the questions of the Hi-ToM study file)",
+    "ids_sha256": "d7cd5dfc757a63317cdd001eb714ff5ec8037af0f32fe4d6d26696740c4c110c"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "eb6ded0f7ba93b54e5595cd8d046708ee7ef8ed74a7b6c527911a477f797a808",
+   "bytes": 4183854,
+   "sha256": "9b853b11157318533b6e5379a4ec8cf7e50eabe45b19351b5d694be03ff4efe5",
+   "study": "first-stage screen of the Hi-ToM temperature sweep, 500 samples per cell",
+   "parse": "both"
+  },
+  {
+   "path": "selection/hitom/Qwen3-0.6B__temperature__screen500.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "temperature",
+   "fixed": {},
+   "rows": 37200,
+   "questions": 1200,
+   "settings": [
+    0.075,
+    0.15,
+    0.225,
+    0.3,
+    0.375,
+    0.45,
+    0.525,
+    0.6,
+    0.675,
+    0.75,
+    0.825,
+    0.9,
+    0.975,
+    1.05,
+    1.125,
+    1.2,
+    1.275,
+    1.35,
+    1.425,
+    1.5,
+    1.575,
+    1.65,
+    1.725,
+    1.8,
+    1.875,
+    1.95,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    4.0
+   ],
+   "settings_count": 31,
+   "n_min": 500,
+   "n_max": 500,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 18600000,
+   "correct": 3457142,
+   "included": {
+    "n": 743,
+    "rule": "kept by the screen: best single-temperature pass rate below 0.30 (the questions of the Hi-ToM study file)",
+    "ids_sha256": "30373ea5cc8419bd02c7d2655bfa0c60e3ff44317c43c4464e3224a681c7d0a9"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": "1d6589fc98c3db60c9ed5e151f100c865d948dda52d950d0423748c364050828",
+   "bytes": 4244489,
+   "sha256": "104d9a42078afce73605a4e5c3c277b6524a54224db30d5fe458fbe0133a3aa7",
+   "study": "first-stage screen of the Hi-ToM temperature sweep, 500 samples per cell",
+   "parse": "both"
+  },
+  {
+   "path": "selection/hitom/Qwen3-0.6B__min_p_tau1.5__screen100.jsonl",
+   "benchmark": "hitom",
+   "model": "Qwen/Qwen3-0.6B",
+   "axis": "min_p",
+   "fixed": {
+    "temperature": 1.5
+   },
+   "rows": 12000,
+   "questions": 1200,
+   "settings": [
+    0.0,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7
+   ],
+   "settings_count": 10,
+   "n_min": 100,
+   "n_max": 100,
+   "rows_with_n_cell": 0,
+   "samples_drawn": 1200000,
+   "correct": 295646,
+   "included": {
+    "n": 648,
+    "rule": "kept by the screen: best min_p value's pass rate below 0.30 (the 648 questions of the min_p files)",
+    "ids_sha256": "4835b11a888fa4493f772c5d9bc1f192cfe42c4068d1e9393bee450cf74a932f"
+   },
+   "question_order": "as the paper's analysis code read the source file",
+   "source_sha256": {
+    "q06_T1.5_mp0.0": "59b5974024832e6ddc4994659694dc531fc7112054b1fb5a8e0cbf4e1019e494",
+    "q06_T1.5_mp0.001": "ea39563714c69d9885b1e13ff9a8d00ee49887436bc79fa39f473d84b15139c0",
+    "q06_T1.5_mp0.003": "0b3f9944b380499658fb850a7584ac5f232a9fda4c24b7601a236fd6ea7365c2",
+    "q06_T1.5_mp0.01": "4bac4dba33b7d1401f5f1cc9f9d49ce94c2f0854b1b3fed8c96c3fff8cc14467",
+    "q06_T1.5_mp0.03": "65cecfe34e890257eae3d2e9e9e5b9666d0f40c88adf3422d1dd6d15ea4da96f",
+    "q06_T1.5_mp0.1": "9b0f0a9357ea548faa635d096f21c76dcb4f832f2bdb5f3d382a3e6a7f116b25",
+    "q06_T1.5_mp0.2": "17469e7ee84fb259fe6a8fc2936684f7027bc249c3fdba191e165584ddc14d6f",
+    "q06_T1.5_mp0.3": "6c03f7e7d2eb510ed753f4e405a6bb45a74005e9d156451af73e7ef1383a6561",
+    "q06_T1.5_mp0.5": "17ddc0b2a8a46e8667d5cd9e8a125ebee3aa98a412df66ca9d63d3a47b39cc6d",
+    "q06_T1.5_mp0.7": "671a9a5b702d6038a3187975fcd670b42c5c3cff6994b213b3f8f8f702718816"
+   },
+   "bytes": 1347971,
+   "sha256": "60d498523ca1d08694ce31f06fb335ca86b45e5379e528e6c6955f5b0111e4ba",
+   "study": "first-stage screen of the min_p sweep at tau = 1.5, 100 samples per cell",
+   "parse": "both"
+  }
+ ],
+ "uses": [
+  {
+   "label": "fig:ManyQ",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "all",
+   "n_printed": null,
+   "question_order": "file",
+   "note": "three highlighted questions (2730, abc393_e, abc394_c) over a sample of the others; the figure was drawn from an earlier release of this data, not shipped, so a redraw differs in the grey background",
+   "expected_difference": "drawn from the earlier data release of Qwen3-8B, which is not in this export; this file is the later release (same 975 questions, 119,228,250 samples) that every other Qwen3-8B figure uses, so a redraw differs"
+  },
+  {
+   "label": "fig:Seperation",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:TempsCom",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:Prot:D:Main",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "panel (a): the corrected parse of Appendix H"
+  },
+  {
+   "label": "fig:Prot:D:Main",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "panel (b): the parse of Appendix G"
+  },
+  {
+   "label": "zap:DataDis:gpt_oss_20b",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file",
+   "note": "LiveCodeBench"
+  },
+  {
+   "label": "zap:DataDis:mistral_7b_instruct",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "LiveCodeBench"
+  },
+  {
+   "label": "zap:DataDis:qwen3_8b",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 646,
+   "question_order": "file",
+   "note": "LiveCodeBench",
+   "expected_difference": "the table counts the earlier data release (100,568,250 samples, 646 included); this file is the later release (119,228,250 samples, 647 included), which every figure uses, as Appendix G states"
+  },
+  {
+   "label": "zap:DataDis:qwen3_0_6b",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file",
+   "note": "LiveCodeBench"
+  },
+  {
+   "label": "zap:DataDis:gpt_oss_20b",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file",
+   "note": "MATH-500"
+  },
+  {
+   "label": "zap:DataDis:mistral_7b_instruct",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file",
+   "note": "MATH-500"
+  },
+  {
+   "label": "zap:DataDis:qwen3_8b",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file",
+   "note": "MATH-500"
+  },
+  {
+   "label": "zap:DataDis:qwen3_0_6b",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file",
+   "note": "MATH-500"
+  },
+  {
+   "label": "zap:DataDis:gpt_oss_20b",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file",
+   "note": "Hi-ToM"
+  },
+  {
+   "label": "zap:DataDis:mistral_7b_instruct",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file",
+   "note": "Hi-ToM"
+  },
+  {
+   "label": "zap:DataDis:qwen3_8b",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file",
+   "note": "Hi-ToM"
+  },
+  {
+   "label": "zap:DataDis:qwen3_0_6b",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file",
+   "note": "Hi-ToM"
+  },
+  {
+   "label": "fig:AveTemp:gpt_oss_20b",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:mistral_7b_instruct",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:qwen3_8b",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:qwen3_0_6b",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:math500:gpt_oss_20b",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:math500:mistral_7b_instruct",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:math500:qwen3_8b",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:math500:qwen3_0_6b",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:hitom:gpt_oss_20b",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:hitom:mistral_7b_instruct",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:hitom:qwen3_8b",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:AveTemp:hitom:qwen3_0_6b",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:gpt_oss_20b",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:mistral_7b_instruct",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:qwen3_8b",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:qwen3_0_6b",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:math500:gpt_oss_20b",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:math500:mistral_7b_instruct",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:math500:qwen3_8b",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:math500:qwen3_0_6b",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:hitom:gpt_oss_20b",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:hitom:mistral_7b_instruct",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:hitom:qwen3_8b",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RangeSize:hitom:qwen3_0_6b",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:gpt_oss_20b",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:mistral_7b_instruct",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:qwen3_8b",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:qwen3_0_6b",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:math500:gpt_oss_20b",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:math500:mistral_7b_instruct",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:math500:qwen3_8b",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:math500:qwen3_0_6b",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:hitom:gpt_oss_20b",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:hitom:mistral_7b_instruct",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:hitom:qwen3_8b",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:relC:hitom:qwen3_0_6b",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:gpt_oss_20b",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:mistral_7b_instruct",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:qwen3_8b",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:qwen3_0_6b",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:math500:gpt_oss_20b",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:math500:mistral_7b_instruct",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:math500:qwen3_8b",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:math500:qwen3_0_6b",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:hitom:gpt_oss_20b",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:hitom:mistral_7b_instruct",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:hitom:qwen3_8b",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:hitom:qwen3_0_6b",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file",
+   "note": "GPT OSS 20B, LiveCodeBench"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, LiveCodeBench"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file",
+   "note": "Qwen3-8B, LiveCodeBench"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, LiveCodeBench"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file",
+   "note": "GPT OSS 20B, MATH-500"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, MATH-500"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file",
+   "note": "Qwen3-8B, MATH-500"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, MATH-500"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file",
+   "note": "GPT OSS 20B, Hi-ToM"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, Hi-ToM"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file",
+   "note": "Qwen3-8B, Hi-ToM"
+  },
+  {
+   "label": "zap:Multiple:Comp:res#summary-table",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, Hi-ToM"
+  },
+  {
+   "label": "tab:passk_gpt_oss_20b",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file",
+   "note": "the table prints no n; the population is the included questions"
+  },
+  {
+   "label": "tab:passk_mistral_7b_instruct",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "the table prints no n; the population is the included questions"
+  },
+  {
+   "label": "tab:passk_qwen3_8b_low",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file",
+   "note": "the table prints no n; the population is the included questions"
+  },
+  {
+   "label": "tab:passk_qwen3_8b_high",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file",
+   "note": "the table prints no n; the population is the included questions"
+  },
+  {
+   "label": "tab:passk_qwen3_0_6b",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file",
+   "note": "the table prints no n; the population is the included questions"
+  },
+  {
+   "label": "fig:RandomH:KGrid",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:GPToss",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:Qwen8B",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:Qwen06B",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:MATH:Mistral",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:MATH:GPToss",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:MATH:Qwen8B",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:MATH:Qwen06B",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:HiToM:Mistral",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:HiToM:GPToss",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:HiToM:Qwen8B",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:RandomH:KGrid:HiToM:Qwen06B",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file"
+  },
+  {
+   "label": "zap:DataDis:RandomH:res#table",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file",
+   "note": "GPT OSS 20B"
+  },
+  {
+   "label": "zap:DataDis:RandomH:res#table",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct"
+  },
+  {
+   "label": "zap:DataDis:RandomH:res#table",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 647,
+   "question_order": "file",
+   "note": "Qwen3-8B"
+  },
+  {
+   "label": "zap:DataDis:RandomH:res#table",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "population": "included",
+   "n_printed": 85,
+   "question_order": "file",
+   "note": "Qwen3-0.6B"
+  },
+  {
+   "label": "fig:Prot:D:LCB",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file",
+   "note": "GPT OSS 20B; the corrected parse"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/livecodebench/gpt-oss-20b__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 766,
+   "question_order": "file",
+   "note": "GPT OSS 20B, LiveCodeBench"
+  },
+  {
+   "label": "fig:Prot:D:LCB",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct; the corrected parse"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, LiveCodeBench"
+  },
+  {
+   "label": "fig:Prot:D:LCB",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 677,
+   "question_order": "file",
+   "note": "Qwen3-8B; the corrected parse"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/livecodebench/Qwen3-8B__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 677,
+   "question_order": "file",
+   "note": "Qwen3-8B, LiveCodeBench"
+  },
+  {
+   "label": "fig:Prot:D:LCB",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 86,
+   "question_order": "file",
+   "note": "Qwen3-0.6B; the corrected parse"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/livecodebench/Qwen3-0.6B__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 86,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, LiveCodeBench"
+  },
+  {
+   "label": "fig:Prot:D:MATH",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file",
+   "note": "GPT OSS 20B"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/math500/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 500,
+   "question_order": "file",
+   "note": "GPT OSS 20B, MATH-500"
+  },
+  {
+   "label": "fig:Prot:D:MATH",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/math500/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 455,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, MATH-500"
+  },
+  {
+   "label": "fig:Prot:D:MATH",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file",
+   "note": "Qwen3-8B"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/math500/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 496,
+   "question_order": "file",
+   "note": "Qwen3-8B, MATH-500"
+  },
+  {
+   "label": "fig:Prot:D:MATH",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file",
+   "note": "Qwen3-0.6B"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/math500/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 492,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, MATH-500"
+  },
+  {
+   "label": "fig:Prot:D:HiToM",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file",
+   "note": "GPT OSS 20B"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "population": "included",
+   "n_printed": 678,
+   "question_order": "file",
+   "note": "GPT OSS 20B, Hi-ToM"
+  },
+  {
+   "label": "fig:Prot:D:HiToM",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "included",
+   "n_printed": 615,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, Hi-ToM"
+  },
+  {
+   "label": "fig:Prot:D:HiToM",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file",
+   "note": "Qwen3-8B"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 466,
+   "question_order": "file",
+   "note": "Qwen3-8B, Hi-ToM"
+  },
+  {
+   "label": "fig:Prot:D:HiToM",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file",
+   "note": "Qwen3-0.6B"
+  },
+  {
+   "label": "zap:DataDis:Prot#text",
+   "file": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "population": "included",
+   "n_printed": 743,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, Hi-ToM"
+  },
+  {
+   "label": "fig:Prot:Sim",
+   "file": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "population": "included",
+   "n_printed": 359,
+   "question_order": "file",
+   "note": "the 1,000 simulated questions take their profiles from the included Mistral 7B Instruct LiveCodeBench questions with hardness between 1e2 and 1e3; Figure 32 has no data"
+  },
+  {
+   "label": "zap:MinP#setup-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "file"
+  },
+  {
+   "label": "zap:MinP#setup-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "file"
+  },
+  {
+   "label": "zap:MinP#setup-table",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "all",
+   "n_printed": 617,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:rtu:minp",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "file"
+  },
+  {
+   "label": "zap:MinP#tau1.5-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "file"
+  },
+  {
+   "label": "fig:minp:T2",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "the five tau = 2.0 values"
+  },
+  {
+   "label": "fig:minp:T2",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__stage2_nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "the reference and the faint tau = 1.5 curves, on the 400 second-stage samples"
+  },
+  {
+   "label": "zap:MinP#tau2-vs-tau1.5-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "zap:MinP#tau2-vs-tau1.5-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__stage2_nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "zap:MinP#plain-T-table",
+   "file": "counts/hitom/Qwen3-0.6B__temperature__topup1000.jsonl",
+   "population": "included",
+   "n_printed": 642,
+   "question_order": "sorted ids",
+   "note": "included = the 642 also in the min_p files"
+  },
+  {
+   "label": "zap:MinP#plain-T-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "restricted to the 642 ids by the analysis"
+  },
+  {
+   "label": "zap:MinP#plain-T-table",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__stage2_nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "restricted to the 642 ids by the analysis"
+  },
+  {
+   "label": "fig:minp:mistral",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "all",
+   "n_printed": 617,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "fig:minp:mistral",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "all",
+   "n_printed": 617,
+   "question_order": "sorted ids",
+   "note": "the 31 plain temperatures, all 617 kept questions"
+  },
+  {
+   "label": "zap:MinP#mistral-table",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "all",
+   "n_printed": 617,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "zap:MinP#mistral-table",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__temperature.jsonl",
+   "population": "all",
+   "n_printed": 617,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "fig:minp:rtuT2",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "file",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:rtuT2",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "file",
+   "note": "Mistral 7B Instruct, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:profiles",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 1.5"
+  },
+  {
+   "label": "fig:minp:profiles",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:profiles",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "sorted ids",
+   "note": "Mistral 7B Instruct, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:Peak",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 1.5"
+  },
+  {
+   "label": "fig:minp:Peak",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:Peak",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "sorted ids",
+   "note": "Mistral 7B Instruct, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:RangeSize",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 1.5"
+  },
+  {
+   "label": "fig:minp:RangeSize",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:RangeSize",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "sorted ids",
+   "note": "Mistral 7B Instruct, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:relC",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 1.5"
+  },
+  {
+   "label": "fig:minp:relC",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:relC",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "sorted ids",
+   "note": "Mistral 7B Instruct, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:Prot",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 1.5"
+  },
+  {
+   "label": "fig:minp:Prot",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:Prot",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "sorted ids",
+   "note": "Mistral 7B Instruct, tau = 2.0"
+  },
+  {
+   "label": "fig:minp:RandomH:q15",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "fig:minp:RandomH:q20",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "included",
+   "n_printed": 648,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "fig:minp:RandomH:mis",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "included",
+   "n_printed": 598,
+   "question_order": "sorted ids"
+  },
+  {
+   "label": "zap:MinP#noise-checks",
+   "file": "counts/hitom/Mistral-7B-Instruct-v0.3__min_p_tau2.0__nu1500.jsonl",
+   "population": "all",
+   "n_printed": 617,
+   "question_order": "sorted ids",
+   "note": "the checks draw over all 617 Mistral 7B Instruct min_p questions"
+  },
+  {
+   "label": "zap:MinP#noise-checks",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 1.5"
+  },
+  {
+   "label": "zap:MinP#noise-checks",
+   "file": "counts/hitom/Qwen3-0.6B__min_p_tau2.0__nu400.jsonl",
+   "population": "all",
+   "n_printed": 648,
+   "question_order": "sorted ids",
+   "note": "Qwen3-0.6B, tau = 2.0"
+  },
+  {
+   "label": "zap:Datasets#hitom-screen",
+   "file": "selection/hitom/gpt-oss-20b__temperature__screen500.jsonl",
+   "population": "included",
+   "n_printed": null,
+   "question_order": "file",
+   "note": "GPT OSS 20B: the screen keeps 678 of 1,200, the questions of the Hi-ToM study file"
+  },
+  {
+   "label": "zap:Datasets#hitom-screen",
+   "file": "selection/hitom/Qwen3-8B__temperature__screen500.jsonl",
+   "population": "included",
+   "n_printed": null,
+   "question_order": "file",
+   "note": "Qwen3-8B: the screen keeps 471 of 1,200, the questions of the Hi-ToM study file"
+  },
+  {
+   "label": "zap:Datasets#hitom-screen",
+   "file": "selection/hitom/Qwen3-0.6B__temperature__screen500.jsonl",
+   "population": "included",
+   "n_printed": null,
+   "question_order": "file",
+   "note": "Qwen3-0.6B: the screen keeps 743 of 1,200, the questions of the Hi-ToM study file"
+  },
+  {
+   "label": "zap:MinP#screen",
+   "file": "selection/hitom/Qwen3-0.6B__min_p_tau1.5__screen100.jsonl",
+   "population": "included",
+   "n_printed": null,
+   "question_order": "file",
+   "note": "keeps 648 of 1,200, the questions of the min_p files"
+  }
+ ],
+ "labels": {
+  "fig:ManyQ": "Figure 1: temperature profiles of Qwen3-8B questions, LiveCodeBench",
+  "fig:Seperation": "Figure 2: peak temperature, efficient range size and maximal overlap vs hardness, Qwen3-8B, LiveCodeBench",
+  "fig:TempsCom": "Figure 3: pass@K relative to uniform, Mistral 7B Instruct, LiveCodeBench (10-fold red trace)",
+  "fig:Prot:D:Main": "Figure 4: (a) beta* against D at a 10 % loss; (b) the KL top row with 24 million W's; Mistral 7B Instruct, LiveCodeBench",
+  "zap:DataDis:gpt_oss_20b": "Appendix C table of GPT OSS 20B: included questions, samples per (q, tau), temperature grid",
+  "zap:DataDis:mistral_7b_instruct": "Appendix C table of Mistral 7B Instruct: included questions, samples per (q, tau), temperature grid",
+  "zap:DataDis:qwen3_8b": "Appendix C table of Qwen3-8B: included questions, samples per (q, tau), temperature grid",
+  "zap:DataDis:qwen3_0_6b": "Appendix C table of Qwen3-0.6B: included questions, samples per (q, tau), temperature grid",
+  "fig:AveTemp:gpt_oss_20b": "Figure 5a: per-question peak temperature vs hardness, GPT OSS 20B, LiveCodeBench",
+  "fig:AveTemp:mistral_7b_instruct": "Figure 5b: per-question peak temperature vs hardness, Mistral 7B Instruct, LiveCodeBench",
+  "fig:AveTemp:qwen3_8b": "Figure 5c: per-question peak temperature vs hardness, Qwen3-8B, LiveCodeBench",
+  "fig:AveTemp:qwen3_0_6b": "Figure 5d: per-question peak temperature vs hardness, Qwen3-0.6B, LiveCodeBench",
+  "fig:AveTemp:math500:gpt_oss_20b": "Figure 6a: per-question peak temperature vs hardness, GPT OSS 20B, MATH-500",
+  "fig:AveTemp:math500:mistral_7b_instruct": "Figure 6b: per-question peak temperature vs hardness, Mistral 7B Instruct, MATH-500",
+  "fig:AveTemp:math500:qwen3_8b": "Figure 6c: per-question peak temperature vs hardness, Qwen3-8B, MATH-500",
+  "fig:AveTemp:math500:qwen3_0_6b": "Figure 6d: per-question peak temperature vs hardness, Qwen3-0.6B, MATH-500",
+  "fig:AveTemp:hitom:gpt_oss_20b": "Figure 7a: per-question peak temperature vs hardness, GPT OSS 20B, Hi-ToM",
+  "fig:AveTemp:hitom:mistral_7b_instruct": "Figure 7b: per-question peak temperature vs hardness, Mistral 7B Instruct, Hi-ToM",
+  "fig:AveTemp:hitom:qwen3_8b": "Figure 7c: per-question peak temperature vs hardness, Qwen3-8B, Hi-ToM",
+  "fig:AveTemp:hitom:qwen3_0_6b": "Figure 7d: per-question peak temperature vs hardness, Qwen3-0.6B, Hi-ToM",
+  "fig:RangeSize:gpt_oss_20b": "Figure 8a: efficient range size vs hardness, GPT OSS 20B, LiveCodeBench",
+  "fig:RangeSize:mistral_7b_instruct": "Figure 8b: efficient range size vs hardness, Mistral 7B Instruct, LiveCodeBench",
+  "fig:RangeSize:qwen3_8b": "Figure 8c: efficient range size vs hardness, Qwen3-8B, LiveCodeBench",
+  "fig:RangeSize:qwen3_0_6b": "Figure 8d: efficient range size vs hardness, Qwen3-0.6B, LiveCodeBench",
+  "fig:RangeSize:math500:gpt_oss_20b": "Figure 9a: efficient range size vs hardness, GPT OSS 20B, MATH-500",
+  "fig:RangeSize:math500:mistral_7b_instruct": "Figure 9b: efficient range size vs hardness, Mistral 7B Instruct, MATH-500",
+  "fig:RangeSize:math500:qwen3_8b": "Figure 9c: efficient range size vs hardness, Qwen3-8B, MATH-500",
+  "fig:RangeSize:math500:qwen3_0_6b": "Figure 9d: efficient range size vs hardness, Qwen3-0.6B, MATH-500",
+  "fig:RangeSize:hitom:gpt_oss_20b": "Figure 10a: efficient range size vs hardness, GPT OSS 20B, Hi-ToM",
+  "fig:RangeSize:hitom:mistral_7b_instruct": "Figure 10b: efficient range size vs hardness, Mistral 7B Instruct, Hi-ToM",
+  "fig:RangeSize:hitom:qwen3_8b": "Figure 10c: efficient range size vs hardness, Qwen3-8B, Hi-ToM",
+  "fig:RangeSize:hitom:qwen3_0_6b": "Figure 10d: efficient range size vs hardness, Qwen3-0.6B, Hi-ToM",
+  "fig:relC:gpt_oss_20b": "Figure 11a: maximal coverage R_Q(H) in 17 log-uniform hardness bins, GPT OSS 20B, LiveCodeBench",
+  "fig:relC:mistral_7b_instruct": "Figure 11b: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Mistral 7B Instruct, LiveCodeBench",
+  "fig:relC:qwen3_8b": "Figure 11c: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Qwen3-8B, LiveCodeBench",
+  "fig:relC:qwen3_0_6b": "Figure 11d: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Qwen3-0.6B, LiveCodeBench",
+  "fig:relC:math500:gpt_oss_20b": "Figure 12a: maximal coverage R_Q(H) in 17 log-uniform hardness bins, GPT OSS 20B, MATH-500",
+  "fig:relC:math500:mistral_7b_instruct": "Figure 12b: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Mistral 7B Instruct, MATH-500",
+  "fig:relC:math500:qwen3_8b": "Figure 12c: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Qwen3-8B, MATH-500",
+  "fig:relC:math500:qwen3_0_6b": "Figure 12d: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Qwen3-0.6B, MATH-500",
+  "fig:relC:hitom:gpt_oss_20b": "Figure 13a: maximal coverage R_Q(H) in 17 log-uniform hardness bins, GPT OSS 20B, Hi-ToM",
+  "fig:relC:hitom:mistral_7b_instruct": "Figure 13b: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Mistral 7B Instruct, Hi-ToM",
+  "fig:relC:hitom:qwen3_8b": "Figure 13c: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Qwen3-8B, Hi-ToM",
+  "fig:relC:hitom:qwen3_0_6b": "Figure 13d: maximal coverage R_Q(H) in 17 log-uniform hardness bins, Qwen3-0.6B, Hi-ToM",
+  "fig:rtu:gpt_oss_20b": "Figure 14a: pass@K relative to uniform with the LOO optimum, GPT OSS 20B, LiveCodeBench",
+  "fig:rtu:mistral_7b_instruct": "Figure 14b: pass@K relative to uniform with the LOO optimum, Mistral 7B Instruct, LiveCodeBench",
+  "fig:rtu:qwen3_8b": "Figure 14c: pass@K relative to uniform with the LOO optimum, Qwen3-8B, LiveCodeBench",
+  "fig:rtu:qwen3_0_6b": "Figure 14d: pass@K relative to uniform with the LOO optimum, Qwen3-0.6B, LiveCodeBench",
+  "fig:rtu:math500:gpt_oss_20b": "Figure 15a: pass@K relative to uniform with the LOO optimum, GPT OSS 20B, MATH-500",
+  "fig:rtu:math500:mistral_7b_instruct": "Figure 15b: pass@K relative to uniform with the LOO optimum, Mistral 7B Instruct, MATH-500",
+  "fig:rtu:math500:qwen3_8b": "Figure 15c: pass@K relative to uniform with the LOO optimum, Qwen3-8B, MATH-500",
+  "fig:rtu:math500:qwen3_0_6b": "Figure 15d: pass@K relative to uniform with the LOO optimum, Qwen3-0.6B, MATH-500",
+  "fig:rtu:hitom:gpt_oss_20b": "Figure 16a: pass@K relative to uniform with the LOO optimum, GPT OSS 20B, Hi-ToM",
+  "fig:rtu:hitom:mistral_7b_instruct": "Figure 16b: pass@K relative to uniform with the LOO optimum, Mistral 7B Instruct, Hi-ToM",
+  "fig:rtu:hitom:qwen3_8b": "Figure 16c: pass@K relative to uniform with the LOO optimum, Qwen3-8B, Hi-ToM",
+  "fig:rtu:hitom:qwen3_0_6b": "Figure 16d: pass@K relative to uniform with the LOO optimum, Qwen3-0.6B, Hi-ToM",
+  "zap:Multiple:Comp:res#summary-table": "Appendix F.2 summary table: Optimal (LOO) / uniform and the best single tau at K = 1, 16, 256, 1024",
+  "tab:passk_gpt_oss_20b": "Table 2: pass@K per temperature and per strategy, GPT OSS 20B, LiveCodeBench",
+  "tab:passk_mistral_7b_instruct": "Table 3: pass@K per temperature and per strategy, Mistral 7B Instruct, LiveCodeBench",
+  "tab:passk_qwen3_8b_low": "Table 4: pass@K per temperature and per strategy, Qwen3-8B, LiveCodeBench",
+  "tab:passk_qwen3_8b_high": "Table 5: pass@K per temperature and per strategy, Qwen3-8B, LiveCodeBench",
+  "tab:passk_qwen3_0_6b": "Table 6: pass@K per temperature and per strategy, Qwen3-0.6B, LiveCodeBench",
+  "fig:RandomH:KGrid": "Figure 17: score_B / score_A against KL(W || uniform), Mistral 7B Instruct, LiveCodeBench",
+  "fig:RandomH:KGrid:GPToss": "Figure 18: score_B / score_A against KL(W || uniform), GPT OSS 20B, LiveCodeBench",
+  "fig:RandomH:KGrid:Qwen8B": "Figure 19: score_B / score_A against KL(W || uniform), Qwen3-8B, LiveCodeBench",
+  "fig:RandomH:KGrid:Qwen06B": "Figure 20: score_B / score_A against KL(W || uniform), Qwen3-0.6B, LiveCodeBench",
+  "fig:RandomH:KGrid:MATH:Mistral": "Figure 21: score_B / score_A against KL(W || uniform), Mistral 7B Instruct, MATH-500",
+  "fig:RandomH:KGrid:MATH:GPToss": "Figure 22: score_B / score_A against KL(W || uniform), GPT OSS 20B, MATH-500",
+  "fig:RandomH:KGrid:MATH:Qwen8B": "Figure 23: score_B / score_A against KL(W || uniform), Qwen3-8B, MATH-500",
+  "fig:RandomH:KGrid:MATH:Qwen06B": "Figure 24: score_B / score_A against KL(W || uniform), Qwen3-0.6B, MATH-500",
+  "fig:RandomH:KGrid:HiToM:Mistral": "Figure 25: score_B / score_A against KL(W || uniform), Mistral 7B Instruct, Hi-ToM",
+  "fig:RandomH:KGrid:HiToM:GPToss": "Figure 26: score_B / score_A against KL(W || uniform), GPT OSS 20B, Hi-ToM",
+  "fig:RandomH:KGrid:HiToM:Qwen8B": "Figure 27: score_B / score_A against KL(W || uniform), Qwen3-8B, Hi-ToM",
+  "fig:RandomH:KGrid:HiToM:Qwen06B": "Figure 28: score_B / score_A against KL(W || uniform), Qwen3-0.6B, Hi-ToM",
+  "zap:DataDis:RandomH:res#table": "Appendix G table: tau_A, score_A and top-row occupancy, LiveCodeBench",
+  "fig:Prot:D:LCB": "Figure 29: beta* against D at a 10 % and a 1 % loss, LiveCodeBench",
+  "zap:DataDis:Prot#text": "Appendix H text: worst-case loss R, one side at a time, tilting, natural sub-datasets and resampling, on the 12 combinations",
+  "fig:Prot:D:MATH": "Figure 30: beta* against D at a 10 % and a 1 % loss, MATH-500",
+  "fig:Prot:D:HiToM": "Figure 31: beta* against D at a 10 % and a 1 % loss, Hi-ToM",
+  "fig:Prot:Sim": "Figure 33: beta* against D for the three simulated hardness shapes",
+  "zap:MinP#setup-table": "Appendix I setup table: kept questions and nu per study",
+  "fig:rtu:minp": "Figure 34: rtu(K) over min_p, Qwen3-0.6B, Hi-ToM, tau = 1.5",
+  "zap:MinP#tau1.5-table": "Appendix I tau = 1.5 table and its text (ratios, uniform pass@K, absolute gains)",
+  "fig:minp:T2": "Figure 35: pass@K relative to tau = 1.5 with min_p = 0.003, Qwen3-0.6B",
+  "zap:MinP#tau2-vs-tau1.5-table": "Appendix I table: the best value at tau = 2.0 against tau = 1.5",
+  "zap:MinP#plain-T-table": "Appendix I table: the best min_p value against the best plain temperature, Qwen3-0.6B, on the 642 questions both screens kept",
+  "fig:minp:mistral": "Figure 36: pass@K with min_p at tau = 2.0 relative to the best plain temperature, Mistral 7B Instruct, Hi-ToM",
+  "zap:MinP#mistral-table": "Appendix I table: Mistral 7B Instruct, the best min_p value against the best plain temperature",
+  "fig:minp:rtuT2": "Figure 37: rtu(K) at tau = 2.0 (min_p, Hi-ToM)",
+  "fig:minp:profiles": "Figure 38: min_p profiles of 51 questions (min_p, Hi-ToM)",
+  "fig:minp:Peak": "Figure 39: peak min_p vs hardness (min_p, Hi-ToM)",
+  "fig:minp:RangeSize": "Figure 40: efficient range size vs hardness (min_p, Hi-ToM)",
+  "fig:minp:relC": "Figure 41: maximal coverage vs hardness (min_p, Hi-ToM)",
+  "fig:minp:Prot": "Figure 45: beta* against D (min_p, Hi-ToM)",
+  "fig:minp:RandomH:q15": "Figure 42: score_B / score_A against KL(W || uniform) with min_p, Hi-ToM",
+  "fig:minp:RandomH:q20": "Figure 43: score_B / score_A against KL(W || uniform) with min_p, Hi-ToM",
+  "fig:minp:RandomH:mis": "Figure 44: score_B / score_A against KL(W || uniform) with min_p, Hi-ToM",
+  "zap:MinP#noise-checks": "Appendix I: the split-half and null checks of the hardness trends",
+  "zap:Datasets#hitom-screen": "Appendix C: the Hi-ToM first-stage screen (best single-temperature pass rate below 0.30 on 500 samples per cell)",
+  "zap:MinP#screen": "Appendix I: the min_p screen at tau = 1.5 (100 samples per value; keep if the best value's pass rate is below 0.30)"
+ },
+ "consistency": [
+  {
+   "a": "counts/livecodebench/gpt-oss-20b__temperature__question_n.jsonl",
+   "b": "counts/livecodebench/gpt-oss-20b__temperature__cell_n.jsonl",
+   "relation": "same_questions",
+   "samples": "same",
+   "shared_questions": 975,
+   "shared_cells": 15600
+  },
+  {
+   "a": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__question_n.jsonl",
+   "b": "counts/livecodebench/Mistral-7B-Instruct-v0.3__temperature__cell_n.jsonl",
+   "relation": "same_questions",
+   "samples": "same",
+   "shared_questions": 975,
+   "shared_cells": 15600
+  },
+  {
+   "a": "counts/livecodebench/Qwen3-8B__temperature__question_n.jsonl",
+   "b": "counts/livecodebench/Qwen3-8B__temperature__cell_n.jsonl",
+   "relation": "same_questions",
+   "samples": "same",
+   "shared_questions": 975,
+   "shared_cells": 37050
+  },
+  {
+   "a": "counts/livecodebench/Qwen3-0.6B__temperature__question_n.jsonl",
+   "b": "counts/livecodebench/Qwen3-0.6B__temperature__cell_n.jsonl",
+   "relation": "same_questions",
+   "samples": "same",
+   "shared_questions": 110,
+   "shared_cells": 2200
+  },
+  {
+   "a": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__stage2_nu400.jsonl",
+   "b": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "relation": "same_questions",
+   "samples": "a_within_b",
+   "shared_questions": 648,
+   "shared_cells": 6480
+  },
+  {
+   "a": "counts/hitom/Qwen3-0.6B__temperature__topup1000.jsonl",
+   "b": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "relation": "same_questions",
+   "samples": "a_within_b",
+   "shared_questions": 743,
+   "shared_cells": 23033
+  },
+  {
+   "a": "selection/hitom/gpt-oss-20b__temperature__screen500.jsonl",
+   "b": "counts/hitom/gpt-oss-20b__temperature.jsonl",
+   "relation": "b_subset_of_a",
+   "samples": "a_within_b",
+   "shared_questions": 678,
+   "shared_cells": 21018
+  },
+  {
+   "a": "selection/hitom/Qwen3-8B__temperature__screen500.jsonl",
+   "b": "counts/hitom/Qwen3-8B__temperature.jsonl",
+   "relation": "b_subset_of_a",
+   "samples": "a_within_b",
+   "shared_questions": 471,
+   "shared_cells": 14601
+  },
+  {
+   "a": "selection/hitom/Qwen3-0.6B__temperature__screen500.jsonl",
+   "b": "counts/hitom/Qwen3-0.6B__temperature.jsonl",
+   "relation": "b_subset_of_a",
+   "samples": "a_within_b",
+   "shared_questions": 743,
+   "shared_cells": 23033
+  },
+  {
+   "a": "selection/hitom/Qwen3-0.6B__min_p_tau1.5__screen100.jsonl",
+   "b": "counts/hitom/Qwen3-0.6B__min_p_tau1.5__nu500.jsonl",
+   "relation": "b_subset_of_a",
+   "samples": "a_within_b",
+   "shared_questions": 648,
+   "shared_cells": 6480
+  }
+ ]
+}

@@ -1,45 +1,96 @@
 #!/usr/bin/env python3
-"""Step 2 for MATH-500: grade completions and write the counts file.
+"""MATH-500 grader of the paper (frozen version v2.5): completions -> counts.jsonl.
 
-    python grade_math500.py --gen-dir runs/mistral7b_math500 --dataset math500_test.jsonl --out counts.jsonl
+    python -m onetemp.grading.math500 --inputs runs/mistral_math500 --out counts_math500.jsonl --summary summary.json
+    python -m onetemp.grading.math500 --try 'so the answer is $\\boxed{\\dfrac12}$' --gold '\\frac{1}{2}'
 
---dataset is the public test split of HuggingFaceH4/MATH-500 saved as JSONL (fields unique_id, answer); without it
-the split is loaded from the Hugging Face hub. Output: one line per (question, temperature)
-    {"id", "temperature", "n", "c", "c_strict"}
-c counts completions graded correct by the full grader, c_strict by the exact layer alone. Every completion counts
-once (instance-weighted); verdicts are cached by the extracted answer string only to save time.
+WHAT IT COMPUTES (Appendix C, "Datasets"). For every completion: the answer is the content of the LAST \\boxed{}
+span of the completion, and a sample with no such span fails. A sample passes if its answer equals the reference
+answer after normalization, or if an equivalence layer of generic rules and a time-bounded symbolic check with SymPy
+accepts it. Per (question, setting) it writes n = samples and c = passing samples (instance-weighted), which is the
+estimate c/n of the single-sample success probability P_q(tau) of Section 2. It also writes the optional field
 
-The grader below is the frozen grader of the paper's MATH-500 runs (version v2.5), copied unchanged except for
-comments. Its design:
-  * extract_boxed(completion) takes the completion ONLY; the LAST \\boxed{} span is the answer; a completion with no
-    \\boxed{} is its own bucket (no_boxed) and fails.
-  * normalize() both sides; the exact layer is exact normalised equality, never substring or regex search.
-  * Then an equivalence layer of generic rules (never per question), and SymPy equivalence through parse_expr with a
-    restricted namespace and empty __builtins__ -- never sympify/eval on model output.
-  * Every comparison is time-bound (SIGALRM, Unix main thread); a timeout or an internal error REJECTS.
-  * Only a real bool from SymPy is believed.
-Rule codes recorded on each verdict:
-  R1 units       degree marks and ONE trailing unit block (\\text{..}, \\mbox{..}, \\mathrm{..}) are dropped from both sides.
-  R2 prefix      a single-letter `v =` prefix is dropped once; on both sides the letters must match.
-  R3 lists       a gold that is a bare comma list or a set is a multiset; tuples, intervals, vectors, matrices stay ordered.
-  R4 \\pm         `a \\pm b` is the multiset {a+b, a-b}.
-  R5 fail closed any LaTeX command the translator does not handle makes the pair `unparseable` (a fail); a fixed
-                 whitelist of pure layout commands is stripped first.
-  R6 buckets     timeout -> grader_timeout, internal error -> grader_error; both fail and both are counted.
-  MX             a gold that is a mixed number (2\\frac{1}{3}) means addition; a candidate's own mixed number must match
-                 under both the product and the school reading.
-  TS thousands   one comma-grouped number (12,345) is that number, only against a single number; never against a list.
-  BE exponents   ^{t} is ^t for one letter or digit t.
-  PX prefixes    a subscripted or primed single letter, or an uppercase segment name, before '='; `v \\in` before a set.
-  SS singleton   a one-element set against a scalar gold is that element.
-  TP tuples      a bare comma list against a parenthesised tuple gold of the same length, element by element in order.
-Requires sympy (see requirements.txt).
+    c_strict   samples whose answer passes the exact layer alone (normalized string equality), for reference.
+
+The reference answers are the `answer` field of the public MATH-500 test split (HuggingFaceH4/MATH-500, which is
+byte-identical to PRM800K's math_splits/test.jsonl). They are downloaded at run time and checked by sha256; none is
+stored in this repository.
+
+The grading code below is copied unchanged from the frozen grader that produced every MATH-500 number in the paper;
+only comments and three docstrings were edited. It was frozen, with its hand-labelled test fixture, before the data
+it graded existed, and it was never made more lenient after seeing results. Its design:
+
+  * extract_boxed(completion) takes the completion ONLY. The problem record and the reference answer are never in
+    its scope, so a failed extraction cannot be replaced by anything derived from the answer key.
+  * The LAST \\boxed{} span counts, a rule fixed in advance; "pass if any span matches" would be in-sample oracle
+    selection. The number of spans is recorded, never used.
+  * No \\boxed{} is its own bucket (no_boxed) and fails. Empty never matches empty.
+  * The exact layer is exact equality of normalized strings: never `in`, never a regex search.
+  * Model output is never passed to sympify or eval directly, which would execute a string the model controls. Only
+    a string of digits, letters, _, + - * / ( ) . and spaces reaches sympy's parse_expr, which evaluates it with a
+    restricted namespace and empty __builtins__.
+  * Every comparison is time-bound (2 s, SIGALRM; Unix main thread). A timeout or an internal error fails the
+    sample (fail closed) and has its own bucket.
+  * Only a real bool from sympy is believed (an unevaluated Eq is truthy).
+
+The equivalence layer, in rule codes (recorded on each verdict as `rule`):
+  R1 units       From both sides: every degree mark (^\\circ, ^{\\circ}, a Unicode degree sign, \\degree), and ONE
+                 trailing unit block (\\text{..}, \\mbox{..} or \\mathrm{..} holding words, with a value before it)
+                 together with a power directly after it (^2, ^{3}). The rest must still match.
+  R2 prefix      A single-letter `v =` prefix is stripped once when it holds the side's only '='; on both sides the
+                 letters must match. In a list, prefixes are stripped per element only when every element carries
+                 the same letter.
+  R3 lists       A reference that is a bare comma-separated list or a set \\{..\\} is a multiset: equal length,
+                 matched element by element. Tuples, points, intervals, vectors and matrices stay ordered. A
+                 comma-grouped number (12,345) is a number, not a list.
+  R4 \\pm         An item `a \\pm b` (or \\mp) is the multiset {a+b, a-b}, on either side.
+  R5 fail closed Any LaTeX command the translator does not handle (anything but brace-free \\frac, \\sqrt{}, \\pi,
+                 \\times, \\div) refuses the sympy layer: bucket `unparseable`, a fail. A fixed whitelist of pure
+                 layout commands (\\displaystyle, \\big, \\quad, ...) is stripped first.
+  R6 buckets     A timeout -> grader_timeout, an internal error -> grader_error. Both fail, both are counted.
+  MX mixed nums  A reference that is a mixed number (2\\frac{1}{3}) means addition. A candidate that writes its own
+                 mixed number must be equal under both readings, the product a*b/c and the school reading a + b/c.
+  TS thousands   A side that is ONE comma-grouped number (12,345 or 12{,}345) is that number without separators, only
+                 when the other side is a single number. A comma followed by whitespace in the raw text separates a
+                 list ("3, 100"), and a grouped number never meets a list, tuple, set or interval.
+  BE exponents   ^{t} is ^t for one letter or digit t (layout only), except directly before a letter, digit or point.
+  PX prefixes    Stripped once, like R2, when there is no other '=' or \\in: a subscripted or primed single letter
+                 (z_1 =, x' =), an uppercase segment name (DE =), or `<v> \\in` before an interval or a set.
+  SS singleton   A set \\{a\\} of one element against a scalar reference is a.
+  TP tuples      A bare comma list against a parenthesised tuple reference of the same length, element by element
+                 in order (an interval with \\infty is not a tuple).
+
+Version history (each rule generic, never per question; each version's fixture written before its code):
+  v2.0 R1-R6 (156 fixture cases); v2.1 more unit and degree forms (172); v2.2 the R2 whole-answer prefix and the R5
+  layout whitelist (210); v2.3 a false pass removed: a mixed number must match under both readings (223); v2.4 a
+  reference mixed number means addition (237); v2.5 TS, BE, PX, SS and TP, the final freeze (308 cases).
+
+Output of grade_one(completion, gold), a dict:
+  bucket   no_boxed | exact_match | equivalence_match | parsed_wrong | unparseable | grader_timeout | grader_error |
+           empty_after_normalize
+  lenient  the verdict (pass = exact_match or equivalence_match); strict = the exact layer alone
+  n_boxed, extracted, layer, rule (the rule(s) that credited a pass, '+'-joined), detail (a reason code)
+
+Reproducing the paper's verdicts needs sympy 1.14.0 and mpmath 1.3.0 with sympy's pure-Python ground types (the
+script sets SYMPY_GROUND_TYPES=python and refuses other versions unless --any-sympy is given).
 """
 import argparse
-import glob
+import hashlib
 import json
 import os
-from collections import Counter, defaultdict
+import sys
+from collections import Counter
+
+from . import completions_io as io_  # noqa: E402
+
+# Pure-Python ground types, as in the paper's runs; must be set before sympy is first imported.
+os.environ["SYMPY_GROUND_TYPES"] = "python"
+
+# The block below is the grader the paper's verdicts came from, byte for byte, so its own comments are kept as
+# they were: the test that pins it by sha256 is tests/test_grading_math500.py in this repository.
+# =======================================================================================
+# THE FROZEN GRADER (v2.5). Code unchanged; tests/test_math500.py pins this block by the sha256 of its text.
+# =======================================================================================
 import re
 import signal
 from contextlib import contextmanager
@@ -242,7 +293,7 @@ def _scalar(a, b):
     """One item against one item -> (MATCH | NO | UNPARSEABLE, reason). Exact string equality first (sound), then v1's
     sympy equivalence with R5 in front of it. Runs inside grade_one's time bound.
 
-    v2.3: when either side holds a mixed number, the two sides must be equal under BOTH readings --
+    v2.3 (a false pass found in an audit): when either side holds a mixed number, the two sides must be equal under BOTH readings --
     v1's product a*b/c and the school reading a + b/c. Strictly stricter than v2.2: it can only remove a credit."""
     if not a or not b:
         return NO, "empty_item"                    # empty never matches empty
@@ -303,7 +354,7 @@ _PM = re.compile(r"\\(pm|mp)(?![A-Za-z])")                                 # R4
 # already go in normalize(). Nothing else is stripped: every other untranslated command still fails closed (R5).
 _LAYOUT = re.compile(r"\\(?:displaystyle|textstyle|big|bigl|bigr|Big|Bigl|Bigr|bigg|biggl|biggr|quad|qquad)"
                      r"(?![A-Za-z])|\\:")
-# R3: a comma-grouped number is a number, not a list. v2.5 TS: a fixed pattern, on a side's form ({,} read as a
+# R3: a comma-grouped number is a number, not a list. v2.5 TS: this pattern, on a side's form ({,} read as a
 # comma); it replaces v2.0's [+-]? pattern on the normalized gold, which no MATH-500 gold tells apart.
 _GROUPED = re.compile(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?")
 # TS, on the RAW text: a comma followed by whitespace, ~ or a positive LaTeX space separates a LIST ("3, 100").
@@ -678,61 +729,229 @@ def grade_one(completion, gold):
     return _v("parsed_wrong", n_spans, extracted, "sympy", _rule(rules), why)
 
 
-# ---------------------------------------------------------------------------------------
-# Command line: generation output -> counts file.            (added for this release)
-# ---------------------------------------------------------------------------------------
+# =======================================================================================
+# END OF THE FROZEN GRADER. Everything below drives it (added for this release).
+# =======================================================================================
+
+# The public MATH-500 test split. HuggingFaceH4/MATH-500 at this revision is byte-identical to openai/prm800k's
+# prm800k/math_splits/test.jsonl, whose git-LFS pointer records the same sha256 and 446,564 bytes.
+MATH500_REVISION = "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+MATH500_URL = f"https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/{MATH500_REVISION}/test.jsonl"
+MATH500_SHA256 = "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+SYMPY_MPMATH = ("1.14.0", "1.3.0")      # the versions behind every verdict in the paper
+RECHECK_EVERY = 97                      # every 97th cache hit is graded again on its own, as in the paper's runs
+BUCKET_CODE = {"no_boxed": "n", "exact_match": "e", "equivalence_match": "q", "parsed_wrong": "w", "unparseable": "u",
+               "grader_timeout": "t", "grader_error": "x", "empty_after_normalize": "z"}
+
+
 def load_gold(path):
-    """unique_id -> reference answer, from the public MATH-500 test split. Only grade_one ever sees it."""
-    if path:
-        rows = [json.loads(line) for line in open(path) if line.strip()]
-    else:
-        from datasets import load_dataset
-        rows = list(load_dataset("HuggingFaceH4/MATH-500", split="test"))
+    """unique_id -> reference answer string, from the MATH-500 test split (one JSON object per line).
+
+    Only grade_one ever sees a reference answer. Every reference must normalize to a non-empty string, so that an
+    empty extraction can never equal an empty reference."""
+    with open(path, encoding="utf-8") as fh:
+        rows = [json.loads(line) for line in fh if line.strip()]
     gold = {r["unique_id"]: r["answer"] for r in rows}
-    assert len(gold) == len(rows), "unique_id collision"
-    assert all(normalize(g) for g in gold.values()), "a reference answer normalises to empty"
+    if len(gold) != len(rows):
+        raise SystemExit(f"{path}: duplicate unique_id")
+    if not all(isinstance(g, str) and g.strip() and normalize(g) for g in gold.values()):
+        raise SystemExit(f"{path}: a reference answer is empty after normalization")
     return gold
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--gen-dir", required=True, help="generate_vllm.py output directory (T*.jsonl files)")
-    ap.add_argument("--dataset", help="MATH-500 test split as JSONL (unique_id, answer); default: the HF hub")
-    ap.add_argument("--out", required=True, help="counts JSONL to write")
-    args = ap.parse_args()
+def check_sympy(allow_other):
+    """The grader's environment, checked rather than assumed: sympy/mpmath versions and pure-Python ground types."""
+    import mpmath
+    import sympy
+    from sympy.external.gmpy import GROUND_TYPES
+    env = {"sympy": sympy.__version__, "mpmath": mpmath.__version__, "sympy_ground_types": GROUND_TYPES,
+           "python": sys.version.split()[0]}
+    problems = []
+    if (sympy.__version__, mpmath.__version__) != SYMPY_MPMATH:
+        problems.append(f"sympy/mpmath {sympy.__version__}/{mpmath.__version__}, the paper used "
+                        f"{SYMPY_MPMATH[0]}/{SYMPY_MPMATH[1]}")
+    if GROUND_TYPES != "python":
+        problems.append(f"sympy ground types {GROUND_TYPES!r}, the paper used 'python'")
+    if problems and not allow_other:
+        raise SystemExit("; ".join(problems) + ". Install the grading extra (pip install -e \".[grading]\"), or pass "
+                         "--any-sympy to grade anyway (verdicts may then differ from the paper's).")
+    for p in problems:
+        print(f"WARNING: {p}", file=sys.stderr)
+    return env
 
-    gold = load_gold(args.dataset)
-    cache = {}                                    # (question id, extracted answer) -> verdict
-    counts = {}
-    tally = defaultdict(Counter)
-    for path in sorted(glob.glob(os.path.join(args.gen_dir, "T*.jsonl"))):
-        for line in open(path):
-            if not line.strip():
-                continue
-            rec = json.loads(line)
-            qid, t = rec["id"], float(rec["temperature"])
-            key_cell = (qid, t)
-            assert key_cell not in counts, f"duplicate cell {key_cell}"
-            n = c = c_strict = 0
-            for comp in rec["completions"]:
-                extracted, _ = extract_boxed(comp)
-                key = (qid, extracted)
-                if key not in cache:
-                    cache[key] = grade_one(comp, gold[qid])
-                v = cache[key]
-                n += 1
-                c += bool(v["lenient"])
-                c_strict += bool(v["strict"])
-                tally[t][v["bucket"]] += 1
-            counts[key_cell] = {"id": qid, "temperature": t, "n": n, "c": c, "c_strict": c_strict}
-    with open(args.out, "w") as f:
-        for k in sorted(counts):
-            f.write(json.dumps(counts[k]) + "\n")
-    print(f"{len(counts)} cells written to {args.out}; buckets per temperature (completions):")
-    for t in sorted(tally):
-        tot = sum(tally[t].values())
-        print(f"  T={t:g}: " + ", ".join(f"{b} {tally[t][b] / tot:.1%}" for b in BUCKETS if tally[t][b]))
+
+def _fail_closed(text, gold):
+    """grade_one never raises; if it ever did, the sample would be a grader_error (a fail), never a pass."""
+    try:
+        return grade_one(text, gold)
+    except KeyboardInterrupt:
+        raise
+    except BaseException:  # noqa: BLE001
+        return {"bucket": "grader_error", "strict": False, "lenient": False, "rule": "R6"}
+
+
+def grade_texts(gold, texts, recheck_every=RECHECK_EVERY):
+    """Per-sample verdicts for the completions of ONE cell, instance-weighted.
+
+    grade_one's verdict depends only on the last \\boxed{} span and the reference, so a distinct span is graded once
+    per cell and its verdict is reused for every sample with that span. As a check, a new distinct text whose span is
+    already graded is graded again on its own whenever the number of distinct texts seen so far is a multiple of
+    `recheck_every` (identical repeats of a text are never re-graded). A disagreement that involves no timeout is
+    counted in `cache_mismatches`, and the caller then fails the run. This is the caching of the paper's runs, cell
+    by cell. Returns per-sample bit strings and counts."""
+    vt, vindex, span_cache, text_cache = [], {}, {}, {}
+    checks = mismatches = 0
+    idx, nbox = [], []
+    for text in texts:
+        h = hashlib.sha256(text.encode("utf-8", "surrogatepass")).digest()
+        hit = text_cache.get(h)
+        if hit is None:
+            ex, nb = extract_boxed(text)
+            v = span_cache.get(ex)
+            if v is None:
+                r = _fail_closed(text, gold)
+                v = (r["bucket"], bool(r["strict"]), bool(r["lenient"]), r.get("rule"))
+                span_cache[ex] = v
+            elif recheck_every and len(text_cache) % recheck_every == 0:
+                r = _fail_closed(text, gold)
+                checks += 1
+                if (r["bucket"], bool(r["lenient"]), r.get("rule")) != (v[0], v[2], v[3]) \
+                        and "grader_timeout" not in (r["bucket"], v[0]):
+                    mismatches += 1
+            if v not in vindex:
+                vindex[v] = len(vt)
+                vt.append(v)
+            hit = text_cache[h] = (vindex[v], nb)
+        idx.append(hit[0])
+        nbox.append(hit[1])
+    return {"pass": "".join("1" if vt[i][2] else "0" for i in idx),
+            "strict": "".join("1" if vt[i][1] else "0" for i in idx),
+            "bucket": "".join(BUCKET_CODE[vt[i][0]] for i in idx),
+            "multi_box": sum(1 for nb in nbox if nb > 1),
+            "distinct_texts": len(text_cache), "distinct_spans": len(span_cache),
+            "cache_checks": checks, "cache_mismatches": mismatches}
+
+
+# --------------------------------------------------------------------------- worker processes
+_WORKER = {}
+
+
+def _init_worker(rlimit_gb):
+    """Each grading process caps its own address space (3 GB in the paper's runs): a pathological expression then
+    raises MemoryError inside sympy, which the grader turns into grader_error, instead of exhausting the machine."""
+    if rlimit_gb:
+        try:
+            import resource
+            lim = int(rlimit_gb * (1 << 30))
+            _, hard = resource.getrlimit(resource.RLIMIT_AS)
+            resource.setrlimit(resource.RLIMIT_AS, (lim, hard if hard != resource.RLIM_INFINITY else lim))
+        except (ImportError, ValueError, OSError):
+            pass
+    _WORKER["ready"] = True
+
+
+def _grade_job(job):
+    """job = (gold answer, completions, finish_reasons) -> per-cell result. Runs in a worker's main thread, where
+    SIGALRM works."""
+    gold, texts, fins = job
+    res = grade_texts(gold, texts)
+    try:
+        from sympy.core.cache import clear_cache
+        clear_cache()                                # once per cell, as in the paper's runs
+    except Exception:  # noqa: BLE001
+        pass
+    trunc = "".join("1" if f == "length" else "0" for f in fins) if fins is not None else None
+    return res, trunc
+
+
+def grade_inputs(paths, gold, jobs=1, model=None, rlimit_gb=3.0):
+    """Grade every cell under `paths` -> (CountsTable, Summary, totals). Gold answers stay in this process and in
+    the grading workers; they are never written out."""
+    import concurrent.futures as cf
+    counts = io_.CountsTable(extra_fields=("c_strict",))
+    summary = io_.Summary()
+    totals = Counter()
+    cells = io_.iter_cells(paths, "math500", model=model)
+    with cf.ProcessPoolExecutor(max_workers=max(1, jobs), initializer=_init_worker, initargs=(rlimit_gb,)) as ex:
+        pending = {}
+
+        def drain(block):
+            done, _ = cf.wait(list(pending), return_when=cf.FIRST_COMPLETED if not block else cf.ALL_COMPLETED)
+            for fut in done:
+                cell = pending.pop(fut)
+                res, trunc = fut.result()
+                if res["cache_mismatches"]:
+                    raise SystemExit(f"{cell['source']}: {res['cache_mismatches']} cache re-checks disagreed with "
+                                     f"the cached verdict; the run is not trusted")
+                n = len(res["pass"])
+                c, cs = res["pass"].count("1"), res["strict"].count("1")
+                counts.add(cell, n, c, {"c_strict": cs}, texts_hash=cell["_hash"])
+                code_bucket = {v: k for k, v in BUCKET_CODE.items()}
+                buckets = Counter(code_bucket[ch] for ch in res["bucket"])
+                nt = trunc.count("1") if trunc else 0
+                ntp = sum(1 for p, t in zip(res["pass"], trunc) if p == "1" and t == "1") if trunc else 0
+                summary.add(cell, buckets, nt, ntp)
+                totals.update({"cells": 1, "samples": n, "passes": c, "multi_boxed": res["multi_box"],
+                               "distinct_spans": res["distinct_spans"], "cache_checks": res["cache_checks"]})
+
+        for cell in cells:
+            if cell["id"] not in gold:
+                raise SystemExit(f"{cell['source']}: {cell['id']!r} is not a MATH-500 unique_id")
+            cell["_hash"] = io_.texts_sha256(cell["completions"])
+            fut = ex.submit(_grade_job, (gold[cell["id"]], cell["completions"], cell["finish_reasons"]))
+            cell.pop("completions")
+            pending[fut] = cell
+            if len(pending) >= 2 * max(1, jobs):
+                drain(False)
+        while pending:
+            drain(True)
+    return counts, summary, totals
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--inputs", nargs="+", help="completions files or directories (*.jsonl, *.jsonl.gz)")
+    ap.add_argument("--out", help="counts.jsonl to write")
+    ap.add_argument("--summary", help="optional JSON: buckets and truncation per (model, setting), counts only")
+    ap.add_argument("--dataset", help="local copy of the MATH-500 test.jsonl (default: download and cache it)")
+    ap.add_argument("--cache-dir", default=io_.default_cache_dir(), help="where downloaded data is kept")
+    ap.add_argument("--no-verify-data", action="store_true", help="skip the sha256 check of the dataset")
+    ap.add_argument("--model", help="model id for lines that do not name one")
+    ap.add_argument("--jobs", type=int, default=1, help="grading processes (default 1)")
+    ap.add_argument("--rlimit-gb", type=float, default=3.0, help="address-space cap per grading process, GB "
+                    "(the paper's three-model grids: 3, its GPT-OSS grading: 6; 0 = none)")
+    ap.add_argument("--any-sympy", action="store_true", help="run even if sympy/mpmath are not the paper's versions")
+    ap.add_argument("--force", action="store_true", help="overwrite --out / --summary")
+    ap.add_argument("--try", dest="try_text", metavar="COMPLETION", help="grade one completion against --gold and "
+                    "print the verdict")
+    ap.add_argument("--gold", help="reference answer for --try")
+    a = ap.parse_args(argv)
+
+    env = check_sympy(a.any_sympy)
+    if a.try_text is not None:
+        if a.gold is None:
+            ap.error("--try needs --gold")
+        print(json.dumps(grade_one(a.try_text, a.gold), ensure_ascii=False))
+        return 0
+    if not a.inputs or not a.out:
+        ap.error("--inputs and --out are required")
+    out_path, summary_path = io_.check_outputs([a.out, a.summary], force=a.force)     # before any work
+    path = io_.fetch_pinned(MATH500_URL, MATH500_SHA256, a.cache_dir, "math500_test.jsonl", a.dataset,
+                            check=not a.no_verify_data)
+    gold = load_gold(path)
+    counts, summary, totals = grade_inputs(a.inputs, gold, jobs=a.jobs, model=a.model, rlimit_gb=a.rlimit_gb)
+    rows = counts.sorted_rows()
+    io_.write_jsonl_atomic(out_path, rows, force=a.force)
+    for w in counts.warnings:
+        print(f"WARNING: {w}", file=sys.stderr)
+    if summary_path:
+        io_.write_json_atomic(summary_path, {
+            "benchmark": "math500", "grader_version": GRADER_VERSION, "environment": env,
+            "dataset": {"url": MATH500_URL, "sha256": io_.sha256_file(path), "verified": not a.no_verify_data},
+            "totals": dict(totals), "by_setting": summary.as_json()}, force=a.force)
+    print(f"{len(rows)} cells, {totals['samples']} samples, {totals['passes']} passing -> {out_path}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onetemp"
+version = "2.0.0"
+description = "Code and data for the paper \"One Temperature to Rule Them All?\" (NeurIPS 2026): per-question temperature profiles, pass@K, the optimal multi-temperature allocation and its robustness to the question mix."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+# The MATH-500 grader: its verdicts are defined with sympy 1.14.0 and mpmath 1.3.0 (it refuses other versions
+# unless --any-sympy). The Hi-ToM and LiveCodeBench graders need nothing beyond the base install.
+grading = ["sympy==1.14.0", "mpmath==1.3.0"]
+# GPU sampling. vLLM 0.19.0 drew the MATH-500, Hi-ToM and min_p samples and most of Qwen3-8B on LiveCodeBench.
+sampling = ["vllm==0.19.0", "transformers==4.57.6"]
+# Building and checking the paper's prompts without a GPU (onetemp.sampling.build_prompts and verify_prompts):
+# the tokenizers' chat templates need jinja2, and Mistral's tokenizer needs sentencepiece and protobuf.
+prompts = ["transformers==4.57.6", "jinja2", "sentencepiece", "protobuf"]
+# The test suite (it also runs the MATH-500 grader tests, so it pins the grader's sympy).
+dev = ["pytest>=7", "sympy==1.14.0", "mpmath==1.3.0"]
+
+[tool.setuptools.packages.find]
+include = ["onetemp*"]
+
+[tool.setuptools.package-data]
+"onetemp.core" = ["bernstein_kernel.c", "paper_numbers.json"]
+"onetemp.sampling" = ["question_sets/*.json", "expected_prompts/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+# matplotlib 3.10 calls pyparsing names that pyparsing 3.3 deprecates; the warnings are not about this code
+filterwarnings = ["ignore::DeprecationWarning:matplotlib.*", "ignore::DeprecationWarning:pyparsing.*"]

@@ -1,0 +1,16 @@
+{
+ "description": "The 10 of those 30 that got 100,000 more samples (4 GPUs x 25,000) at the same 16 temperatures.",
+ "n": 10,
+ "ids": [
+  "3494",
+  "3508",
+  "abc370_b",
+  "abc373_b",
+  "abc377_c",
+  "arc189_d",
+  "3621",
+  "abc393_e",
+  "abc399_b",
+  "3750"
+ ]
+}

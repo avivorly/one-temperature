@@ -1,8 +1,0 @@
-# Generation (GPU). The paper's runs used vLLM 0.19.0; it pulls a matching torch build.
-vllm==0.19.0
-datasets>=2.19        # MATH-500 from the Hugging Face hub (generate_vllm.py --benchmark math500)
-
-# Grading and analysis (CPU only)
-numpy>=1.26
-scipy>=1.11           # SLSQP in optimize_temperatures.py
-sympy>=1.12           # equivalence fallback in grade_math500.py

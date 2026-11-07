@@ -1,0 +1,32 @@
+# The exact environment the reproduction of the README ran in (CPU; Python 3.12.12, x86-64 Linux). These pins
+# install on Python 3.12 or later only (contourpy 1.4.0 needs 3.12; scipy 1.16.0 and fonttools 4.66.1 need 3.11).
+# With other versions, the images can differ in bytes (the paper's were drawn with these matplotlib and Pillow
+# versions), and values drawn at random can differ in their last digits: the min_p null checks of Appendix I give
+# the paper's values with numpy 2.2.6's binomial draws, and the random reweighting cells rely on numpy's random
+# streams and its default argsort. "Package versions" in the README says what two other environments gave.
+#
+#   pip install -r requirements-exact.txt && pip install --no-deps -e .
+#
+numpy==2.2.6
+scipy==1.16.0
+matplotlib==3.10.6
+pillow==11.3.0
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.66.1
+kiwisolver==1.5.1
+packaging==26.3
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+six==1.17.0
+# the MATH-500 grader (extra "grading")
+sympy==1.14.0
+mpmath==1.3.0
+# the tests (extra "dev")
+pytest==9.2.0
+iniconfig==2.3.1
+pluggy==1.7.0
+Pygments==2.21.0
+# GPU sampling only (extra "sampling"), not installed for the CPU reproduction:
+#   vllm==0.19.0
+#   transformers==4.57.6

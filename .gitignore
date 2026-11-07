@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+# the optional compiled profile-fit kernel (python -m onetemp.core.fit_all --build-kernel)
+onetemp/core/_bernstein_kernel.*
+# outputs of python -m onetemp.reproduce and of the example commands
+results/
+outputs/
+runs/
+prompts/
+/counts_*.jsonl
+/kept_*.json
+/reproduce.log
+# the virtual environment of the README's install
+.venv/

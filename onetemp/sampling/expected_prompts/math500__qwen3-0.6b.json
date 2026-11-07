@@ -1,0 +1,2515 @@
+{
+"benchmark": "math500",
+"model": "Qwen/Qwen3-0.6B",
+"prompt_style": "math500_qwen3",
+"source": "the prompt token ids the paper's runs sent (pre-rendered question file)",
+"text": "rendered prompt text",
+"fields": [
+"n_tokens",
+"ids_sha256",
+"text_sha256"
+],
+"n": 500,
+"prompts": {
+"test/precalculus/807.json": {
+"n_tokens": 88,
+"ids_sha256": "d0ba007c303d9c3866a006a95fb4ab7e1ec95e2b65249acec4c0eae060b3f568",
+"text_sha256": "ed6908b6163d470b358a22ed526ff48ae71e621163372569a3b3a50ed32ebe3a"
+},
+"test/intermediate_algebra/1994.json": {
+"n_tokens": 151,
+"ids_sha256": "d2a605a4bef85c5b0f62d21cbb76d1cd2d97477d7f47a038cf4db6aca56279df",
+"text_sha256": "042cf75436e591a83cffc784e642670e99de182c1b2df06688c84de0fefa3eb1"
+},
+"test/algebra/2584.json": {
+"n_tokens": 88,
+"ids_sha256": "703b6edbafcff8d02641c5c8bdc0f9e9ce500ac0e454470a5bf8b0356273b410",
+"text_sha256": "91265d43d8d77a878bf229218e2dc76cfa8c4bf0cc8d96b1f1c73b603c34599c"
+},
+"test/number_theory/572.json": {
+"n_tokens": 55,
+"ids_sha256": "5436f201ff1a13dbb8c8b09f14d6e82d208f8eec0002a6081ad6ae8b3140e5cd",
+"text_sha256": "9dc21da5f2e2f06503fca9469d9a37ebd4a359d1ad8f1ebd9da13a12e4de8c9e"
+},
+"test/algebra/1349.json": {
+"n_tokens": 380,
+"ids_sha256": "60945ae00933536f0bd3f1442a2af8c1b5f6e01f3776943912aaa73ad217e2ae",
+"text_sha256": "1a8087b7240c574bb167bbe335e28a48a2215918724e6e30944ee72b47ebf489"
+},
+"test/prealgebra/1622.json": {
+"n_tokens": 82,
+"ids_sha256": "f586d70431a6cc6669089c9dcd9887491298b02f0d76e7df2466d5f428043557",
+"text_sha256": "07b679e600036b5c7771c05199bde1ba5fb92aa88d05e8f43688a7966936c2e6"
+},
+"test/number_theory/515.json": {
+"n_tokens": 60,
+"ids_sha256": "d1f15242ad8a054702b92db09b91948fe06979080faab762da27d6b57139dd11",
+"text_sha256": "0b9dedc3633438dee4ae51217ce1a7746c14ef7d127d879b60611ca0ab664aa3"
+},
+"test/precalculus/927.json": {
+"n_tokens": 107,
+"ids_sha256": "5184e03002402653c19db5af01be53480b6a804f0d5e393f618a8f2fa51bd122",
+"text_sha256": "6f6c856f938732a32020fc4c415336e9569ae64c8480e370f60cf34a9bdcd67f"
+},
+"test/algebra/2036.json": {
+"n_tokens": 75,
+"ids_sha256": "4cbe1340823afa5fe3afab9d1d60e0d44dd752ab72014546a50e79ee29aad0f4",
+"text_sha256": "74a219bdc4997c2bb318779205931c4196edb16c6fc86afce8972b4cb0825b0f"
+},
+"test/prealgebra/1139.json": {
+"n_tokens": 190,
+"ids_sha256": "e267fd01328d6e3d1a6dff2e6b7ab428f57b3d1925946cc066026ba7776b9f17",
+"text_sha256": "976f4c547e139930091d5e4c83a5e215426d23f8b66a06961cefefa0d6d393cf"
+},
+"test/number_theory/1032.json": {
+"n_tokens": 66,
+"ids_sha256": "6dc4a4f2f68182ab6f01b67a111d567f00ea5264ce0d45db31c0f5811454738e",
+"text_sha256": "859a51bacfdd1fe44b9cd6ba9f228b058bd81abe42dca41ee00471b37da0dfda"
+},
+"test/intermediate_algebra/1197.json": {
+"n_tokens": 100,
+"ids_sha256": "f69d225f70456693beb57bc59fde51c5a3eea6ca7078ab643825b5cc2ce9311d",
+"text_sha256": "ba0313c46ced8789adc75b15eb1eaf03473fa51b09d9da7f0e48aaff5146bc85"
+},
+"test/number_theory/737.json": {
+"n_tokens": 112,
+"ids_sha256": "2f28011cc8ac53bbbf0530a58fdc43935c2234522b71a324efd05f8ce65e223a",
+"text_sha256": "a851c2e9e313f8f16cd0777616806c869ac3124cc2ac57947c3f367dc76f7bce"
+},
+"test/geometry/248.json": {
+"n_tokens": 216,
+"ids_sha256": "32fa3c57b563bf79adf1890229d4c56c64ec85163f744b4e8d3e6f475186b73d",
+"text_sha256": "d28d6a03b906b6753eaab49b23c4f9881d69e2a6e2f4e0cc0f3b529a07ab9c4e"
+},
+"test/precalculus/1303.json": {
+"n_tokens": 154,
+"ids_sha256": "e86d54a8c53be64275e8646c9c55f8e55cb8a93fbf94bef9994de8e45525425f",
+"text_sha256": "8ab5914ceb70a83da4fbff5c08cf79fc015148a0d913f735a11a0d8af76c6853"
+},
+"test/precalculus/990.json": {
+"n_tokens": 219,
+"ids_sha256": "c76718fc7e05434b36c792407846994f62e2e1070058fff5826bcdb0b614f890",
+"text_sha256": "c3ee442f244094ae7556f1daecf334abbfa2dcedc960be8d223e0c7dbcad42f1"
+},
+"test/intermediate_algebra/134.json": {
+"n_tokens": 64,
+"ids_sha256": "5b4b55a5f741d59f63988bc8cf755e33e1883108b69a0b7699f92e80533cb83c",
+"text_sha256": "b620600a718db4ca1b7ffd76fc1648d0fad6363ec8bbb659d0930a1b4286bcdc"
+},
+"test/precalculus/1199.json": {
+"n_tokens": 252,
+"ids_sha256": "0561a421ccf27de255829b6555af0133b7bc47f7e93b35c7302c048d57432ef7",
+"text_sha256": "92bdcbdff94a7b0355f8978435240c3184db048fe5be531dad7b433b3ea71ea2"
+},
+"test/geometry/434.json": {
+"n_tokens": 191,
+"ids_sha256": "576295c81539b5b8261e049cdedd3fa407e2c51727f8e4512d4a393efa9f9628",
+"text_sha256": "1d16f3b5d51fcf190f0f10ff911bc6942d52b482d8a50d1f07ab0dca59a0e7a7"
+},
+"test/intermediate_algebra/1000.json": {
+"n_tokens": 88,
+"ids_sha256": "139f385d5d12bdf44acba834883809613359211d0c6a33f18e40f3383a438359",
+"text_sha256": "22d840f2117a0ba7b3b6836f1bd0d6e2f0c3141da0925f59a4752835cd6fd83d"
+},
+"test/algebra/1098.json": {
+"n_tokens": 53,
+"ids_sha256": "3e6efbc631307b673274c693d28ee257a4bbd40ffae912f0eb3716a3410a1d29",
+"text_sha256": "c5ea841cc503bb94319b459333243bb83a9e498922b58c50d868391426593857"
+},
+"test/intermediate_algebra/607.json": {
+"n_tokens": 70,
+"ids_sha256": "58c18f5c6e0e02a068c592dde010aadfa0bd9351eaa23acced6c680b69bb9469",
+"text_sha256": "660359a96b05ae6b486f5625b84241dd120c436317eeb5da01f68d6abeb6b436"
+},
+"test/algebra/1837.json": {
+"n_tokens": 168,
+"ids_sha256": "ef2b3838e99a5c9543e865b3a5f6aadc6cba1271b7c084a0a25d7c3a109c55bf",
+"text_sha256": "3f63720dd372fd7027a2fa8819a5597d66419730b31b06b3322c497770f9751c"
+},
+"test/algebra/2193.json": {
+"n_tokens": 69,
+"ids_sha256": "e4b28f279833f46d7a1cfe6e9cc10b150b03ed21d7f598d9e64df63797679342",
+"text_sha256": "c1c2370bec56d589db55d8af1ace755128469dcd833c663724a4d211c2712d17"
+},
+"test/algebra/2427.json": {
+"n_tokens": 144,
+"ids_sha256": "bebdf4cb25a213389a858f3feaaef4805f710b1029942f49bdb17ad24bc0bb86",
+"text_sha256": "54ecda03e43a5d4bb5a991795e08b09d51b7bcc0c2640d776090a4290d32cfef"
+},
+"test/intermediate_algebra/1388.json": {
+"n_tokens": 120,
+"ids_sha256": "e5f678d91b32012d2d2f0ddbf4979b01772e50b4e2181b82329d808b82325795",
+"text_sha256": "4719422691b20a9943834ee3f81653ef8916624fd8849b10e9034e00a9b6512b"
+},
+"test/counting_and_probability/525.json": {
+"n_tokens": 93,
+"ids_sha256": "d543916edad081085fee782181a17e0d3d18b09bd5cdd4db9e1121cda6ba1cd0",
+"text_sha256": "325e7cda4c538a8a3963ddda136d7097329531eaa557c10ff662d80b9dbd1731"
+},
+"test/prealgebra/1840.json": {
+"n_tokens": 122,
+"ids_sha256": "7bf5394ef2ea6261522ed761719bf77a0fa8b99c640ed69a80f6084f22b5a912",
+"text_sha256": "20f3b2d4ea6b7dcec29f6d7e5c74d15d3cc7289051dd3790d1991ab7310213ff"
+},
+"test/precalculus/779.json": {
+"n_tokens": 76,
+"ids_sha256": "c38471c3b5897d2255aa9be40589a1f10247c95a6de51938476440e311a52a98",
+"text_sha256": "916915d3eecaad3e55ff8713583d1338b918f200db3d168be30524426b5cdbc9"
+},
+"test/counting_and_probability/666.json": {
+"n_tokens": 119,
+"ids_sha256": "27b6b17996048edec0f52165d1bf5d5ec0785f8736a150e43e9cbe0448415041",
+"text_sha256": "d1f3c087dc56f0630e4d04de6d655f22e5f784b2cded385408a135483b4df03f"
+},
+"test/number_theory/864.json": {
+"n_tokens": 64,
+"ids_sha256": "059a4bf9f4d97939e63064e55cc9b8bff21f3667f9dd45caf434673b6092b781",
+"text_sha256": "e7302996c5b996062512aa4e6634ada892c676bfa87799af21564a620f3acf08"
+},
+"test/prealgebra/1302.json": {
+"n_tokens": 51,
+"ids_sha256": "0c6fc078b8c36fc8582f3bb9399074c672638a96d05ab3d5d105f7038be29657",
+"text_sha256": "b196e3af7cd9c5edf9ee035d4cb188de0686e5b3e827b4b0c6d30a21d1152651"
+},
+"test/counting_and_probability/134.json": {
+"n_tokens": 92,
+"ids_sha256": "cf2d7094c91c404ccf9adb0fa629949a7d4f2cbfde52e1cbba106b1e83fb3d44",
+"text_sha256": "778b1f0461b8a56a553ee33cdda99ada18e2d40ea9a31f341922501322046084"
+},
+"test/algebra/1072.json": {
+"n_tokens": 89,
+"ids_sha256": "7d5c96948ff6823b06b57cd91d687fc9331a836de3aae6364d198d12914e4d95",
+"text_sha256": "dd57e7c7d3f228221152a5e622721a60eb0f7c7c91936449b6f64be74cb8d26e"
+},
+"test/counting_and_probability/119.json": {
+"n_tokens": 74,
+"ids_sha256": "63d3dcaee2cc1c52a856e8dc747122fa52c937e0ca595c5e8c3e80df148c8e54",
+"text_sha256": "f62e9fbbf75d0f7b21a1c4de4830b61e5f6e84285fe00eff4846514bb698046d"
+},
+"test/number_theory/627.json": {
+"n_tokens": 82,
+"ids_sha256": "f500d94828176edd615a9fde4ddc5f8ea87f95fea1a08c6c7db34eccda96259a",
+"text_sha256": "131fcd20d3e82b3148560d7cd79d97f76e094a4d4992933ca85d3ac865860fce"
+},
+"test/intermediate_algebra/428.json": {
+"n_tokens": 70,
+"ids_sha256": "afbc8891ddf152f553d0adc2b9f459b2a3cfdc9b1fdea58c8b8b3f6687bc7cdf",
+"text_sha256": "70ceef293b3da7a00e3b8b73aca8c93aa609a020c89f5c59aa7f238cfa28f270"
+},
+"test/geometry/967.json": {
+"n_tokens": 75,
+"ids_sha256": "021c7308471e946fe99264ed59bb5949a0b31616d8d6e0b5dbbf93df37896b8a",
+"text_sha256": "a99008b819b882968e76066e40251eeaa620daa3a40c7f8d2d9f42ba53f71fe0"
+},
+"test/algebra/24.json": {
+"n_tokens": 83,
+"ids_sha256": "881c4ef3dbc9c72f2a3d83c3da61e740e50e0480d28515385d7850188f859cf9",
+"text_sha256": "118741c8a5cf29feef4fb0f5ff671e4dd6ba218c5cd0d61e38b4bc85a0a9ba76"
+},
+"test/number_theory/45.json": {
+"n_tokens": 68,
+"ids_sha256": "428d750fa4d46947995b04e35e55ebc180520869460213f5853de83b829a33b6",
+"text_sha256": "1781d75f9ef8742809ac3e7f48880a68d1f84282d99447cf144cc70896df6332"
+},
+"test/prealgebra/930.json": {
+"n_tokens": 152,
+"ids_sha256": "06f45b86d54251af9f325e8091f782ac86d8dfc4093419520416074a270c6693",
+"text_sha256": "742a9bd7ff8731094b2b676f60db86917a977199a3a15f3c5a161de0c24cbff6"
+},
+"test/geometry/627.json": {
+"n_tokens": 91,
+"ids_sha256": "6f77d7cad35ef4fc2111f5c1a8aae0a6bc71a3622f8629a95ca07818621615a4",
+"text_sha256": "6edc17aaca16a695609698b11bb6b116830097648c0bbcd251d8c721893dcec6"
+},
+"test/algebra/2214.json": {
+"n_tokens": 80,
+"ids_sha256": "296847b5a5e323b2be751fa79bac569663652f3f4dcb5698f3bfd9fbd1af3cbd",
+"text_sha256": "fae33e3d0823726d71dc9480337c5f6ae21c33e9fe099ac8abc0190a6ea84623"
+},
+"test/intermediate_algebra/1454.json": {
+"n_tokens": 126,
+"ids_sha256": "62ff49d8053030612244b95661ec584978c0116577603a62c53b398718791be7",
+"text_sha256": "db6840045235b88724521972b59a7bae58e9ffc4ef2b2d2c9a164db9c30b23a2"
+},
+"test/prealgebra/1558.json": {
+"n_tokens": 105,
+"ids_sha256": "56e52f7e59a01e3d8b826509de6179fdaa486adbed40f1c618bd4d89acea1c51",
+"text_sha256": "d5176bef160143381ea6c23323a579d8c3f5e19f577cb7e4e6cbc7762b62b5b9"
+},
+"test/geometry/178.json": {
+"n_tokens": 78,
+"ids_sha256": "e9a114ea8a08a63e2b1db19cf683f283ae12af78a0d385d4319122714ea5fed5",
+"text_sha256": "dc24b830386434b9da2e2462a72c422bd82cc8e0416a10109f88faa36424fa29"
+},
+"test/precalculus/285.json": {
+"n_tokens": 85,
+"ids_sha256": "1a369afaf186ff8a267acadd6c63c4f6c50f2ed5ac24fda8be9d7d530eda8388",
+"text_sha256": "d91b878dabc5700a9dc9429c00bb5c68b4b84c53453aa65680de929980e7bc5c"
+},
+"test/algebra/305.json": {
+"n_tokens": 92,
+"ids_sha256": "9a4ca472b3fbbc8d40c224f7639b6dbf26678b095cca80f3383fdd9eb0de68f2",
+"text_sha256": "f15416bb0b974997450afb569da916e192515ee0daa7b146c0add6e31a70335e"
+},
+"test/algebra/1265.json": {
+"n_tokens": 60,
+"ids_sha256": "246ba5eca42b76906ea7b9796a570f7c35790f75b8d5fbfa728b38afc3820b5f",
+"text_sha256": "5a144f9503f92d0dbf9482fa990c0a5f57991424f11165188e8263adaa74a23c"
+},
+"test/prealgebra/1388.json": {
+"n_tokens": 67,
+"ids_sha256": "d10aece52e2a24ccc9da329ec30c7a932006766aa777822e26265ada0ef3bab0",
+"text_sha256": "93215c08f241a88ad2dd8f11713d8ce7dae57b35ac27d9f741e4c88c3fea3f23"
+},
+"test/number_theory/1055.json": {
+"n_tokens": 141,
+"ids_sha256": "a69e41f4e78b6265ff328a91e146e9ffe91513a835c38aafe8fd417253e23dab",
+"text_sha256": "3216f00c99dd1dbf127c3447fb40f8c396cb5c22ec8807b07b90d4df9a290ef6"
+},
+"test/intermediate_algebra/1217.json": {
+"n_tokens": 62,
+"ids_sha256": "f13c456ac6f521a3449cc0fc074b9f1363ad1af42d9655e23562119222cf61b5",
+"text_sha256": "66a41c705b8b6cfe78e973e55f638b69bdb6c3fdca379402e11305248f37eda9"
+},
+"test/prealgebra/951.json": {
+"n_tokens": 71,
+"ids_sha256": "e909a867f086ade475defb7f7755c893c9bf0fd2e50befd1b4c8027ef22c92df",
+"text_sha256": "505b059dee5c8eb73d93776a618625dc703fc8fdd6a6d98af8a2c41c27af498e"
+},
+"test/precalculus/1105.json": {
+"n_tokens": 68,
+"ids_sha256": "22eaedc29dc050b99cd4842820afa8e0b8e07295fdc532f7a97df116aa530bc3",
+"text_sha256": "43e71156edcdab0f13ecf635cca644edf653d22d6f99a335efc736c429febcd0"
+},
+"test/prealgebra/572.json": {
+"n_tokens": 54,
+"ids_sha256": "8942e1c6a67d571377ac9b801ef86c1a143f5fbb39cd883c45f095e4063b5ccf",
+"text_sha256": "31a381f340cf1ae0640ebac15c9c27d90150047ae5d49e3f1b398d7483cae6d9"
+},
+"test/algebra/187.json": {
+"n_tokens": 94,
+"ids_sha256": "5c75798566816a5db6eb2e6d9194baf08ad296a30c92c5323f0c35e6777e9f58",
+"text_sha256": "62739223721a7880f1f27b3551ea83c0b61b368d08332e626c3eb5f6ee2111ed"
+},
+"test/algebra/769.json": {
+"n_tokens": 67,
+"ids_sha256": "47a835b7f3db06a4d72c5f262bdfa4d0916a922722fe96793dc7422248e6839c",
+"text_sha256": "8445b497ce24eafd44bad43ad12739340b1fa5161d2406e6398caa844659f214"
+},
+"test/intermediate_algebra/1168.json": {
+"n_tokens": 95,
+"ids_sha256": "4eb1d1d3141d04f591fdf93aa828591e75e5deb01b80e0732eff073b50a245cd",
+"text_sha256": "68d97c19ce002dd3cc5280ac2d7e78d842b82bbad62372aa60fcc776a48ada51"
+},
+"test/algebra/722.json": {
+"n_tokens": 57,
+"ids_sha256": "d0132bc84c06ccac9f63858ba3f6be96fa6319b6f982c4f7264efec5f4faf40f",
+"text_sha256": "79f1e805c98febf83570d253fbaaa8d10ca057bb58a24e20dbdadb89f0c273a0"
+},
+"test/prealgebra/1247.json": {
+"n_tokens": 90,
+"ids_sha256": "e81c4dea6e7e52dd26b6d7f44d9d8de198be3c3219a3564d04fe1d4886332c0f",
+"text_sha256": "168529228de412ca7ec8affb75b1f99ebc2a58e57c9d118f51acc4e939e61e80"
+},
+"test/intermediate_algebra/956.json": {
+"n_tokens": 91,
+"ids_sha256": "13164ca0aad2cf4137d8ba469f18e3a9bb708bb5b19ebf8e25505dcc06a86756",
+"text_sha256": "d673cafee254fd3a58b5cbd065bcdb5edc7a99dbecf5de8d76810a1aa770e3b4"
+},
+"test/intermediate_algebra/1247.json": {
+"n_tokens": 110,
+"ids_sha256": "02c32b29fda999f70574dfa3ef4927fecf7a8544cd1bf96046f72296a8bdc807",
+"text_sha256": "43b18ccff9c20bc73650148adcb7d58bc544e6131d786545e077dd54a7287059"
+},
+"test/precalculus/675.json": {
+"n_tokens": 146,
+"ids_sha256": "0a5f75087c4ee76c2880b4df713dba94754884fad1771621b477dbede77db1df",
+"text_sha256": "31f4787b47d88319df0c9a150795b931ffdab8c29c8bcb0f616d88024ccc38be"
+},
+"test/intermediate_algebra/279.json": {
+"n_tokens": 130,
+"ids_sha256": "3f081b8c976eab9f124080fdd666cc2c60aebaa43dbfe91c5e28befd578e02bc",
+"text_sha256": "d73bb4ff302e58c113514c4862ef1002bcb3ad2f3fa09a855ea9d9b6a6dd898d"
+},
+"test/precalculus/1146.json": {
+"n_tokens": 106,
+"ids_sha256": "28c309dfcc56ae31e9257aaeddc00e459872928eb2e9f74080f89811d5edec90",
+"text_sha256": "b5d9ae4531d2b515589d5aa5b89ffe40ae7914340bd509fa7c824dfe6eaf7a6f"
+},
+"test/prealgebra/1747.json": {
+"n_tokens": 61,
+"ids_sha256": "34dfe80459a12fa14f72ab2eb1470d6ad6d2f3fb1120d4351ae41d41a2e7e90e",
+"text_sha256": "1ef5b6d6dc9a28f6844b22bd4760afc0aaf5f735df56de337977778fffbaaab2"
+},
+"test/algebra/2046.json": {
+"n_tokens": 79,
+"ids_sha256": "2388cfd5cebd2a9161a320e97bcdbd0eeaf93f1914ea8a19830dad9d1a994fb4",
+"text_sha256": "d9b555fe562bb2613f2db18a99481866697a402a00b66f2434a604bb0a8ecf5a"
+},
+"test/prealgebra/1233.json": {
+"n_tokens": 91,
+"ids_sha256": "beae8943eb322623ae1a9b3e7dd08a76273c9f303d68db2d0abe4f452b20f7ab",
+"text_sha256": "011c6b58411d3b2d335cb5af2339fb5e3c4c5d27d5f20393ded8298917b49f62"
+},
+"test/precalculus/1313.json": {
+"n_tokens": 107,
+"ids_sha256": "bc836f2e1f9a683ba2576b10fe59dcfd5f945bdb95ab5db91c0c40e9300da556",
+"text_sha256": "2569ade5820c253dc9f18256f9cdb7d69f16c027048ac98605f0d5c020678aa2"
+},
+"test/intermediate_algebra/207.json": {
+"n_tokens": 97,
+"ids_sha256": "4cafc5a0adbc749b747886bce0f3bf0b04578b07d72176ca29c14f580a36d34d",
+"text_sha256": "b78afb813edc942a0446e300eeeeba3a315a92cf6dab79b204070093dfa11c0d"
+},
+"test/number_theory/46.json": {
+"n_tokens": 62,
+"ids_sha256": "e2d82f157f68f2047c16bc2bf25dc29224ecd6fdf1ec913f1b9a4d7d0c75052e",
+"text_sha256": "5f1cdbcad950496aa195ee2a043fa0278885a7945ca4833a5dd716e3d465c9f6"
+},
+"test/number_theory/516.json": {
+"n_tokens": 68,
+"ids_sha256": "e82826255450506c1157acead3f300202a7b3a46de74adb2d914b7494dc98f09",
+"text_sha256": "c5a60f647bdc8ab9073254bce1900d8e9d28b48e4e129f974d16e9f91f717d9e"
+},
+"test/geometry/456.json": {
+"n_tokens": 75,
+"ids_sha256": "96a3239b80b54eff182ab9184e54f69afa1dd3aa1a515ccc029f6bca4a657ca1",
+"text_sha256": "f2938bad30a7919c6a438717891b0d4eeba067f0e45abab6e5fcba26e7d68223"
+},
+"test/algebra/2253.json": {
+"n_tokens": 112,
+"ids_sha256": "64aef73ea95ec60fc669b38b2b8bc6150a2d0b5004e788556a111b3121d45609",
+"text_sha256": "82f46efe2a91da04f6663028019b92842c679470dcceb246312e4d5970187996"
+},
+"test/precalculus/24313.json": {
+"n_tokens": 68,
+"ids_sha256": "d1cb942979176138669c82ed3d42cf154665a51c3e8e29b11137702076564b85",
+"text_sha256": "a18ef4a00cf88550b955144f3c2970eae6bdb4efb05a9e760a412e42f931efab"
+},
+"test/counting_and_probability/1114.json": {
+"n_tokens": 79,
+"ids_sha256": "a8c0fde0778eab409d4ad56ff7a96769f2ce1243de462b290c3077f360c5430c",
+"text_sha256": "13a079dc7dff839253fd41a326fccc573c4e8b23038bfa655d92567017c1799e"
+},
+"test/intermediate_algebra/623.json": {
+"n_tokens": 80,
+"ids_sha256": "3d2298284a06db0a749fd755847dcefe781fa0c21b34a6ec15361badba8d0070",
+"text_sha256": "5fdae6ace6754f7a925b509cf8aba79d980e7da81f177315cbd2b4d913b3eddd"
+},
+"test/algebra/1004.json": {
+"n_tokens": 60,
+"ids_sha256": "890a0e5e647dcb271f20a734b7a4e7830b139cfd7ab42606285a187e7afdbc1d",
+"text_sha256": "e1ad501f6998c3aa862c326d888ea3b3b4f90a5b4f7d1961a5f7b61e3e7cd661"
+},
+"test/intermediate_algebra/47.json": {
+"n_tokens": 110,
+"ids_sha256": "4559eae63b3aae658e34a39c81ee6d08f9b00c5db7d6b15a79bbbc0329782d38",
+"text_sha256": "0cffa0105a6b275ce2db6416191c3d421ca29b45382bbd1861028820f5a781f5"
+},
+"test/prealgebra/192.json": {
+"n_tokens": 63,
+"ids_sha256": "78aba736a7e2809c11b9c510a7bc13297137a30bbe81cb11256da3b98877cfac",
+"text_sha256": "f04c13630c406c08ea7f4355ad115eb99da21cb8a2457c37d5b5fbfecc68b5d3"
+},
+"test/intermediate_algebra/1849.json": {
+"n_tokens": 87,
+"ids_sha256": "2ad2dcd1a01148cad47457ad69743fca940a5ea502b89a980f04620b0c861d43",
+"text_sha256": "472ed23af1915e6422083dfb9dd7831ee4a0a1d37a85ffc38fd0bed199de6253"
+},
+"test/algebra/1035.json": {
+"n_tokens": 90,
+"ids_sha256": "d213830f76fa86cffb0ab7189c6b8ced776838205b1732a3cef7c32721b81675",
+"text_sha256": "811a2bf40142e87ba3e11c7c9d331a8e213b9c8efbb92c0a3605a8e627b9263a"
+},
+"test/algebra/2700.json": {
+"n_tokens": 128,
+"ids_sha256": "39e046242a6b35ac5ff5db0b16d5aec77e0321f7d7fc876a50287ff220e65a2f",
+"text_sha256": "53c04e66fe0c48b1e431656faf1ed7e3464be8e28bca143d5420734edeb7a41e"
+},
+"test/intermediate_algebra/2046.json": {
+"n_tokens": 64,
+"ids_sha256": "e7c6abc8f6d83a5f6ea532ce02bbcf633046e1b596aa0d42dab388d0586d1358",
+"text_sha256": "ddb39faeb3aa50fb3bf22e5016bcf15e76f4162a08adb2969ec5ee7c4bc7f29e"
+},
+"test/algebra/893.json": {
+"n_tokens": 97,
+"ids_sha256": "07f79ea99e06ad1bbe8ae5a43e1d63fc3541ec1425bb3168b63a1577bf713dbf",
+"text_sha256": "069f5b232b0e3626fa89856e06cf7f266c23e31d14ddd48bf05f691001efb923"
+},
+"test/geometry/353.json": {
+"n_tokens": 102,
+"ids_sha256": "bf87c40f44b916f4f12b817869fc2d65c9ae8c7ff7f2dbc7bffdc5df354655e3",
+"text_sha256": "2f379272f22a6bf3fd9ffd1d877587a465e241a6add89060f23ce60664a17165"
+},
+"test/prealgebra/307.json": {
+"n_tokens": 79,
+"ids_sha256": "9cc5eb881b11e21d606a9379b4f0dff3a546cc0dceb1f1373e01120fa07de3da",
+"text_sha256": "ac1fc811db465f8310f0781054bbf52f63a96f38f88f8cec1dac08baa3e1516d"
+},
+"test/algebra/567.json": {
+"n_tokens": 64,
+"ids_sha256": "00aec27c35818a321100d748e379612c60bba5b7e9c11672d94b5aa853ed56cd",
+"text_sha256": "7fe0a418dc2d16e73419dc2914bd1e9d142c85b8706042f49c316358419d41af"
+},
+"test/algebra/892.json": {
+"n_tokens": 128,
+"ids_sha256": "bf91c2f57acffc65a224e4901ab537e47650b9b427e57275940d853058c9402c",
+"text_sha256": "6411da31e491e1f2e6d48ef6676efe77a59a7f2be10d108ae700902d2fb2d346"
+},
+"test/number_theory/357.json": {
+"n_tokens": 66,
+"ids_sha256": "93517b80160eeeb2a192ed882794c7c8623bd519eeeb2679243cedc297373203",
+"text_sha256": "bc88f6e93d6b69d6877122969d9d46e626a0d3f2fe59e44878c07569c427629c"
+},
+"test/prealgebra/1761.json": {
+"n_tokens": 84,
+"ids_sha256": "2f61550f9a7b5dd396cdf9cf421e0822aabaf3984f734f1fb4c00e75e9e54da1",
+"text_sha256": "d9a1cf08cd0cff9eb3a958032a2ef78a440de078578ff4debec81a5ac3c644be"
+},
+"test/algebra/2023.json": {
+"n_tokens": 84,
+"ids_sha256": "38514f3ce690a9724e27c38d8906c190db574430e9d81482da4ae77da6f08ff9",
+"text_sha256": "65a18b1027bde6644d602814023e0492caabc3208d10e561ddaffe9059fa8693"
+},
+"test/counting_and_probability/377.json": {
+"n_tokens": 81,
+"ids_sha256": "c3081f9363992db94dbb44da205559a48963a6ca213a919151a08851600491d2",
+"text_sha256": "c5f0bf259161a35936e9ec75df1930d2396cfa8f106418fead6f3952d6c690af"
+},
+"test/algebra/873.json": {
+"n_tokens": 84,
+"ids_sha256": "534f1eee1c397ec08b2f33beaf1d92cd971e76353d00de391268c6988673d9ab",
+"text_sha256": "2972050906bc45ca0efcb7472a10921e6cdab6a4aafd0dacbca65722e99bfc81"
+},
+"test/prealgebra/1646.json": {
+"n_tokens": 389,
+"ids_sha256": "6402ad95022499cfbece7cedffc921297cceff988bf7df288ac9c89df99766c3",
+"text_sha256": "dc7b39bd836948efcaa75e55aa3279b374bef75df62f7f4b047bd5a4dbe81516"
+},
+"test/precalculus/34.json": {
+"n_tokens": 120,
+"ids_sha256": "219e3ef7feabfeb8fa72872294f9e3e225ae3ba3ca089c4d55abe1edf3fbe379",
+"text_sha256": "efeb9bf126528400dcec3ce35003e4b7412e9baab8daea750c086a9108b2fab3"
+},
+"test/intermediate_algebra/662.json": {
+"n_tokens": 149,
+"ids_sha256": "072ed6f8c815d0a0043b80fdf6a88a41ce65f5f6f90c8a83bdffa1ae44cdb739",
+"text_sha256": "6aa327f60c7e6d7d9afeb054a2e2e9cf17166f648aac5b3ba7ee6370c0601738"
+},
+"test/prealgebra/105.json": {
+"n_tokens": 86,
+"ids_sha256": "6af76cf0751c4eb5d3059bdab1727bbfe27c42f0f541f6968dc2e02dc033e6c4",
+"text_sha256": "bb523546d3181b0b708ff85845670fae78b04231d947e8a0acd4a0997caf94d4"
+},
+"test/prealgebra/1924.json": {
+"n_tokens": 59,
+"ids_sha256": "e62f43baa12a635dea82e8d3474a9303400f1edc0f511a070f7e2bf3e85072a7",
+"text_sha256": "96b73bcc880f2a8b1ca91dae6a35d2ab34921b95a8244948ebf1fd7dd76547a1"
+},
+"test/precalculus/1300.json": {
+"n_tokens": 137,
+"ids_sha256": "48b2b9394529d2b19c08eb793eeef45fedeab02db33f9e1fdb6a8af6100b95d1",
+"text_sha256": "a18d00f0c5d1a5ba7ae988fb9ae176db6d59084f635521179af15270e77d66ec"
+},
+"test/geometry/183.json": {
+"n_tokens": 242,
+"ids_sha256": "2948cc17161314d29760ce5c7b8f17b2eaa5c9b063972910642d85782a39aab9",
+"text_sha256": "dcdc2a103cc9fa2902fec8870dfc86fe32c222045c17a5b856ccea8578201489"
+},
+"test/intermediate_algebra/582.json": {
+"n_tokens": 232,
+"ids_sha256": "1300422b03477caf4b29ca844a09fa742d9c7f55be05e38802e76ea89ec7efe2",
+"text_sha256": "d40f161d3097f7ea1f75388a4b7e6001a13f1f06d48d4f3efa677596b194037e"
+},
+"test/intermediate_algebra/431.json": {
+"n_tokens": 56,
+"ids_sha256": "ea14c373b9f450cbaafeded4c0758ecd818913696f52137a247a6723b41d8922",
+"text_sha256": "2b485add7a0df09d45e9a71cd1ef383ca0eb50ec7deb8b7d247acb1bc3ab2a78"
+},
+"test/intermediate_algebra/558.json": {
+"n_tokens": 147,
+"ids_sha256": "5423dd61ddf0908a603de1bc4a6ef9ac55b96f2f4be89f16366bbe7cb8bcc8ae",
+"text_sha256": "6da4c15ff0f7bc34462743c7dfbfeb0a1db95392454f6193ff7ce57e2547a7af"
+},
+"test/intermediate_algebra/362.json": {
+"n_tokens": 121,
+"ids_sha256": "a79e7e279cc943161083327943486b3369e182b1cd36f715b867e0af1f64ab40",
+"text_sha256": "a62b88a943356c17f020027ec60fbc7ac5fbd131f5749d8fd79882c4bf54cd11"
+},
+"test/prealgebra/1804.json": {
+"n_tokens": 356,
+"ids_sha256": "7e3d1e48b2bcdf120a99fdec461d848d76cdde70809b1be97a21e403d80d6f8f",
+"text_sha256": "078837e14257eba6dbe2733c96fe709d3ea93b9b4d69adfa33558be33caee4ea"
+},
+"test/intermediate_algebra/515.json": {
+"n_tokens": 91,
+"ids_sha256": "c52c5f846099015234828c0a11d2be7c5ed6bcf858453bf44e9f3802b363830b",
+"text_sha256": "59b483966ee48cbc22c5af29a7e482b4d94a525529dcfaf2ec20883e26762136"
+},
+"test/number_theory/914.json": {
+"n_tokens": 73,
+"ids_sha256": "34ec4c49b4182e1ad78352f9bf70929fca8ff1581a986206dec682904dd99ba5",
+"text_sha256": "28705acb84264866ef1abb2d7c395f7c76ef2414ed244f26859c5a52992b5a14"
+},
+"test/intermediate_algebra/894.json": {
+"n_tokens": 126,
+"ids_sha256": "0a723fc53956a380ff4f5ae8f654ab22a36f7517af7fe9fc95a7f0d65e02c08f",
+"text_sha256": "2874ffb69c1ffc67e53fb95ae2757722059d18338178ae09592b3c50a4a5431a"
+},
+"test/precalculus/44.json": {
+"n_tokens": 182,
+"ids_sha256": "f62514c99b701139ae1e9e7fc15b7555502c2fb4a9d8633fb2d5e5b714889875",
+"text_sha256": "520245ac2671ac67dd727548c1974721d00a0b6a030f2fcd18307143ebf498d6"
+},
+"test/intermediate_algebra/345.json": {
+"n_tokens": 158,
+"ids_sha256": "228478775a2176c8b392a9d6ba3d181a7f9c7c11d01441e036565df19e9e9a2d",
+"text_sha256": "d4099a10956b1f694aa8fbba6335e495df2b2b09f2af8c02f21f6b9676ef690a"
+},
+"test/counting_and_probability/23957.json": {
+"n_tokens": 93,
+"ids_sha256": "f305f89543c46f5fcb1b909018db92a1e9069d1f43fc53d61486d4c01234b745",
+"text_sha256": "c571427a389df2a6ede9e28fe2780419e9a0433e13c764d8cd0c53c591831a46"
+},
+"test/algebra/2058.json": {
+"n_tokens": 117,
+"ids_sha256": "94c3e3aa392caff346b9c4fbb0617164be601b84e106ad51674e001338a27443",
+"text_sha256": "157307213909b631334a565f81bbaa17afda266d6cbca619d2682cc5ff4f0c1f"
+},
+"test/algebra/2593.json": {
+"n_tokens": 71,
+"ids_sha256": "24ddb47b0c12784b1cc041c9405bf1395a559e78f32c4b96928cef833585f906",
+"text_sha256": "ab02f517593e7c3ad6c044d34ee85c23fa6a370d03492e8b45c2063c46c14de8"
+},
+"test/intermediate_algebra/1898.json": {
+"n_tokens": 116,
+"ids_sha256": "b3ae6f626437fdbe5f8a1453f936307533a82bab328c0680140ebb9e6d6ade30",
+"text_sha256": "ae5773eea1d8f1f75ccaf173ba9691704806ae69ba9f35d97ef4ba2078eac5b0"
+},
+"test/counting_and_probability/1060.json": {
+"n_tokens": 59,
+"ids_sha256": "0bfd5a6f5e3b36f17c58b4d6679dae009981fbe1c193b484491f8ad8b7c757d3",
+"text_sha256": "3cd9b226f31aac2b30f45c71ce65af1fef28e76d44cc10d2d072eb9c14ef41fb"
+},
+"test/algebra/2157.json": {
+"n_tokens": 66,
+"ids_sha256": "44bc8825a85764e7e994d68cdc8b069277372b5e982b457c08bacb7a9a6e8458",
+"text_sha256": "5f9c1f87c36d9e7117b191d0a90216d8c012f90f9f800e5209b51288f1cc8dff"
+},
+"test/algebra/2251.json": {
+"n_tokens": 60,
+"ids_sha256": "e23d7e1b0db599d397853a60f510c10edb9e3c1460b9e04fbb84fe814c8a2c76",
+"text_sha256": "09f114363f61fb2166f1b53b3394963b918337ed6702b57813b1539a09fd7faf"
+},
+"test/intermediate_algebra/232.json": {
+"n_tokens": 66,
+"ids_sha256": "9b8dfba9e61c1f2a1c1922c4e7e20b7ad097e0bcdb47a1f8d3d3679970a98495",
+"text_sha256": "1a6b8ece0a99a57283c8fe548c7025b38b2b83fde04ef46cab5f8b9a7b585310"
+},
+"test/prealgebra/1733.json": {
+"n_tokens": 194,
+"ids_sha256": "ecb8fd99178ad8eebc1a3ec5d3f9d384cafb896512c9c2e4ec229954e7b2e2af",
+"text_sha256": "5ac17a1a57ff11ce126618da47b33e0b658b5233bdb08242247ac4abd1e63264"
+},
+"test/intermediate_algebra/128.json": {
+"n_tokens": 94,
+"ids_sha256": "f897350642ed82a01f4cbe0ecf1ab19f5ca925c432a41b352cf999784cbd6047",
+"text_sha256": "593cee184e4df17dde54598c2f1d86c90f5a17a9a61e9ab9db461371d9991b4e"
+},
+"test/prealgebra/505.json": {
+"n_tokens": 62,
+"ids_sha256": "611919600cbcfd11efb8de0053e0b8c74bc439996793b49892ec7ef85062f7c6",
+"text_sha256": "df3fda0ecc1ba78ad16ffcf01e124d60d7b4b17ae1073008ba3a05b93bd15ea4"
+},
+"test/algebra/1332.json": {
+"n_tokens": 112,
+"ids_sha256": "f0d95b3c0c842efd820146cdf4458deb11de41ef95dcadde8cdcf3fcf3281a45",
+"text_sha256": "eb0e4ebdaf6f147c6495771b91a3fb22d38a24154ebfb7f5934d48f91f4375fd"
+},
+"test/geometry/283.json": {
+"n_tokens": 290,
+"ids_sha256": "60223bf6ea97ac72bb9074e77a1b522bd2311d8372c1bbf2ad9dfcf4f0a5ebea",
+"text_sha256": "815dd8c07787acd3d0023c2001884b97eb332d055cb79de83d7bab7dbadb8b75"
+},
+"test/algebra/972.json": {
+"n_tokens": 73,
+"ids_sha256": "d7e3f7fb4aaf5346df3fbe386ee61cffe044d78c01ff0a7a6b3ed68292c43708",
+"text_sha256": "c6b815e7ebfea95f6613ca0a1d253e977af94572cc54c688d2e521f7aedbda54"
+},
+"test/algebra/2232.json": {
+"n_tokens": 70,
+"ids_sha256": "b8e83b50c5061a870ad5a3abf45ffd5da4c6cf7417d12372639ede7e301a30f5",
+"text_sha256": "ffcfa5403b32d9be9b7714b4c1a5a80974e8f5e770f099bf0af91fa39033b55b"
+},
+"test/intermediate_algebra/1063.json": {
+"n_tokens": 114,
+"ids_sha256": "e066a729722364ae7d4c37e1369ee1a053788d522b3aa9dc75ce67b6c0150b0c",
+"text_sha256": "8b140f6d037d5a2fcbb6ac1688d4af0f889412e415ecbe21987c181a634133ff"
+},
+"test/number_theory/847.json": {
+"n_tokens": 55,
+"ids_sha256": "69e846beec1a5bc3d6b0f125367dfcdca4efaa15b7105d7576b5579bb1fa5c86",
+"text_sha256": "979e4b73604b0fb4797f026c99cda025e049b6b2bb248eeec6b1856ddb016002"
+},
+"test/algebra/661.json": {
+"n_tokens": 65,
+"ids_sha256": "a061c2befea275ecab91ff25fd7ba2f6e04f3ded5f040a1a1730d2af462d6d9c",
+"text_sha256": "f7efd8b936c12b76efff0199bf81bd4a37ccd06a0027658ea8f6c74136502886"
+},
+"test/geometry/1140.json": {
+"n_tokens": 96,
+"ids_sha256": "f8a6f64f455a27ef1ef82912c1bdef38128d809f75edce676d767b36de421376",
+"text_sha256": "be0b492e549822a3b581098c9fa7e4770da4c28ce3e5873d950118329495e956"
+},
+"test/number_theory/753.json": {
+"n_tokens": 80,
+"ids_sha256": "ddf90844cbdd2896280e7f3c0a267ea38d511cb637464e2611ec471b008bafe1",
+"text_sha256": "7aef2f13d3243571bfe284253a05043ff31d41aaa77fb5415f2d7539b371dedd"
+},
+"test/algebra/246.json": {
+"n_tokens": 77,
+"ids_sha256": "e1815a3e13a8f7be95ebb4b0a3cd7a14c7291c46adfc0acd640aed986ad3cf0a",
+"text_sha256": "a29016060de256a6dc62d6f4d03828f2c5ddc97328321b3c34aa3a7c436222e9"
+},
+"test/prealgebra/1686.json": {
+"n_tokens": 88,
+"ids_sha256": "c6d82a97075a0d1817680f85d4b0919884870c4a2f016d061a23858188ea34ba",
+"text_sha256": "9fa0cdd95406f36c3d23dcea29b73f85f11a2c869ae5fcf9f351a6fe7744b82a"
+},
+"test/prealgebra/1807.json": {
+"n_tokens": 81,
+"ids_sha256": "76bfcf27a5c396bb5916392ec24bcb20c3f0caf59b8b51a1dac38815f951dd70",
+"text_sha256": "7d792279d27db569fa15252c7c90edc8724a23de5b82d9af589865559b1da828"
+},
+"test/intermediate_algebra/1126.json": {
+"n_tokens": 157,
+"ids_sha256": "209c00622e60500b50c443b28fbd0046281fbef0d2336d1726d37089fcb49f62",
+"text_sha256": "822fe9d8d24b3b7e2d74ffb7e3a2ccadedf2b39dd0cab75966a48c1a22196516"
+},
+"test/prealgebra/1297.json": {
+"n_tokens": 111,
+"ids_sha256": "4c071de05fe064995085cd20194e6f366e04c85be7bab62896bc9d73b989bf82",
+"text_sha256": "716b87a3cea978fbf8960aaba5eb2d5269c47bec7061b8692123af0e6b06894c"
+},
+"test/intermediate_algebra/2022.json": {
+"n_tokens": 142,
+"ids_sha256": "df6593314c54741446ac48f397946c5e85c12208e6e8786cb58aed1de30e4285",
+"text_sha256": "8b805e06c48bbe72c3045fe364d58eb95a0dd38aaa9cd587dae607dcff1cef05"
+},
+"test/number_theory/1257.json": {
+"n_tokens": 62,
+"ids_sha256": "ac90c7d839e7edb70ffce43d2d4c0c655ab8d99f8a304eaa2691406d74136bbe",
+"text_sha256": "14c33684b7eae45662899ba588a486f45251305f0f7b9a40574310849d63a072"
+},
+"test/counting_and_probability/430.json": {
+"n_tokens": 122,
+"ids_sha256": "4716911f9298beb442a6377d9cfe22abdbb387613137e5ab9b18e51367a9df40",
+"text_sha256": "5b35c8c60b35d72866b227f0ebfd5adffcc8d0e9b83b990d4aabd92dffe6e4ab"
+},
+"test/intermediate_algebra/1151.json": {
+"n_tokens": 91,
+"ids_sha256": "812d34af6099100144d217602fda432e6983c41f153bec94dc7a9673a5ac0b7f",
+"text_sha256": "1e147886e6265aaec505c238091a6d882f2caf2482a7c07655eef4ddb344c316"
+},
+"test/number_theory/156.json": {
+"n_tokens": 73,
+"ids_sha256": "9c360f71ea3b4315534d591db6fdbbbe3b306243be8cce3ea76ef20b42eb2f1b",
+"text_sha256": "d84ff82ec109893d63654841f01eed355b7cafa486cdcc10277edf8cf8f4b484"
+},
+"test/number_theory/612.json": {
+"n_tokens": 101,
+"ids_sha256": "3476f2af4c91f9fbcc2e906f69072e0f630883d94cfd04561ad15df1b6dafb6b",
+"text_sha256": "ec14fb88b71ed2145be69b8261b8bce5fcad1821fc7022724968ab3e5b28614b"
+},
+"test/counting_and_probability/159.json": {
+"n_tokens": 101,
+"ids_sha256": "515801c6ba49297b36a5149238433b43e18cddc866e2cdca7ef1417c95f359e9",
+"text_sha256": "8a22ab0cc2de5ba33fb37e7aad02750438d0a30d93ecc48082bac947bb397130"
+},
+"test/precalculus/477.json": {
+"n_tokens": 120,
+"ids_sha256": "e6daf4234497d55a2052cbaba8c14e7ac50dc6ee92386aaee21798309c744fdd",
+"text_sha256": "ee569d8d868c6652740254eabcca08b42ec42b40084ee8e9181cff0493891911"
+},
+"test/precalculus/43.json": {
+"n_tokens": 90,
+"ids_sha256": "bbdb99051728270702f6a27c6046b5839deed47e697866b4e9cb17332510a815",
+"text_sha256": "f41de3ac39c540fc10295b06eddc33d30c45fe80623049b0290918d8fa834250"
+},
+"test/intermediate_algebra/1408.json": {
+"n_tokens": 99,
+"ids_sha256": "5fbcf5f511abc3952a25d8bc206c3276314cb3356b49c6bb1f4c6fba37b3fdff",
+"text_sha256": "64943087b9558906958e4483806e57c4cee6d1dbf414f5d351330717e167becc"
+},
+"test/algebra/1519.json": {
+"n_tokens": 59,
+"ids_sha256": "0f286ea14135f5b36153fa7dafd9f98acb75fe18b836c5d846ebd733e308548d",
+"text_sha256": "3be376c3bfd0b097dc416b53487cde60565be931cef556bc5268301ba132917c"
+},
+"test/intermediate_algebra/966.json": {
+"n_tokens": 89,
+"ids_sha256": "37068697d7f11337eb6a064dbfa43c998c80169b4b65dd3da059c972e07323e1",
+"text_sha256": "7119baecc44280eaf56890ac956c88a9ce8a9cd3d7bfe537c63cb1e532eb71a2"
+},
+"test/algebra/988.json": {
+"n_tokens": 72,
+"ids_sha256": "56b2ba31d9a797703ddfc5ef0a895b987d130363ccf007e70bde2b550e7b3154",
+"text_sha256": "ad63200fabb0d6b84631118f45324205c7091006e37d6e99bf2012c86ca10470"
+},
+"test/number_theory/931.json": {
+"n_tokens": 99,
+"ids_sha256": "21f4e7fbf8b92a83878c7476670c1ea0910c07627e2b61a4266d529930e20f5a",
+"text_sha256": "3a2f16788b12c56df5f9f1fa5d1d40bea47071da6faa029d891cd78ec5031656"
+},
+"test/intermediate_algebra/964.json": {
+"n_tokens": 265,
+"ids_sha256": "fd8731efa2ff071d6664c1b0dbcb61beeedd3c20d4d9517b41bd04803db68f33",
+"text_sha256": "1dbebcb8c2b4266439fd925b394b2634e0679209cfce0e07a37ab25aee320a9d"
+},
+"test/precalculus/986.json": {
+"n_tokens": 215,
+"ids_sha256": "eace5b9388fd842e3c934cad7b77cfa23843780b39fd71e99d270e47c4ee2db7",
+"text_sha256": "ba005f8115c683e5c2546b28d5727d3acb07bdc6d9671e21c3fbec7ca15095db"
+},
+"test/geometry/172.json": {
+"n_tokens": 122,
+"ids_sha256": "e2045d6e71a500e016ceeef4e2126e4e1616fc83ea5d9f7ddfb18b92c1449921",
+"text_sha256": "5fac72d5bf4e9854c5df91b1857e08ec20f3b70509f467ad6cc2843e1e8afb70"
+},
+"test/counting_and_probability/230.json": {
+"n_tokens": 128,
+"ids_sha256": "dfe5357a6c0a3f9f578789962ae060ba5ede924f242794f389ecf701c4605caf",
+"text_sha256": "ce7aa328f57e32270bd5bf1c070b16eb59fd82e69fb0eff840280ea02ad81408"
+},
+"test/geometry/880.json": {
+"n_tokens": 185,
+"ids_sha256": "3d3c46acbee4f77b69af732555b4ad5dc044fb755224876544fb41257f269c00",
+"text_sha256": "9f496ce0548ec4e0258e9ca47fca9916af29ddcde643c8242821da681a98e6d7"
+},
+"test/counting_and_probability/803.json": {
+"n_tokens": 95,
+"ids_sha256": "0578f1dbfad8e3a2a727890a90d1eb98cadb5484cf5d9367e516a119336b7b56",
+"text_sha256": "0012f6a9a0ea0d8273e4b8d18672ceaaed13c370abfc223efc7c018754b1e38d"
+},
+"test/precalculus/117.json": {
+"n_tokens": 235,
+"ids_sha256": "1e33b7e5859f45594690c7098c40cd846d6a1e44f1f2076a8e902deb772e17ad",
+"text_sha256": "115305a5bc61904a08d603de5d8bc1e328079ecf9c389d86178f34121b5a3c17"
+},
+"test/intermediate_algebra/1410.json": {
+"n_tokens": 87,
+"ids_sha256": "f2db6b4f9a4776aa13b651dbbf2a36f5dbb8fb5801ba5c7d7d645ef1b7d9ee34",
+"text_sha256": "27fc5e4ca56e9e316d2cd0a5b391d1b9fb509a01c553e034551c6350ce141b4c"
+},
+"test/algebra/2570.json": {
+"n_tokens": 64,
+"ids_sha256": "134cd72560ab6c304fb406de1a60fda38843669aa0e7e87db426c759ae90f1ad",
+"text_sha256": "e01bea5677216815f1de02bfc6efc6d4fd542e9282e6a0c0298f8fd926cf4f73"
+},
+"test/algebra/621.json": {
+"n_tokens": 92,
+"ids_sha256": "89cf1bab6b45075f48b13e7014510ddd760c1f0cfaf135270453244ae3696239",
+"text_sha256": "b86d8629662cdc1db313e2cfac7f1f8401f887bf2c4ee6397319de8bc40d0d16"
+},
+"test/number_theory/521.json": {
+"n_tokens": 64,
+"ids_sha256": "b63b7bbbaccdf48e5ce2202c69930a5da749553fdb27b63787f753abc3a1d7ba",
+"text_sha256": "ef784558a950ce4291126298c95f015c1568cf3282a460a916c97df37778d4c6"
+},
+"test/algebra/1255.json": {
+"n_tokens": 49,
+"ids_sha256": "1b2ba2bafebcbd3a30458adb0ce8a555718555e97cb9a143ef92e5b3198f699e",
+"text_sha256": "cd4ef8841735bf1c993465d35e7b953a3518f9a85476f0ea2d270cc133287fc7"
+},
+"test/prealgebra/1655.json": {
+"n_tokens": 92,
+"ids_sha256": "eb7b53c2f3735ae7f1854bcdafbcfe3dd7e2d093a90c1f062aa381cdcc6dd310",
+"text_sha256": "d1012833642372ef475f8a114872a95c11176f26926037da3c72fe194d971246"
+},
+"test/algebra/2517.json": {
+"n_tokens": 112,
+"ids_sha256": "de271b1523bb20a7144a2e239ec8b89a210cddc6ccfc527988eded1d1fd8e78d",
+"text_sha256": "7969aea1fca8a63c0983ced5c5f46000921bbdd72c7a49b7d785349b744396c1"
+},
+"test/precalculus/697.json": {
+"n_tokens": 63,
+"ids_sha256": "d9cc8a533b463ef8ab23915b4c52a1b1ed723ec4cc04ac2b494a5ff5cfbc5add",
+"text_sha256": "4325ddc007552cabaa6c502aa772a34198c59ff6c9ad1b9ea48b763c937f7867"
+},
+"test/prealgebra/1356.json": {
+"n_tokens": 116,
+"ids_sha256": "9d6837ba658d53264be752179f9a187b2001fde63e35c5d321d69a1b1933cda8",
+"text_sha256": "61e4c71a787f5d1c7366a341dee595fffeb2b2435896b8218c8fddf1de4cab03"
+},
+"test/prealgebra/1003.json": {
+"n_tokens": 245,
+"ids_sha256": "23187ece2e1911b08eed2734f3c4089c2c2ba2e8d2ae8e2d1780f98ff894f192",
+"text_sha256": "3a6555ef7c8b044a77f774d6bf4f1f50638fae024cc50143f4dabbf1c86a7225"
+},
+"test/algebra/478.json": {
+"n_tokens": 118,
+"ids_sha256": "a58b747bf12384bed553ac89b9a71b4a2966f3dabefc47ff312a5d717fba5539",
+"text_sha256": "ef2ff5d7e12cac9c178b69feeaa06c66d08a70cff5ca7f61c306f568ad840fcb"
+},
+"test/counting_and_probability/181.json": {
+"n_tokens": 708,
+"ids_sha256": "2e42dad5b6ceec04ccd538ac1958e253b1a5a6548e5f864fb892b29ebeebd4fd",
+"text_sha256": "e1c3961e190efed375c263c66b21cbc3a2b35dfbcf5cd140150d6f34b6370a0f"
+},
+"test/geometry/802.json": {
+"n_tokens": 67,
+"ids_sha256": "242a7b4769bed942ba9c2162dc5a05d8b2641956c4e46fb983af77af81eedc7e",
+"text_sha256": "acf81eac790622706a396a87ed4aa23d6d66e92a8a869267f55ad4e88132261f"
+},
+"test/algebra/297.json": {
+"n_tokens": 84,
+"ids_sha256": "5a2173ba80684c2b582f36089bb8b9885e330e8f713b0720d50ff5342da5477e",
+"text_sha256": "d02a813c3dedb3c00181a9023a9b5325200543ef6123b6ef9a88a5f943764054"
+},
+"test/prealgebra/1272.json": {
+"n_tokens": 90,
+"ids_sha256": "af06f2fe4a5bba516ef735a3cdd01d53d6ab1bcb07aa529acf3397e5c4aaf7b1",
+"text_sha256": "b0ed2153c5d2fa67ae01e36b58674d1893e3e540ab0d76de31669a68e6f238e9"
+},
+"test/algebra/841.json": {
+"n_tokens": 71,
+"ids_sha256": "4b3166d9a833b785db485fe100933d9f41df2f30c4f0735682538573df7e85af",
+"text_sha256": "ba2857a069850416744690501a61ac3e202bdfa7e54bec9615ebb11d9465045d"
+},
+"test/algebra/686.json": {
+"n_tokens": 96,
+"ids_sha256": "1c74cad315477a3bc1b7982f9a8c20e00d77be9b101c6e6f3fd80ce1cb561b08",
+"text_sha256": "4da607a5d817f2e8e1e99477e7c4b3fbc5ef9e6e75f3c6f971b13c454a796aa4"
+},
+"test/algebra/351.json": {
+"n_tokens": 73,
+"ids_sha256": "d75401716e42a33f629d209b919a31e1e6796f84f3b4fffcd5ccda2e81049840",
+"text_sha256": "3f365125f54ba260318c4c7a4fe8240bfdd32faf63f6f08709041154296ec2cb"
+},
+"test/intermediate_algebra/991.json": {
+"n_tokens": 83,
+"ids_sha256": "2a8e28b865f8e60258fb984b63aeacbd3ee8bfd5b39ba34f765f55b58fcf7995",
+"text_sha256": "651d0c24a5bde09ef972f83f3c6bfa9fec85be6c8d15c3cdb0c84cc12af341f3"
+},
+"test/number_theory/598.json": {
+"n_tokens": 63,
+"ids_sha256": "0d7f6386cc2eba9c88cc07e2c7300b73a214cbdc5c8d748d634cc56dc89b1cc2",
+"text_sha256": "28a74a32800e93cf2a71a1464cc292f554d5ef8f244508435cd0f843ec722a94"
+},
+"test/geometry/65.json": {
+"n_tokens": 292,
+"ids_sha256": "2fc1dec56b728b3f5ac7f7da9150658b2ccae21f72a90eed94ceda744c2fdcf1",
+"text_sha256": "82b38d160a12fca81612c982ff201771cf266b8c3f7bedd872c6e72a5773a10b"
+},
+"test/prealgebra/1113.json": {
+"n_tokens": 65,
+"ids_sha256": "9a2c2ad6350a40ea4f6d1439174092177400de9e2ebcd6c85acac301f626b72e",
+"text_sha256": "0434e1c86d553ded092b70d778a13e2b563dc9f49b58842283a6d675d9b5f6c9"
+},
+"test/precalculus/659.json": {
+"n_tokens": 142,
+"ids_sha256": "9abb10ea31999ff02c3d16a7a844dcf86409800924fb6a2c128c2ff8ca0de81c",
+"text_sha256": "debb6f5164d761a4361b0bdb19db561442015cc9ad51668cd6ee98690cb1a90c"
+},
+"test/prealgebra/1908.json": {
+"n_tokens": 61,
+"ids_sha256": "910386347ae716a28b6f96a0172dab7801a948dc42b24f5229474e20f7517d99",
+"text_sha256": "b165d6ed8c0b3049731df356d69dc05445587174185726fdcebe628aeeee3edb"
+},
+"test/algebra/1275.json": {
+"n_tokens": 73,
+"ids_sha256": "8e6407d3fa525e56ce240080f12dbebc5690300e2db18b305fad787cea7b3e9a",
+"text_sha256": "9f963b49883193185e9607eb5d5a4ed4380682c7ebddcb5dff3b770c3c8f4888"
+},
+"test/prealgebra/1922.json": {
+"n_tokens": 74,
+"ids_sha256": "9220130a030f8d00755656da4239b2ba7ec2d4cc6787f856b2f4757f1ffeea2a",
+"text_sha256": "a2e71db12f10fbcf37c44c25741885050c9ba4318dd2a02c34d06282ce16e759"
+},
+"test/algebra/1082.json": {
+"n_tokens": 134,
+"ids_sha256": "e60892537c9d2ad7f734b7f4a82c1e70d4a040df9aa58725331446827a438b85",
+"text_sha256": "ccda244e5c26f198f93bfa37dd5604a91ca60066ebced351ed80ec8ae9ae36ce"
+},
+"test/intermediate_algebra/183.json": {
+"n_tokens": 95,
+"ids_sha256": "c58b9552e40e2158ac9bb9f9e84e1b7b95d2aff5efe5701cc1d207fa6f5fc086",
+"text_sha256": "f4efa7fda7bd3129bb96fd7e8b78c3fe6e6dd70f49b964ed96be7b242d1ceed1"
+},
+"test/algebra/1214.json": {
+"n_tokens": 58,
+"ids_sha256": "a347f939ff34b6eb88f33dcbf41adee2e0c715fc27ea31ca106bd107bf1a02a6",
+"text_sha256": "b6600de6927518ca5bc52b28c96acf2cb7292fec748667a891a5e85007e41655"
+},
+"test/number_theory/978.json": {
+"n_tokens": 75,
+"ids_sha256": "d5d0d32a00ed7a61c0aedcd66f6b1061d72629a40f71de8b45ee0840a72ed5c5",
+"text_sha256": "fbf8815f20c57ed6b0b71acaefb8be0c92d1e0f51c6e1f02422ff67b7fa3eee4"
+},
+"test/algebra/2199.json": {
+"n_tokens": 73,
+"ids_sha256": "a56b65d913d73ca8b4e5b300f0d64a7fff65209d73f4faf5c7bdb262bd95cc01",
+"text_sha256": "18f713edc8e487194392d8c5f2714a7fb3f35688b3a51b5d776e88636fd40730"
+},
+"test/algebra/733.json": {
+"n_tokens": 264,
+"ids_sha256": "4bc4c705634cc376fd9633a719690942f41248f7a080cb59deca325ee024f7c9",
+"text_sha256": "a5e06115b1226dc77920bf1409e9c17511162e855d48ddc7f3d17f5bd9b97d83"
+},
+"test/geometry/702.json": {
+"n_tokens": 501,
+"ids_sha256": "9ee04b7e30c94e45c5db7314dbd3c7fd722afa92a7614422dc812295b744df30",
+"text_sha256": "6c4f7efd64d1d8e159d9107b2665f732ef3949d9153591c0c9c03d9a2575cdf7"
+},
+"test/counting_and_probability/51.json": {
+"n_tokens": 71,
+"ids_sha256": "15e9bdb5b5a3364997b75d595de6bcb44d948e66f390755b51aaf14e6d252b66",
+"text_sha256": "65713863c2290fd708031fc37ee6642dba5ecb68d61546ca721af0371081d81a"
+},
+"test/algebra/109.json": {
+"n_tokens": 83,
+"ids_sha256": "f94f3d4bef15d7d761709ea941c577387c9af83db600e0096f22d5239df3d10b",
+"text_sha256": "cdf9479480df62284c7b0b02ff9874f082cc83dae2f1712e39002735a8d6fd10"
+},
+"test/geometry/221.json": {
+"n_tokens": 80,
+"ids_sha256": "2969c4cbe260182c90c65b06f4176792805786f63173394de8aa524791ee0bb4",
+"text_sha256": "8ba824375c72673e15f7541440ca48cca00a1af3525570a5c8dd8c69377b563c"
+},
+"test/intermediate_algebra/1422.json": {
+"n_tokens": 95,
+"ids_sha256": "01cb03a6f0063160e65521377a0d10318a169b043cd4f3cab88d2af659858fa2",
+"text_sha256": "70ba515cf6caeac87e5aa00edcd05ecc1a06655129d1b8a2f0fd531baf906ecc"
+},
+"test/intermediate_algebra/2196.json": {
+"n_tokens": 77,
+"ids_sha256": "2bbee5e4bd46fb72b23e7320e6a73d1a61ea22b04ed4084834f300bb697a43e0",
+"text_sha256": "3dea19e442cf4b3334d27ad441e0bf4790e8083c61b8c3e1bd7dc6cd34e4dad8"
+},
+"test/intermediate_algebra/591.json": {
+"n_tokens": 90,
+"ids_sha256": "1b832668ab33d33af7b0e3feece10dc65f96505a9672f1be5051ddd75feb46e5",
+"text_sha256": "c2dad20761a23612b15cecc5d93b315743e8da03e70a8b978f148b7bc66e596c"
+},
+"test/algebra/1937.json": {
+"n_tokens": 64,
+"ids_sha256": "1bfcbc4d57088fa1f3175e13f78403f68dd8f24d27ae99d2d5c7bf6594479b77",
+"text_sha256": "517db58ca0dd799c3ac5dd673c33fd679702d125755cb6e621828834159502d6"
+},
+"test/number_theory/838.json": {
+"n_tokens": 106,
+"ids_sha256": "f0de717b77f4d93ebc90e416f2c80123ec26621f089f0dbeef31fff5c99907b4",
+"text_sha256": "91d5bd64231e99f46cab0ae45b4d0f305b2e9460208cd780710a438fb963da8c"
+},
+"test/counting_and_probability/508.json": {
+"n_tokens": 70,
+"ids_sha256": "4781ce84a7903ea87fcbf17a2a0dfb5cf6129e72b979e3c6595605c5bb785bf5",
+"text_sha256": "c1dcbdd398eafc723b3a3766df4cb0c1411067b13c79f0fa92a575d0f25aed2a"
+},
+"test/prealgebra/1907.json": {
+"n_tokens": 71,
+"ids_sha256": "93ee60cc9190e928f506c33c0f29191130c7d9cabd4b14d507f7a15e00c437d5",
+"text_sha256": "2ff3b455585e0a25218dc7d2bb0353fd6b152fbc9654448fb6172a238de9d169"
+},
+"test/prealgebra/2086.json": {
+"n_tokens": 74,
+"ids_sha256": "b1a53342ca2196eb8827992e46c01c4325de01281ff895c7737994b49e8988c2",
+"text_sha256": "fd3b4a12e6263567964eece72726d3dace6b775a4c271a94378c7eb9a1ba63bf"
+},
+"test/number_theory/149.json": {
+"n_tokens": 115,
+"ids_sha256": "fdb114a14d38bfde3985c8d1ae3d669bec516d331072001bdf4a386545226c8d",
+"text_sha256": "95ded81a7ce36a0186f5ee420da3649cd92f2d60c5eed60475f2a10fdd740af5"
+},
+"test/algebra/291.json": {
+"n_tokens": 119,
+"ids_sha256": "5e141a3a9b7cc84cee589258287efdd9cadcc25a2cf58a2731e949e6b83a8a0e",
+"text_sha256": "a7ad5ffbdecb7aa25dd12d9468361fc818b3e256e361e04c48ee6ff7db9b5f9a"
+},
+"test/intermediate_algebra/1555.json": {
+"n_tokens": 98,
+"ids_sha256": "19eca865c3b9ae2e3d89e11cce6b758fbb8586bef1309458c6599b9981aec248",
+"text_sha256": "fdb53ff6f372c738eeaeaa20e4dc738f35728530d27d6305b6406469b7647865"
+},
+"test/intermediate_algebra/1510.json": {
+"n_tokens": 128,
+"ids_sha256": "b6476b60fd8494186b1c8d2db9a8eceac251405410d2b1e725849248f3cbb5c5",
+"text_sha256": "74d9c0ce11687424bf52e2e80e52fceff2a14d35558bd8905045d55cc7398146"
+},
+"test/precalculus/263.json": {
+"n_tokens": 189,
+"ids_sha256": "fdfb6488be61b7dd7d8903a578b8fe0fa4bfb84a29c210bd40939365e5f451fe",
+"text_sha256": "f2f975e884d4b62ddc661fe6099214c395c9dabca2b2f2f191fb8f428567553f"
+},
+"test/precalculus/541.json": {
+"n_tokens": 131,
+"ids_sha256": "2b62b0af08dae5e70065ce9c2e9f27035ab1fac87bdb507561f91dd236e6acea",
+"text_sha256": "828b27988ee1ebd740f02f6bc2a836232cd2c1503bf55cc11655603e6fdad755"
+},
+"test/counting_and_probability/389.json": {
+"n_tokens": 72,
+"ids_sha256": "39e3d18f763f2085ffc4f709a8b707142a4a23d9c3ce1f3c68c9041b030ad2ae",
+"text_sha256": "de3b61d1e00af4d35a68f23450b225cfe8d84c0a197e531b45f8862c568b021b"
+},
+"test/number_theory/1201.json": {
+"n_tokens": 63,
+"ids_sha256": "f7486092e4bca54ae27dad607eeec1287065cc2d5edc9dd5806886d00f513abf",
+"text_sha256": "c9a49b4e161deaa59167ed2938cfcc2e46433572ae6e4063d2e49a8ae093baaf"
+},
+"test/number_theory/234.json": {
+"n_tokens": 79,
+"ids_sha256": "9930f8af53d62b2d346d4abbcba66a007359a1acb35fb4298f74d4c65b69160d",
+"text_sha256": "2bd28eb824bc5371c92be44a238dda32cb7889821c13ab381fbe056102527cc2"
+},
+"test/prealgebra/378.json": {
+"n_tokens": 244,
+"ids_sha256": "ca106b23a6cb007274b29fdaadabdb9e8b37c7620f987d56ce6917d9372b27ec",
+"text_sha256": "a92ad416a47ebdbfa43417cb19659aa84a9877f3d3402936767796d73552c9e3"
+},
+"test/prealgebra/1555.json": {
+"n_tokens": 69,
+"ids_sha256": "0af96f666972da8cf6b3e0850ec2e42ed905e0c4a4578744762051fb3950abe0",
+"text_sha256": "89d6443914c817ed630929ca60a17aff6485aec3ac49a405205f31f4ac4945fa"
+},
+"test/algebra/2102.json": {
+"n_tokens": 106,
+"ids_sha256": "9f3bef7e89e3150f46b4347c3aa1e2fcbc12d912bb8bcb7fab3a4202fa757001",
+"text_sha256": "2849e35a16170f9162f5a8a3bb00dbc0126520b3e698e679628d4674d126c2d5"
+},
+"test/intermediate_algebra/102.json": {
+"n_tokens": 109,
+"ids_sha256": "d4a042761b9748a944c61ddd1424495b0c5f078afa21e46ce9f859f1c1597c16",
+"text_sha256": "2d2cbab3d92f1a331ff53ead8666ff32e95747590da4a3c6b676e0b3e2a5589f"
+},
+"test/counting_and_probability/765.json": {
+"n_tokens": 132,
+"ids_sha256": "96421da2461026cf82ce40f7289838fa7e50d36fa8582ee18ac7f272162d7b45",
+"text_sha256": "76c00207742efda976eb96d67d932a791cdccda837d669ffcfcaadddba9a54ba"
+},
+"test/algebra/907.json": {
+"n_tokens": 73,
+"ids_sha256": "83684669a11a115e065dc293f7dcb4d34b0410631e88c09c9009f774b08bd601",
+"text_sha256": "9629eaf111f5ebfc41a38834e4593ab714eff7fe1db7d9a33b794241194d8989"
+},
+"test/prealgebra/1436.json": {
+"n_tokens": 94,
+"ids_sha256": "dfc121c21c0ad6e6a66e12c7bead1ce8e4ef52bd39e71b35dcdb709ee554293f",
+"text_sha256": "83cb2d9c203707d271d6606ed16cfc21deed990bdd4469baaae5a62f0177437b"
+},
+"test/number_theory/417.json": {
+"n_tokens": 60,
+"ids_sha256": "a628f216c8e6d6614742f0f7289cd828ec2b7b9fa8331076eb957a232f6ce8d0",
+"text_sha256": "8047fb6072291de01fb41283d6a22bf747aa62f880b223e06db7467b723524f9"
+},
+"test/algebra/864.json": {
+"n_tokens": 75,
+"ids_sha256": "f5bf61d4a892154b3b46d837902ca6c0a10759368f5c0aedb0255514500a1dfa",
+"text_sha256": "59b4a9a5850aa0a2dbce997742bfcde29400b24e86fa3b470c7751566d0dd47b"
+},
+"test/counting_and_probability/282.json": {
+"n_tokens": 741,
+"ids_sha256": "785cca1896f3b53c895311e9bee6ef597238500049ba98000d7bf00c30e3fb85",
+"text_sha256": "06ba6f94bfff090a901e79f774fa119536a785bde9e0c17fc5c3c0f1efffdf43"
+},
+"test/prealgebra/1961.json": {
+"n_tokens": 122,
+"ids_sha256": "b09e2341a57c9b9e65ae0def402061dd8d0db031d10fd266dd3a293be07ede42",
+"text_sha256": "26e0966ce1d125b674f3de49654e712a7b5a2f3b913bf167dda1b3dbee56004c"
+},
+"test/number_theory/89.json": {
+"n_tokens": 70,
+"ids_sha256": "a07d96b5f708f9273dd03f2ad7fb45239119cb4466efc6196fd9c2a490181a7f",
+"text_sha256": "a83448441b91f1216e03953206f7428874e85fbea8eca41f4ad19af87cf488ff"
+},
+"test/geometry/547.json": {
+"n_tokens": 178,
+"ids_sha256": "c83d0f2a062a445b75fbb66c158b181d08bf9024ccaf1d5ce3714690365a1e1c",
+"text_sha256": "a365f0769a7e3b983ec19c7fae407a71a3de09b802bb69708d51274fafc65479"
+},
+"test/number_theory/183.json": {
+"n_tokens": 74,
+"ids_sha256": "0716770c1f3abb020990e50200024284900976f74d42ea5239e1dea484ef6f9d",
+"text_sha256": "849dd94bfd8f352b5d7ca4b903bea290cb2a590b2667e0a86a57e3261960822a"
+},
+"test/precalculus/190.json": {
+"n_tokens": 103,
+"ids_sha256": "8d2bb6aa731df10a5a351c9bcfde20d973c50980119cb527ae7e23ad899a6df6",
+"text_sha256": "749316a32dcc23aa6eba6c1cc16de568162e2838d7f0d0f2ca884932b8017615"
+},
+"test/algebra/2159.json": {
+"n_tokens": 77,
+"ids_sha256": "49e04bc452e3dc8040f3de1ce591a3b81eb1bb7e33ce477ea1c653c52749926a",
+"text_sha256": "bd31a60c88b9eae41d63653fbc44d3c27b368aca462b4794bc98640c135220a0"
+},
+"test/counting_and_probability/71.json": {
+"n_tokens": 68,
+"ids_sha256": "28f6f3c1f4e55e6f95da5a14aa6705b61c2068443f200dc464c0b4ba0f809be1",
+"text_sha256": "80181d2fc6404831096cc585b60437fd9e0cd849c0077d4a6e221e5fb61c4590"
+},
+"test/precalculus/819.json": {
+"n_tokens": 102,
+"ids_sha256": "4b401ceac4c26e8900f674a13f1b04e2849ec6922fe334b8a00609cddb31f0ee",
+"text_sha256": "13485fecfcc1a79f1a9a1c04e44e9f8c0f5acce428205f9dc83858131d6b9811"
+},
+"test/precalculus/1056.json": {
+"n_tokens": 156,
+"ids_sha256": "62f11833fb4d55bc1ee5f2442db3feb45d8ccb2cf4810948fc79168554662af4",
+"text_sha256": "9e2e739c0c1c8f827ca1492c0658a65ef6a79d9ce91e7072a9d2cd703df1d09a"
+},
+"test/prealgebra/2057.json": {
+"n_tokens": 121,
+"ids_sha256": "315af2171a43f53e99f6783b4272a1c2da356cf2b8d2dac46890ce4d85ac046d",
+"text_sha256": "00f10b5fd5f18b540aea266ecd6622edac298fe86b31276d164b9fbc6490be1a"
+},
+"test/intermediate_algebra/986.json": {
+"n_tokens": 123,
+"ids_sha256": "359e98b045f482bbd8737d20cb58962d267677ae1d740c3d8d544a5fb051aa2a",
+"text_sha256": "ef814a5287dfd93330917ac120712205535cb79f87c8300c747ccd096ebbfeb4"
+},
+"test/algebra/1578.json": {
+"n_tokens": 105,
+"ids_sha256": "981b659924033b892c42842b478ed5947d4c595d8a744f8b44c078d872652d37",
+"text_sha256": "2d31d685f3381980494a4c2c0852892b8147aa37ceede2b39c2363d6cb446d60"
+},
+"test/intermediate_algebra/1354.json": {
+"n_tokens": 111,
+"ids_sha256": "c08b9f1fb3cab00a73d11f76eca0bbd7d6a61709486a92a91d61bfade39bd43e",
+"text_sha256": "79db88eb5b1f6895405184fa50e1bdd3bd854efaa90eaed1c65994fd76bd20cd"
+},
+"test/precalculus/441.json": {
+"n_tokens": 147,
+"ids_sha256": "e3e5e59567c834c4132408e4a7d876a897726c9bd0fdfef113124cd58fbb9c19",
+"text_sha256": "cd7b75c71a1dd935ae7f2eb16b2a3c82b842ca669f7d2986a8a8971824ce2810"
+},
+"test/intermediate_algebra/1837.json": {
+"n_tokens": 103,
+"ids_sha256": "6d732f8586a25efda0f39ac57406a151b41badc20400c1fd87d678350e54b701",
+"text_sha256": "e4e66107d727ad7a718f09ff2cbf24d10054ab49d916f01bb435b819f18fccd5"
+},
+"test/prealgebra/153.json": {
+"n_tokens": 75,
+"ids_sha256": "3a72f248790f7d81afaf80e318a44d6500a9eb9a489cd20dfcfdfa1610c3bbfa",
+"text_sha256": "54b48eb2975f6910e17c24462e40f003ed93395d34c5a581a9d9448e978b70af"
+},
+"test/precalculus/989.json": {
+"n_tokens": 93,
+"ids_sha256": "3e94fbcaca63538a453868dd66f84926fe88b41bb22758c4133cc23c5e68dd7e",
+"text_sha256": "ddcf6e094abfc35fc81a306fefb2a60e6b69a830e606beaad46e99684d171cf2"
+},
+"test/intermediate_algebra/337.json": {
+"n_tokens": 86,
+"ids_sha256": "6523dae7e3ec99f8e3bb24c270fa14f2e6385d20c8841d019f717f19915dcbd7",
+"text_sha256": "312b5208c80021ad282c3b7df31e66beb05542a916edc3c210a7d76db01cd1a0"
+},
+"test/algebra/975.json": {
+"n_tokens": 87,
+"ids_sha256": "96b3341a81a1723444ee577e12f56345859a62bb8a3b14a2445dfc79f7b98fed",
+"text_sha256": "87fb58972df167d8dc7e8cae4e7e3a967f0e5025106d826877f4ab152a4172c8"
+},
+"test/geometry/229.json": {
+"n_tokens": 148,
+"ids_sha256": "c69de5a3f7b72267adccb0261aee582c3102d49fc02830846723eed033649fe0",
+"text_sha256": "b31032edecb4e071a41caddd6802ce8c8a652f366d4909c6227479a9d299143e"
+},
+"test/prealgebra/874.json": {
+"n_tokens": 267,
+"ids_sha256": "1d449f0b3862a2e92958a778b77243ccd6fdc43a8688806f9152b6ed77372a4e",
+"text_sha256": "5bf5cc9815d1d31e2b906f4b740bbd614193f3ee990c8b4c79ba2ca71eeccf4b"
+},
+"test/algebra/1143.json": {
+"n_tokens": 83,
+"ids_sha256": "6f86d2eae2740a8f15eedc8caf46e4b6e4600c9fb35b715865361a7e2692be3d",
+"text_sha256": "60d2ef4a2f92b77975b9b2cdf6b78f1b760d83723731ae640868d025998e5f5a"
+},
+"test/algebra/2626.json": {
+"n_tokens": 116,
+"ids_sha256": "39bad9a816ee689f58eb7f38d1359268555a3b10650aa3086591e4311e7ccbf2",
+"text_sha256": "f28afbd2a41225643a31f93d207c656d97f8a14240d7119a6769a38c6fb41727"
+},
+"test/geometry/254.json": {
+"n_tokens": 79,
+"ids_sha256": "8086aa26419b22cb7fd6103c9ad8f4134b5e7eb47142ff60e194e554f870f0d8",
+"text_sha256": "0f7ac9a2df63d1090497e225256c5ad404986728fba886550ad879b161813e78"
+},
+"test/prealgebra/1251.json": {
+"n_tokens": 73,
+"ids_sha256": "598c8528e2cab100f4c99a2b7bf7743d96de16bf1c3fa7a428cf1efad2668ec9",
+"text_sha256": "31e7dba74865e2d498d6d4b3b7597532afd4c32f6e896a0eba28efea6500164b"
+},
+"test/intermediate_algebra/1210.json": {
+"n_tokens": 128,
+"ids_sha256": "45a8515d06e08d5807351f3d827cb6c103b1fae461d1557db188ee61e08c6557",
+"text_sha256": "eb22ce3f976b29d33a23015c5147423d4abf079d8cc0146278fcc5156be9cfe6"
+},
+"test/algebra/1787.json": {
+"n_tokens": 103,
+"ids_sha256": "9e51094656e3af169c50d12380ae2a2f03c8fe411f771d7121d38aa511808075",
+"text_sha256": "468de32a9064dd945d329ab5be1c97a65801c5ad1b77352bba7e3ac861ce5baf"
+},
+"test/intermediate_algebra/1123.json": {
+"n_tokens": 81,
+"ids_sha256": "6fe6622d8cf4262d21daf09d409e83567dd7112777da202edf1493953276fbbe",
+"text_sha256": "677cbca29dba98978364268ec7acdf664e89c3cddf4788a2bf6667186d9f8cc7"
+},
+"test/precalculus/920.json": {
+"n_tokens": 110,
+"ids_sha256": "c948206fe1a8aff7efdec160906dd992a33691dc18e8bcacf97bf06328446d23",
+"text_sha256": "311485f10b77e9dc5a4e415340c9299776e609af5be39bfa0234f77a42900dd2"
+},
+"test/number_theory/1065.json": {
+"n_tokens": 81,
+"ids_sha256": "051b16c96400a8ef9971550ebd3754e82ba332a5ba4e830d3dc87eb6f0e62e8f",
+"text_sha256": "3a6a0c61a9924f45c757d4a04ad8c077753e836333f280b3e4f8babd4b814d57"
+},
+"test/algebra/1934.json": {
+"n_tokens": 110,
+"ids_sha256": "cff624df59d79dee9b1914adb9431ef181bae0f55e47b7bca9e6b4e276bb8970",
+"text_sha256": "62e0ef54bae95d61205d617d597dde4178b223a35acfbbe36bb33e27570c6cc2"
+},
+"test/counting_and_probability/894.json": {
+"n_tokens": 148,
+"ids_sha256": "d6ce549957fd786be3a0ccf8bb55c9552bcedb5c27972e32aed6b425a27761c8",
+"text_sha256": "0a362ad2fc1544eaa291a2d2d262361744bc4f96526e4e8eb6316bea793e0ba3"
+},
+"test/algebra/2064.json": {
+"n_tokens": 67,
+"ids_sha256": "c18c1e5eb69f83f231946ee970e3d35c37857aeaf005f6a026787ea69bd94e1d",
+"text_sha256": "c928c65931136df8e76db3fdd519f4273be4fbc7ddb9a5e9fe6f0380c071a1c7"
+},
+"test/prealgebra/1458.json": {
+"n_tokens": 60,
+"ids_sha256": "9f72966938995af439ad1474acc8ba19564177da9691d9fef4dfc8e547db8776",
+"text_sha256": "58b4140634464a7b470c280bd31cb5a252261affd19508730116e8cffb89d837"
+},
+"test/counting_and_probability/1009.json": {
+"n_tokens": 105,
+"ids_sha256": "c36168010fb583298abbdfec0b80f7469c207c09092b8a64950fa960bd8f4ff3",
+"text_sha256": "b34a5c51d0df7a4321d689d65a65cea943fc0220f5cd16c5b1f37bc4ee310b8f"
+},
+"test/precalculus/452.json": {
+"n_tokens": 97,
+"ids_sha256": "094239402d1ef985377170c4d0e6c734350a394657cbef5becde97ea30af0689",
+"text_sha256": "84a6d9c6afe24b6fcab5cc2cba74c39bc612721e14b208dbfcf178525e0e7b2b"
+},
+"test/prealgebra/1995.json": {
+"n_tokens": 69,
+"ids_sha256": "c4854692e5b95b0e8678a8388a8882107ebc09df4ee6a5dd595a79ca56d0e5c8",
+"text_sha256": "9a4b7888650eac63b8f1d2cbca72a87f2d5b1efc45c99321bd8a184047208842"
+},
+"test/geometry/473.json": {
+"n_tokens": 65,
+"ids_sha256": "c24572efd4f6d867457a3b23d7f25f55378c362e4f9fd603db120d59ba19ed7d",
+"text_sha256": "d44ba56d9e144ecf5e3b227e3a763894a2892f44d8ff6172d99fb79d7796f414"
+},
+"test/algebra/694.json": {
+"n_tokens": 113,
+"ids_sha256": "aa01e38b0937693fbada295cf9dcdc600d8fb6f83bbb19644baba2d0b6592c4a",
+"text_sha256": "274f555d674229980320d99e3ea329f8c2f466c25966647f12fa790ba345267c"
+},
+"test/intermediate_algebra/149.json": {
+"n_tokens": 60,
+"ids_sha256": "693f52dafb53120f8f7d7e50bdee8d86d679a906466ccdaaa2db32530c4e33fb",
+"text_sha256": "d276889104648990c8989eee79ec7b6253ffc0f4c18ba616588b4e274972ebda"
+},
+"test/precalculus/580.json": {
+"n_tokens": 84,
+"ids_sha256": "84477ef1744f0e865e133a03f9c4b260e99ebf75374d7d68471cb3572b44843f",
+"text_sha256": "6059b4bfaee133b1d8a9a6324b99881a010bc5dc65807abb325e2c97d391546b"
+},
+"test/geometry/347.json": {
+"n_tokens": 82,
+"ids_sha256": "c17e01667ce8dbf010f26249634ae4709acc59a704f2821fa5e1fa39bc6e94d1",
+"text_sha256": "62652bb302c42ff15ca81581cb137a7e9b54c92d4d7b24082f921ce6d695fb27"
+},
+"test/prealgebra/1317.json": {
+"n_tokens": 66,
+"ids_sha256": "97d5a7c621d12a9dafe256c50f08607aba1237b13b6a71c08447fe68aca76421",
+"text_sha256": "dddbe7483a8fea50304cdd24070b38c74d71f2a55d33cdab02fa32643a3a72c6"
+},
+"test/geometry/483.json": {
+"n_tokens": 73,
+"ids_sha256": "718987e93c77059fcf58790b82a4ae51b5ae61f06b512fd67551794fcadd7130",
+"text_sha256": "bf1c68db9dbd308678540396de1bec8f0d877c4b440359119612beeb832b97c3"
+},
+"test/geometry/826.json": {
+"n_tokens": 286,
+"ids_sha256": "7c1fb19334d8dd0d9b77cf1ac61a4fa3f162c98e78027a3b312a746e866efae1",
+"text_sha256": "3ba1e5e11a3f206d9bafe1d2e9dc6a5ee94c23774646c5d42cd7f00bc9b55d50"
+},
+"test/algebra/524.json": {
+"n_tokens": 73,
+"ids_sha256": "04d1a37439d416cfc8f7bc823d493c807e08ddf80be37f294c223347c1f57685",
+"text_sha256": "7fec523062a62fa782e7028191cd13b5062573b184d1debad5c54a86961417ef"
+},
+"test/prealgebra/1742.json": {
+"n_tokens": 73,
+"ids_sha256": "886311c4ec845e11080a91026865c452538eebeec51f25f40cc7029c70e554cd",
+"text_sha256": "ebea1eee070253fe640cb1d072f8fd98252ea6d16f4f9095c54396d9b4ab6e1f"
+},
+"test/geometry/226.json": {
+"n_tokens": 220,
+"ids_sha256": "26d926e56d24439fa048646fdc7b1bf205e2a6c6675e1d724a767765d3fa1f9e",
+"text_sha256": "357b73889a85f6bffa2859c52048b4323d7924f2d97b47325fd2300b5c72cdb5"
+},
+"test/number_theory/466.json": {
+"n_tokens": 74,
+"ids_sha256": "199e9f5236edadf2324d9e23b2fb99f0689967ac12f62bc2745f5421401d7426",
+"text_sha256": "a53fbd1cf4815011ca8ae18f0ac4de6d8cab3fff6d83c4611801467748ffb333"
+},
+"test/counting_and_probability/913.json": {
+"n_tokens": 82,
+"ids_sha256": "abec6f33cf4fe58fae3ea475966b1117f0d7d32987ca7e035a936ee8e8714b70",
+"text_sha256": "ab78f77a3e47c1ed5c77487ec7df7dd316b81dcc98e11d45a86f5c67ea0d4654"
+},
+"test/algebra/2551.json": {
+"n_tokens": 108,
+"ids_sha256": "e65580934caa3c79676874ce922398de952dc7d15e71ae48efcea8957eeb6538",
+"text_sha256": "7c5ccfe4b025e20bccf62a129272fb155aa18d42185df67e4faf13f6a3b4dfd9"
+},
+"test/number_theory/634.json": {
+"n_tokens": 72,
+"ids_sha256": "de8b33ae93133c8d7887272690d4feec5670eab4effbb77b229bb6b10804602a",
+"text_sha256": "51326cb18843a0aa123e5e7daeb1443fb15e7d659023d9537562cf5c3438256b"
+},
+"test/number_theory/533.json": {
+"n_tokens": 92,
+"ids_sha256": "321e5b793b0ed245e462a96d8e7928571bbb1d59c6185973699b890115582109",
+"text_sha256": "8571c2b14a7a8ab47abaeddd347a7e5c71e8b2e3f8eb5deb04c833f18c088e87"
+},
+"test/prealgebra/993.json": {
+"n_tokens": 116,
+"ids_sha256": "c3c83a3f7971ea7b47ccfb817812dc29418a1ee2f2f8222197c22a77c65ec5cd",
+"text_sha256": "60c8fe6ee586eafb60e0a751dd79e41d1d8f9c9f9e07462ea3dbd2c0dc9ca70e"
+},
+"test/geometry/686.json": {
+"n_tokens": 104,
+"ids_sha256": "24a5ba70d53c9679c8ec09e5b4dbfcbc2340fcf6418bf316eb9697668012153e",
+"text_sha256": "ff07f7cec0609ce0a2f15f510eff639470468f6f2291e27febab0b9793b80783"
+},
+"test/algebra/346.json": {
+"n_tokens": 77,
+"ids_sha256": "9da51abef7b4af1abc87b38292be1a91e311dc6a4dfbc749633039bc7ec22875",
+"text_sha256": "92036a232b1f14719e9dc4791cd234ef665a9637888a355eea97163cb81eb929"
+},
+"test/algebra/1282.json": {
+"n_tokens": 65,
+"ids_sha256": "4af6c65ee96f082256d9e05513bd287e95f302bd0e0d44eb419ccc196f5cc98d",
+"text_sha256": "4ed042a68b90d335676f3c469fa818aa758ec9a7b165c207176ee34e95c6c1df"
+},
+"test/prealgebra/1834.json": {
+"n_tokens": 54,
+"ids_sha256": "2c46384d14fa9d464804cc9ca6defb196cd550a5e79bbce9b9c9e1842fbecf57",
+"text_sha256": "1ad9bcd6a42999e09d6f7279eec5b89624a92a064bce2e310ce359056afc604b"
+},
+"test/number_theory/691.json": {
+"n_tokens": 62,
+"ids_sha256": "ce25e6a1c3e6d8c7d58f2f33b2e2bd145ddbcde5f4a2118212eba73cc2ee6b22",
+"text_sha256": "bea592d03bda9fdfa4d6b138fce9dbfdd069352866b8566ae453077e5f59af7b"
+},
+"test/prealgebra/1512.json": {
+"n_tokens": 216,
+"ids_sha256": "c61c6c1dcdf3109ffc8baac4ee638247c595bdf23b84279ed86d5b9546d6e906",
+"text_sha256": "3e2a40b0759eeef4d73f88380588efc64f7a1b6bc38200d015767778a5d78d08"
+},
+"test/number_theory/1287.json": {
+"n_tokens": 86,
+"ids_sha256": "dcadc6188694c181efe45b22938f47294f6eba6051933778e90e66cf07493854",
+"text_sha256": "634cfd29333f652153bf78d815bbc2c9ffdec6326fef1f8187933fefdfbe329d"
+},
+"test/prealgebra/260.json": {
+"n_tokens": 383,
+"ids_sha256": "aafd00f9f65574ff08bfe96f0f71061b8009e1c5f08c67451e83b53a5700213c",
+"text_sha256": "98eb9a36091c4d5d99c08e3331f8c80bbde73f5cd0fbb6687c6b0ae8518ca679"
+},
+"test/algebra/1184.json": {
+"n_tokens": 169,
+"ids_sha256": "33ba044c86451a1f419c83aaafa73f56194d8a75270c07f4f25994f431b6fa54",
+"text_sha256": "f2e316198760395346c30370533638fcb152805d6d44ba7c6f702fc569c69ff3"
+},
+"test/prealgebra/1787.json": {
+"n_tokens": 80,
+"ids_sha256": "4b07d456452538e8194326c417a2069424077f0451d55e2a7540aeddb721910f",
+"text_sha256": "cd17e71f80ee867540b24103acf9d3fffcec98662bc2c9b43044e797c1187d0d"
+},
+"test/precalculus/768.json": {
+"n_tokens": 101,
+"ids_sha256": "b7350a09452e30439d8bf74c49dc59cea0dde7fe8ff5e1230d2417a298b45630",
+"text_sha256": "96f2d124fc28698de98e4cdbcba803778f6dc76026dfd253ce2f4106e2d8a7b3"
+},
+"test/intermediate_algebra/1411.json": {
+"n_tokens": 197,
+"ids_sha256": "1352351c2bb307d0067c601f81e1f05c617f43b040f5b2715f4df7e93a0b746a",
+"text_sha256": "7ee5693693c6bcabce9768b2fe389906c6a57d4d9f3feb0597c9bff5fd165c4f"
+},
+"test/intermediate_algebra/960.json": {
+"n_tokens": 109,
+"ids_sha256": "ecb54f458a8742da66787abfdf2c5890cd06cba81fc79662a4ba4b599b5a4dd9",
+"text_sha256": "3b211fc46d883fe55ae7b8182256a5862204c3ff7434296112c9f7d3d3d2c752"
+},
+"test/number_theory/631.json": {
+"n_tokens": 105,
+"ids_sha256": "bda90e8244ebeba9919e17f146fad401073f87a70ecc3e2c94a4d2920d625409",
+"text_sha256": "32b50383171bdf84999564f63bbd88403a55db4806b7b777971b86637d292b56"
+},
+"test/precalculus/1172.json": {
+"n_tokens": 160,
+"ids_sha256": "6df97bae1b7e8c084cba1cdaf99aa2b4a49172dd5702cf99cd20af87c0c44e41",
+"text_sha256": "6f0c3eb265fb0be0f361036fcd7f91e405d2cf5fe081ea5d5d79353c0c5f1afa"
+},
+"test/intermediate_algebra/1300.json": {
+"n_tokens": 114,
+"ids_sha256": "a60cd292c8ae640a683a74af81a869803bf2a54d20e71b7b4a6eb2853ce7272b",
+"text_sha256": "567a9cb1d172a70e1d302f0f1833eee6799e8eabf332e8a6d1bb1b72dfbc0ede"
+},
+"test/algebra/634.json": {
+"n_tokens": 78,
+"ids_sha256": "8ef43333edf303bbbf93a11b97d8133dfd5659749c7b65e553a56767d45bd099",
+"text_sha256": "713ad7195d09757cd90511751dfa8e1f2432f1d3a7a4ea0cd9be2e233ad43a96"
+},
+"test/counting_and_probability/25149.json": {
+"n_tokens": 91,
+"ids_sha256": "35b1016386a71a51a823ded99035b8adbf02cef3d06d0d7cdea7adb1e647050b",
+"text_sha256": "d53457744ae698cd7ea234be78419d969267c4dbc2b95df7efaea2f537ec9e7e"
+},
+"test/intermediate_algebra/90.json": {
+"n_tokens": 166,
+"ids_sha256": "7e1aa3bee7c51f0c7ce5411f4a78eab9c5c2bacd6ce98ad933e0dc294bfc32b0",
+"text_sha256": "db66e37c13a127fdef5ec71d6a2ebe28073c56d9db762327989230ce02a816f1"
+},
+"test/algebra/2486.json": {
+"n_tokens": 89,
+"ids_sha256": "f95bd82c82fb21e01a4aab20333675bdcf62aede575816d1b81c115af595aaea",
+"text_sha256": "9131a29c2c883c1ab8b3d20e62806f6cf88cd2d9ef3ca666e55a5e61b1a54ec3"
+},
+"test/number_theory/488.json": {
+"n_tokens": 99,
+"ids_sha256": "50f402894149baede3323a274f2570060361720d2fa1f10aba01d912657f7821",
+"text_sha256": "36e25f0e37e0067b12111e187c1068dc5d6c8b37c1d611568a75ce7ea90e50c8"
+},
+"test/precalculus/1201.json": {
+"n_tokens": 140,
+"ids_sha256": "de3c332d92a65d9996fa58ae5af89cdc5a96da7abfa6d9f1f91250a038a63cab",
+"text_sha256": "4fd84ee0bdf51bfd5868251d0bbc73c81a87c2bb7c3094a421356b947c78f12a"
+},
+"test/intermediate_algebra/754.json": {
+"n_tokens": 183,
+"ids_sha256": "9daf4a58459f53906b983394a7cdda3bbdd5bfad0e2865ea8897ade5c4dd96a0",
+"text_sha256": "c022eda5a3667ed1f6dd530fda9ca99b5a6e1b1778686bf65726b37412aed4c5"
+},
+"test/number_theory/1172.json": {
+"n_tokens": 135,
+"ids_sha256": "c7d877153fca6eb030d51c05da4a2cb0d8a4dfd8b8d1539fb791064d16481d35",
+"text_sha256": "1dc0d81fb2040ce929e3484263f5a14c34ca8c0cf7971e2918174a1ba8991485"
+},
+"test/precalculus/881.json": {
+"n_tokens": 215,
+"ids_sha256": "943ded10e4ebacbc298b8a01a3dbd36de55d8eb51a192d9e28b8c17c39c0f727",
+"text_sha256": "e69ae8b0a60dd005f92c91199850d96da6a8115f6975acb27c5dbda7442db3e2"
+},
+"test/geometry/1097.json": {
+"n_tokens": 82,
+"ids_sha256": "16862ef20514a4e13a3e5367e692156874afe6b26d460643b4ce3c5021dff651",
+"text_sha256": "86e78e656a66c607b7b1309921cf7f8fa16606f8af7c46db9c44f038801c1a8a"
+},
+"test/counting_and_probability/339.json": {
+"n_tokens": 66,
+"ids_sha256": "dcf980c66f367d43341cbd32a886b2e7a0ceab9190660b1db70f43bb91f8f24e",
+"text_sha256": "1fa80fac1c4e3e3f48c95b1691373ee8b92113f793c295e0c6ded9937bd22bde"
+},
+"test/prealgebra/1044.json": {
+"n_tokens": 832,
+"ids_sha256": "330ae7cd92ae43a269d9f5b538644bed2825ef1f9d00af96f031dfbd40f1b703",
+"text_sha256": "1a08d7bccb88fc0e41f15c692f44ca52d529de05d271d56a78465284bc693aba"
+},
+"test/prealgebra/465.json": {
+"n_tokens": 130,
+"ids_sha256": "43b32d345edbc73815e138964b6dca31933a70998ca61394b21204648589c8d1",
+"text_sha256": "5bdf02a1d4b7164e87b9e8ec1750586a526656ad2d90f23aca88ca7ae0ebf775"
+},
+"test/geometry/965.json": {
+"n_tokens": 119,
+"ids_sha256": "143ced1d0161ac181aeb76d67af13fec3ebdfc29e8a595588ddfa5162fcab316",
+"text_sha256": "eb57279d604568ae6f6a2803d3c9994ff558e6555a7331b3197d3dd052341791"
+},
+"test/intermediate_algebra/446.json": {
+"n_tokens": 75,
+"ids_sha256": "c8e84ec121c1564a3adba54330e6f8be18860cc3c74c672c16deaead2ae7e301",
+"text_sha256": "2970c4eadd4a5e23ea59530b5c965607fcecebb19e3a2466ad21fe6a4a9c4573"
+},
+"test/algebra/2257.json": {
+"n_tokens": 76,
+"ids_sha256": "a016f68460ebf79edb75661c5d2b2d12b2955071ed6aed67fd447ce654bf0973",
+"text_sha256": "b9c29353801960c6b5efb71b0ceea3da6fbdced028c61afe6e651f8d54de6c32"
+},
+"test/intermediate_algebra/1544.json": {
+"n_tokens": 91,
+"ids_sha256": "15aacd805c8a0a08190c1514463accf91a464c6ea43280bf831986fdc42e0784",
+"text_sha256": "8679fda59372499a8d1ed8d9213da1f2449dbd764a921a367b781ca675aa464d"
+},
+"test/precalculus/695.json": {
+"n_tokens": 77,
+"ids_sha256": "953e7dbfd16d552739fa5e71fe6f6c5d14f7ed5a9b381e0e41cf45c62dc6566f",
+"text_sha256": "c4531d0562bc5f7da7f438391c649beea419fa692361d309dca81f8b6a22d226"
+},
+"test/geometry/711.json": {
+"n_tokens": 95,
+"ids_sha256": "506c438cda86a0c76569d82af123c9f3f55659c59f920121a505d600b1e3aa66",
+"text_sha256": "77ef070eff63bdb3a1d409d3bccacca61f60ab6611f775bdfe13434dfab74de8"
+},
+"test/number_theory/203.json": {
+"n_tokens": 65,
+"ids_sha256": "fdb3d0605da8b88399db70dc8c5c6a72e7f1e54b88c32ded1a3ac88f056cdf46",
+"text_sha256": "54af36a62b48e3359e7c920001b9a2bbe1fd906d3f786653e65fd881ef8da3d0"
+},
+"test/algebra/1842.json": {
+"n_tokens": 113,
+"ids_sha256": "c3aa26b3f017b4e1274f22ac50faa606eb9a70d24116f2f098bcc27ef81c8b66",
+"text_sha256": "51bad60e972226b0eabb702430a5d08f9856bdd76d4419826137c2bede4dd010"
+},
+"test/number_theory/911.json": {
+"n_tokens": 116,
+"ids_sha256": "060c9cac22caf0305f6d75f60ce184ee778522ea5daffc53c10e947a546832a2",
+"text_sha256": "867ebc8229ecdb289e61baa9836c8339f09d04dc962665aa4abc2a07242ef362"
+},
+"test/intermediate_algebra/1714.json": {
+"n_tokens": 67,
+"ids_sha256": "2372665eb24d1c71f290f49234fc8b1cc5a347217a4afc10bb880d6f0996231e",
+"text_sha256": "d2d916e75e5c5d3e88954d7238dc188286c8c706d3e2417775052b180873b070"
+},
+"test/prealgebra/1423.json": {
+"n_tokens": 84,
+"ids_sha256": "586276536b7e6cb4f9c1397a18f894c42ebe22aeb55a57b1dca6e2a6707bba30",
+"text_sha256": "650e7fcd4e3b56bf18dbd34959fb4c177ee4716325316db0fd19f5274a587c5d"
+},
+"test/geometry/1108.json": {
+"n_tokens": 103,
+"ids_sha256": "3d3f40908f6f9bdb2f7ac166a9107ec98b7fd25a203332bc469a4aa4c9dbfe66",
+"text_sha256": "670a2efcf6d46277a53272f1be2cc803d32248bf40e684a38d64ec7a465c03ad"
+},
+"test/algebra/791.json": {
+"n_tokens": 81,
+"ids_sha256": "4c96fabd00b11f1e376b78375f1d3e77228f6a278cf960ecf85a6ca9e4afe1e4",
+"text_sha256": "3a7d5fff0668ab5f4e414d9f8d1cd29731613e2c4475ee06f866aac347a37b9b"
+},
+"test/algebra/276.json": {
+"n_tokens": 87,
+"ids_sha256": "9dba251c155ae109debf95079367948928a30200092da064dced721f752931b6",
+"text_sha256": "c524aa74c09e94e1c62b112022980af46ebfa38310ee700594a9faa6a075a3cc"
+},
+"test/intermediate_algebra/2152.json": {
+"n_tokens": 134,
+"ids_sha256": "c617c8251339481c4880b66e46d0dfd4bb2b7b87ac1fd6f944b4ca42574d6246",
+"text_sha256": "d362ec8354de140853f9227f71a568af7cb9baa31e49b41a27da17a037498f7b"
+},
+"test/algebra/2735.json": {
+"n_tokens": 71,
+"ids_sha256": "fa97fcc6c2bb1b844b3425d4988993e53abd554e822e58e93b93147e9bef1cbe",
+"text_sha256": "3a8fac70c4140ea3e2eeec1b3a5fba6fe0910f3c0f52008f76bd6e5f4e1cc99f"
+},
+"test/algebra/425.json": {
+"n_tokens": 70,
+"ids_sha256": "fed3c51aae5c13649867e715d613d9affbd34a621aef474fe04ec194ad33d0b8",
+"text_sha256": "8236a8ba1b544c5a57eb8cec03ccb22f5300bec5e0623e24dcaa88a9867db0ea"
+},
+"test/geometry/947.json": {
+"n_tokens": 164,
+"ids_sha256": "2839b8cf16e3e55c82b1e9220ce5d85dc36185729a0f8739bfacf2c2cccb1c9f",
+"text_sha256": "93a1e118e8749da035339f7538c1b6ad16cc88a2903cbdc23615fd4ec38ada51"
+},
+"test/prealgebra/954.json": {
+"n_tokens": 95,
+"ids_sha256": "1298f781c4f081f7b7e3a681c4de2df0ec18f84448c722ca9d760a24ac391959",
+"text_sha256": "c37a5ae49fa32791ca0fc0aa6544b1bff34339649977768411d49925019e780e"
+},
+"test/algebra/1936.json": {
+"n_tokens": 80,
+"ids_sha256": "8f56d0615c30340632ce15bd582946e3e8ea9e83599135c9459ecedd34ca59cf",
+"text_sha256": "98f0fb8dd08f99058294e7d19d3e88fbb9e3c44bff93142c82c75b3279f06a72"
+},
+"test/counting_and_probability/870.json": {
+"n_tokens": 84,
+"ids_sha256": "8e1c0ecabf5a5599bb59753b45ef3acd9005516c1d1823fc69bf6e10c0441db8",
+"text_sha256": "38d0cf843f704b75b03e0b2d1d2ffe5bdda5b36ba4d5be0eb1cc664858956784"
+},
+"test/geometry/465.json": {
+"n_tokens": 315,
+"ids_sha256": "2aa8ae3bd68108b0e3d44c44deafc38bcd428fd6a64825b1457332079f294806",
+"text_sha256": "77fac16ef84cc23855fc7aedf00e0882488a5fd2c4686e95e765231e14c63d02"
+},
+"test/geometry/73.json": {
+"n_tokens": 80,
+"ids_sha256": "0620d339cf91e72673594721ef897b2aa207381392f75706e086e222195234c4",
+"text_sha256": "0d2eed951f79924084f36ea0935f4909bff5caa8c2a66e78ddd1c38137bdc688"
+},
+"test/precalculus/742.json": {
+"n_tokens": 87,
+"ids_sha256": "16f036f6eb4186c3013bdc6a5a85d8a94da14dbfd232de595fe5ef62fc610024",
+"text_sha256": "5a70896643320a8fa6ed8cb413c93d6db5da6b836c80aeab507c4bfe6ad0c70b"
+},
+"test/intermediate_algebra/117.json": {
+"n_tokens": 128,
+"ids_sha256": "47fa1257479e61674d83a8b5cd23324f2d6f85e4881b84926e2e2dafe1de0a8f",
+"text_sha256": "1ee9b1638fe21e8119fe5a138ef40d230036576a7fe5876e04dcb4283c42894f"
+},
+"test/algebra/2176.json": {
+"n_tokens": 114,
+"ids_sha256": "f5b1677d56d5db93810438c368410687d705aa1a3579bb1c4bce6aba50aec9d1",
+"text_sha256": "13d4957a3931f5ad6ab395c9aec35c06a274347f03407abeedb9f3d990cf9d10"
+},
+"test/prealgebra/1973.json": {
+"n_tokens": 65,
+"ids_sha256": "0ebc08a33ff73026a022f8c0775646bd8d767ac68c6814d4c8b45cd1427d1adb",
+"text_sha256": "36543429a1df362a6e2cb14683e3a03478fe4c441c0a73778bc548f0a1e306b7"
+},
+"test/counting_and_probability/216.json": {
+"n_tokens": 78,
+"ids_sha256": "07d2998e9b86e74f1c8c099e0f6c96b7d0f049469823d8ecbdd8c50dde59486b",
+"text_sha256": "db9b8cf089bf3273da41faa491abccb4c8d6f69843f404a0a8a2c69d4ab78ac2"
+},
+"test/algebra/509.json": {
+"n_tokens": 93,
+"ids_sha256": "de6592b18f20dec1cf8e091efa9f7b16a3a2faa6b3399b2281de2eb71553068b",
+"text_sha256": "b0d547c01597ff71efa008a063500fb1ffa305493acbebfa22bece6c92dca0de"
+},
+"test/intermediate_algebra/190.json": {
+"n_tokens": 88,
+"ids_sha256": "d409cae1028b01bcc28c371a4d8fc98da0bea9692a052f1ba9f1c352b502b40b",
+"text_sha256": "635abdf195ca7e8f8e09bac8a02ba92c411a4cae03aeeac31b06f563f39508b1"
+},
+"test/intermediate_algebra/776.json": {
+"n_tokens": 106,
+"ids_sha256": "78e958eabfe842e38494e67d8930955c8bdc1ab9b5f40580649d8f7089860634",
+"text_sha256": "c379c280a6ab787983469ad2ea970e39977fd2862bf79adc5f5d8bc183e84a90"
+},
+"test/algebra/1457.json": {
+"n_tokens": 73,
+"ids_sha256": "1180b8567c3083d292c674bc0d0abc8b28f3b2fd154206b4b89344cb4f098e4c",
+"text_sha256": "cafa325e4fa83dbccc91563e8728391a37a510b35d10a2875d7039eac94fb045"
+},
+"test/number_theory/483.json": {
+"n_tokens": 105,
+"ids_sha256": "7b8a9216fcce95741fda8e7b0e3d184ae7cb35453f3aea63c21dc3e7ba250eb0",
+"text_sha256": "25b1044bc3758b09551434b6b288fb637da7c95cf41af91d68ca2191a0be3e22"
+},
+"test/algebra/2592.json": {
+"n_tokens": 61,
+"ids_sha256": "87d6eb59e1c5d20be06d645c6b8d8ee7afbda68021dba7f0f5216740d60c101c",
+"text_sha256": "2721295c597a23eca3259f8bec25f136378e5bc139423de09b3350e31d57abd2"
+},
+"test/prealgebra/1730.json": {
+"n_tokens": 78,
+"ids_sha256": "ed0c834a37ff6caf3f16b22e16ac3b766989a409c42c1fa954b3672e16b3dd18",
+"text_sha256": "8b1075192398ecbdbb282d0b8d7552c8fe71ea6b329272e5ba1764b84753208e"
+},
+"test/number_theory/368.json": {
+"n_tokens": 57,
+"ids_sha256": "d28aafafd7f1ac31e02959fc0c942eac5b0d8c5dd7d4291c6a6d9fb3f2a9495b",
+"text_sha256": "6d3bd1f989869b5be81549efaf2a366071641d13dbab4bda87e0ee5856688325"
+},
+"test/intermediate_algebra/1566.json": {
+"n_tokens": 107,
+"ids_sha256": "9d0e23acdbf2ae70166e41cc1eeea2ce6b2e06834028b52884e79d2421557d27",
+"text_sha256": "168c9ef25d9bab2719945920f11fe1c40eda226559b038d16f9ec753dcbdc025"
+},
+"test/precalculus/801.json": {
+"n_tokens": 139,
+"ids_sha256": "517f14d2cd79f0d764a34ff85f22cc30564502a68bea4311b318207ea9d0c711",
+"text_sha256": "5b871a04245fdfaa8288156633a6b9c2ebd9ef98eeb443d0972a52ddb53694c0"
+},
+"test/algebra/858.json": {
+"n_tokens": 55,
+"ids_sha256": "2370f455df757a1dac541ff486cdea6e637b9aed541fc8691f5d998099c4827d",
+"text_sha256": "8f73c8237e290d89d2c070848c101ed4db9ed149a5a5624e3036d688c3880ce0"
+},
+"test/prealgebra/1238.json": {
+"n_tokens": 68,
+"ids_sha256": "91c926c36ca2adb2900d2f46cf7d2cf6f082455c68a1bbc8c9132a67f2250fc7",
+"text_sha256": "8b3cc2eb4febe1dcce7ad045475641c26b465c03a860e26ec0d43e00a9584096"
+},
+"test/counting_and_probability/737.json": {
+"n_tokens": 76,
+"ids_sha256": "44a0df04cc9211915db4cf88e47650ed9f58ab2f29c595b4a3634291b72812b6",
+"text_sha256": "2e04d1cb124ef914e2caa896a1cda33e4508940599d23adf8049727fc773f7fd"
+},
+"test/intermediate_algebra/1572.json": {
+"n_tokens": 107,
+"ids_sha256": "affd21694752c93c8c3a7cc8d055c8382e53c110517366742f7acab0052bc6a1",
+"text_sha256": "af2a4a1abb30529aa1a51f975f0743077f50418029610e34973518245a0f640e"
+},
+"test/algebra/1529.json": {
+"n_tokens": 75,
+"ids_sha256": "d13dc2cbb336acff31fb82a8d6afe1082018867396ca4b49035719beb5cd92b2",
+"text_sha256": "e0303a5f684eb4461573ca11b8a335183986497da417ca477f75deced74d2252"
+},
+"test/algebra/1338.json": {
+"n_tokens": 74,
+"ids_sha256": "6d9f1b3c3c4ed0ea63b82d55881794d755a9d72a97fee88f5e70fdb646c4d326",
+"text_sha256": "19a6b6c378d67cc8f0695170dcc1781741813bbd7f00f72a3e4d52bb20a9f95f"
+},
+"test/algebra/1547.json": {
+"n_tokens": 100,
+"ids_sha256": "3c7ea519892b3aca948e5dd2dc0ccbc0c04ee9eca1fc5fe166963c42f8a0db83",
+"text_sha256": "b83d61b77eecd512a122a3c5251610169387969da79f3018926b663a0fc3e5aa"
+},
+"test/counting_and_probability/116.json": {
+"n_tokens": 54,
+"ids_sha256": "4a2f11a169ec039ab18eac170d1ebc392e8781903b86b46698408a5e20322f42",
+"text_sha256": "ed67bd8508565f9a344399f0fc646246d68ff0ca37a94673130f4ebff77fc551"
+},
+"test/counting_and_probability/238.json": {
+"n_tokens": 78,
+"ids_sha256": "5b59f4db6c75e0a9c18a63a4848a4b630db8cad7b7268490b6dc62b3f09bf3c7",
+"text_sha256": "90fb0e8a255a62984006676d8649b121de4b61c52d5a65f0de749ff77bad8836"
+},
+"test/number_theory/686.json": {
+"n_tokens": 52,
+"ids_sha256": "468088c5eaeaf992c0794be208c2034acc20a079f8d35a781897d2ebe7f795aa",
+"text_sha256": "85c65227ab8f2957ad7ae90c48e1d20b2b32d028259d0f09a23e915460571b3f"
+},
+"test/precalculus/826.json": {
+"n_tokens": 118,
+"ids_sha256": "c4c0397bf76e9acf55a6707ccc319fad2ab4434fb5bbdbe03ad489200d82ca7a",
+"text_sha256": "31c03278271c7ad2333bfd6024305e195ef7e10eec49b0f092a870512e74090c"
+},
+"test/precalculus/1281.json": {
+"n_tokens": 240,
+"ids_sha256": "aecfcd77394044fbd81f3d20037d680f3e91538cad76745419c003f7559ecce0",
+"text_sha256": "7f68f66c372247ff2ee6ac02afe46155cf9f0e65802fe120a15cbb93d68edc10"
+},
+"test/counting_and_probability/1014.json": {
+"n_tokens": 91,
+"ids_sha256": "cab56560cfbbbbc4c379dda8d8038801b255a28a93c58f04af156ab8695a89d9",
+"text_sha256": "bcc5de8a1b6b4e005d744203d844fa75731f52085432b8d8f4763a8425f7533e"
+},
+"test/algebra/529.json": {
+"n_tokens": 61,
+"ids_sha256": "b66226db77cfafaacab0ce169363722f87a15695e205f3411e08d8338e2ff96c",
+"text_sha256": "1cb495f54d629d881e34cc84d724f326471ecc8ce22d9369ad38224011fde6a0"
+},
+"test/intermediate_algebra/1166.json": {
+"n_tokens": 97,
+"ids_sha256": "4df8980708a5fe465496ec24ee0688e97d2044f9343698cca0974c6371a394de",
+"text_sha256": "b781f8d4696d8bd7dd1062f78a549d6a13ddba776826d044de45310a50552769"
+},
+"test/algebra/1078.json": {
+"n_tokens": 75,
+"ids_sha256": "86c6946fab064808cbf7b3b6d42b1f199d8979542fb3b2db1fb723abe4dbb1b3",
+"text_sha256": "33cc92c145776cdee443fe5bdaab80f1378a275c7974666d41817feb4bb19ed4"
+},
+"test/prealgebra/1353.json": {
+"n_tokens": 106,
+"ids_sha256": "8aa181f54b8ba13e1bbf2bc4c7d93200f6c006ed5292d7dd47061a69378f6c01",
+"text_sha256": "a33d69173fc3d592e54a0e5c51260ecfcb642734f32d7dab5755e828aa738a3c"
+},
+"test/intermediate_algebra/860.json": {
+"n_tokens": 96,
+"ids_sha256": "d9ed6db0df7b7a53e58899515972b73bdedfc6d7e6af7d2f187330ecbec36a6f",
+"text_sha256": "769d27f91d92b031c07ade52c4d736b8366b510478dafc838ae0a82b009d95b2"
+},
+"test/intermediate_algebra/1407.json": {
+"n_tokens": 137,
+"ids_sha256": "5fe23e081690920b3afea16e43e1ecfadd3fe3b143486c5fa458e8fdb210c95a",
+"text_sha256": "3d447e00b5bc9921950c69c5b54b43e2b17ef3d96fb7fcfb8589ebabda3bb7cc"
+},
+"test/precalculus/96.json": {
+"n_tokens": 268,
+"ids_sha256": "9a666fa788f9e743b5ed099efdcb3b89ea14d80b3a77d1fdd4bdff0075332f74",
+"text_sha256": "a0316f465ddc705769b508ef866a907b5a259c78f26791bb262145d222e5895f"
+},
+"test/intermediate_algebra/1405.json": {
+"n_tokens": 93,
+"ids_sha256": "7acd493724207d972ba554cffda28105b68054b460a69c7b91d2e64a3f79930d",
+"text_sha256": "d93777899bb3afeb7e7b242af3f51522c1d28f6677f3f02462a1238d504046ab"
+},
+"test/counting_and_probability/14.json": {
+"n_tokens": 99,
+"ids_sha256": "b10c577e4ec196dc868f9fb11ce459f2b3b8a5f7f018cd7fb11c611b6aaa43b0",
+"text_sha256": "cddce7d627869ac3538a3058c76bae627905bc8797c02e46e08596f651679755"
+},
+"test/algebra/251.json": {
+"n_tokens": 62,
+"ids_sha256": "793257818298373629ca6f24609a02a8fba8a106dd7604c2f2f0f12b43ee8c9b",
+"text_sha256": "5261caf930265d5e6aada6241e44dfed94c30515a02b4ba9378348ddbf07e6f9"
+},
+"test/intermediate_algebra/690.json": {
+"n_tokens": 113,
+"ids_sha256": "5dbb63767220e7f455f01e0a20a194f615273c7fdbdd6a26cd5de721cdb174ec",
+"text_sha256": "408437f12c6c5147f1a9fadeedfcf9d4ccbe72525321977506df2177572ed3b6"
+},
+"test/number_theory/820.json": {
+"n_tokens": 97,
+"ids_sha256": "441d75768cc5792cf93ac8654ce90ddb61eecf800d537e629f74bc396913cc01",
+"text_sha256": "a824a95c81b6c1064583385d11416495351ba15db11318874a6e0cdf3e6cc515"
+},
+"test/number_theory/109.json": {
+"n_tokens": 76,
+"ids_sha256": "bcd0a0eb139f804652c57a94c0dc5c35954366cf9c10aa86026411a10c5bc367",
+"text_sha256": "2d0343c58b4456ba4984698cabd5bd4b4d1c4edaad60480e178a95b985aabdcd"
+},
+"test/algebra/1199.json": {
+"n_tokens": 105,
+"ids_sha256": "947dc679cc2b7295985770ec8d0452a1cd6d33cc723111bcd54e29ec160dbae6",
+"text_sha256": "a1ca9acebe4e576dd4eb54a185f86672b3b6b3d9339a9e11ce4bbdff17bfdc12"
+},
+"test/geometry/106.json": {
+"n_tokens": 78,
+"ids_sha256": "ff1484debcbb1d956c4d6244d4171db8eb96ae20560237ce29d9a869687c7b38",
+"text_sha256": "ea6cb2d038e35e37196c246fa8cb80e15198838bc02fc344a868bfbd66283b38"
+},
+"test/prealgebra/1187.json": {
+"n_tokens": 198,
+"ids_sha256": "d63fa41dfc8204fd2f0cb9c9333d25530321cd3f8b91120c253aeb19c59a5b89",
+"text_sha256": "d70df5a0bfd3e2f39b594d6f6d8f85bd35c25bdcb711eed0134944001b1afb08"
+},
+"test/precalculus/1289.json": {
+"n_tokens": 88,
+"ids_sha256": "b977115e2fa41d08aa52cd60f9695fb037d56305c9fd75a5c69249fde364ef24",
+"text_sha256": "8afa6a777d783425e5c95b878e438b4754d104009e09b47c4b64287aa9fbbd75"
+},
+"test/intermediate_algebra/955.json": {
+"n_tokens": 105,
+"ids_sha256": "15b62def65cf1a42da3eb4fab0798a3de4b96a4320915a841780ab3e321ae5de",
+"text_sha256": "2296608f7be1fcac756d5b41f7f08f8008a83ffe4b968ae1f4d3a50def6248bc"
+},
+"test/geometry/846.json": {
+"n_tokens": 287,
+"ids_sha256": "29b6bceac81fdbf9e4aa7fd493f606e96af51f8352649c5feabbb6567bb1f8e9",
+"text_sha256": "535f4891fabf5e7099f7e66c13397376a9d289b70e0e3b07a75b4ba9eee01085"
+},
+"test/algebra/2264.json": {
+"n_tokens": 110,
+"ids_sha256": "2c1108b12fb7f6386c182b0e55127de46fb8753a7bac303160d8db05427bff5f",
+"text_sha256": "20b881e776896ed9d3b347c90f71c36b7d5e72471b8b53a585fed7939e56302a"
+},
+"test/algebra/1303.json": {
+"n_tokens": 63,
+"ids_sha256": "c85e79f675793b478ade4a8270299c6a82005ffcda6eaf1823c2c3f499a185e6",
+"text_sha256": "4c1665a40a7653f5c3ae58252f793890504f72d5f39536b6fc58ab4def4d7413"
+},
+"test/number_theory/427.json": {
+"n_tokens": 74,
+"ids_sha256": "8d7cdc4a2dd660cf0bcaf25b1472c21f7edbb2765540c79e1c8ceb4d40a3c797",
+"text_sha256": "0c80a4dc4a954c514391227160c8536a50a42d9d27b7d8853ca18a9cda632da1"
+},
+"test/geometry/538.json": {
+"n_tokens": 115,
+"ids_sha256": "de0bf4487b23589e5221452d4be552e038879a5599a0fbe941b565c0fda18d5b",
+"text_sha256": "61ac75fc5a5dcaf08abce62b57dc9d85a2a51400d1ee7c5e677dccc3ee7bf768"
+},
+"test/number_theory/1185.json": {
+"n_tokens": 104,
+"ids_sha256": "415a233ed437a76dad8cd8a8fad76db22a08d022d16865d3a3c01a6969111d68",
+"text_sha256": "83c03875bd98733b1f120b960270c1fbbe39664ea3f76a13c3087110a8b788a1"
+},
+"test/prealgebra/1743.json": {
+"n_tokens": 58,
+"ids_sha256": "5060362bf57346c32616f42b601726830591ad0bf8ca231c4871f0dac7badd3a",
+"text_sha256": "a416dee8f281429b290cc01daefe3f70eadb1d382818d8e066fc06524eb786c2"
+},
+"test/prealgebra/1865.json": {
+"n_tokens": 278,
+"ids_sha256": "4fce2394af96267a16987ce95e6156c8bf4c65b6d653d57bc1b1fd6c029b8170",
+"text_sha256": "f0cd63fd3b21ebb88399ec5fec0abf018884bb2bae37f8f95b359554a3e24e06"
+},
+"test/intermediate_algebra/1992.json": {
+"n_tokens": 71,
+"ids_sha256": "a4eadb20ccafd0f771fd17a8af7280e5799ffa9f27f30b7fed562494b0f9346d",
+"text_sha256": "569cf24b0c7844076e1afbaeffda967d518d6814612feb20b39aa37245d62b1b"
+},
+"test/counting_and_probability/188.json": {
+"n_tokens": 88,
+"ids_sha256": "4b77b2d6527638c4a9c23b2ed5b21478e309917aa22badd149c5e13a8d422259",
+"text_sha256": "c8982e656f65e7841ed8d7cb280e440c02bfd65ebfd9c0e95c43c2bd4c80631f"
+},
+"test/intermediate_algebra/1111.json": {
+"n_tokens": 216,
+"ids_sha256": "84ffe18725318b658e3f56bd6879bda43aa5a40a177b5ba7899afd1ccc00ef72",
+"text_sha256": "786dadbcf39aa32b281352521d69f05c9016dca0cf15e23f94f0d283c0d38a26"
+},
+"test/algebra/101.json": {
+"n_tokens": 77,
+"ids_sha256": "d7329594a6cf72f75a3d678257e5d4b61a8f9ee78f11bcc6fdf7f47b11983143",
+"text_sha256": "6da3e6f63471c964d3e474141d0c85a4491850011b395ba0dc5851673c0008f2"
+},
+"test/prealgebra/1298.json": {
+"n_tokens": 66,
+"ids_sha256": "4b8e5bf94ed956e0420c4fe4043f9fae95fead98c8abe44aa723c299013e5ae3",
+"text_sha256": "d760830e0c198123c5dbf9ec4d1ba2fa1ddd26bb712c5e52cbf3b02b6ee8c51f"
+},
+"test/prealgebra/2066.json": {
+"n_tokens": 121,
+"ids_sha256": "50288a103fa08976d72f80eabe26e046ef579e61a2d29cfa13028b176d3542cf",
+"text_sha256": "36fcc5e87313f37e0619f3c6cb77ad4662b859d2880e084b540b61cd9a3ab618"
+},
+"test/algebra/170.json": {
+"n_tokens": 63,
+"ids_sha256": "517b9d0366154d509f1e55c7abd453abba4731642a7df0da82c8053420638eac",
+"text_sha256": "cd34c1756bd401a167d98a7d18e0c02ebedb9ea2fa903b7455995b5ba784baab"
+},
+"test/algebra/849.json": {
+"n_tokens": 67,
+"ids_sha256": "d245f2778877be0b46153b796941708c154829f60b96bfad422e7d21cc2b6933",
+"text_sha256": "8290174655814af090171df4d09108fafdb9db88481ebf0a4c824fe8e55c4f5c"
+},
+"test/algebra/1031.json": {
+"n_tokens": 79,
+"ids_sha256": "7ba40ceb16fb98583c3c3738b4bd44147c3b7cae69d8aa9758b729d8f910c836",
+"text_sha256": "1c12ca96ab0db2150a312a78e108d38c377e7d96e69685d0e05fe9f599c74f95"
+},
+"test/geometry/795.json": {
+"n_tokens": 165,
+"ids_sha256": "db63d2432d74dd1ab63bb148fa6000509446551d7e209b16482b359136cc7e90",
+"text_sha256": "ee63d1dc430151a2f443db09164e94af44f258137ea7718ea63d6aa00f11c3f2"
+},
+"test/algebra/853.json": {
+"n_tokens": 122,
+"ids_sha256": "f4d1255db6e62cee33cbbc1d2d73f543401a5a68acaa74021b9066d9e70ee35a",
+"text_sha256": "498d1d1e4d114befe157dd2f933efff9eb3f8ff76b0518a76a4dd1daf3277f2d"
+},
+"test/algebra/2277.json": {
+"n_tokens": 127,
+"ids_sha256": "b60a071737eb8c1848981be7a11a186c2cc6b145644dae6050a58f5d624674d6",
+"text_sha256": "597f61d2b03f2cdaa5ca04c31b559c01579e879ac57a54b2f32ef6144eb8e1db"
+},
+"test/precalculus/902.json": {
+"n_tokens": 319,
+"ids_sha256": "142954bdf594ab37312a5f4aeea883f38bf321fd47567507ad828e7e0117683a",
+"text_sha256": "fc89a48123f645bb45a7433133c3326654f9d3acb0242275606e76457ecabf31"
+},
+"test/algebra/518.json": {
+"n_tokens": 123,
+"ids_sha256": "eed47958d1150175f8a02f2c78f5aca74b7ff4628bf8f977d5c5adf53c6ca457",
+"text_sha256": "83f42f818f6a72c6bd3ab7a8c46428ea8c56bb96edf8d2ff473a6bfb5d5ab63f"
+},
+"test/intermediate_algebra/1791.json": {
+"n_tokens": 155,
+"ids_sha256": "5f5ee8b7e8f0848f12b9ea65f7341a9e352f129076c46dca11aea65dd0b0ca19",
+"text_sha256": "ddd49ea8faadec287f4a898d3d915501488f607f39f26457aa55f794ffbf6ea7"
+},
+"test/algebra/114.json": {
+"n_tokens": 76,
+"ids_sha256": "da0f01b6b5fa94f0b3301375f4d1e2e12d5e433dad641c4570ea247f74a0b4f5",
+"text_sha256": "0968422aab33b5fb058f2d7b6a1ba5d734da332aec638e7ae799d36e8f78d0f5"
+},
+"test/prealgebra/631.json": {
+"n_tokens": 263,
+"ids_sha256": "72a5fa962d55b33bb55b0619fa3deee5316894200f9b429a20dc723ec5e08e35",
+"text_sha256": "3cc9cc0744d754e5783bdb88eb3e1b31aa1b37621132358d256419044df37dc3"
+},
+"test/prealgebra/977.json": {
+"n_tokens": 71,
+"ids_sha256": "5029f2763907f239861afb29a4225304bffe6df127f6c8187198bb6d84089baf",
+"text_sha256": "dda9a849a4aefbda276afd6bd98abc9a5c5a964b0aa9de9aef76ce0ed823164f"
+},
+"test/prealgebra/1991.json": {
+"n_tokens": 159,
+"ids_sha256": "317dca7c46fa59e022ff4cbfe2fbfea9ab63497c79933d62b339446785f0dcb1",
+"text_sha256": "592d4bcdd2d00f044b63b7b3a6ee9ba4d2be764cca4494f9dde00b810cdc29f0"
+},
+"test/prealgebra/1784.json": {
+"n_tokens": 62,
+"ids_sha256": "d3e87924af57fd578eee54b4b16b23f86955c93bf68316e94057fd97ef5021f3",
+"text_sha256": "0ec7e0f5ef6eb016a349dd4f0244e6f6dee152b6bfce929facea433cd1ab2ae3"
+},
+"test/geometry/817.json": {
+"n_tokens": 112,
+"ids_sha256": "029fb8da79d9b2ffd46fd9b2f83cc6527d84c7c6cc04f9e34c1f7888809f389d",
+"text_sha256": "02f9441b8849593d1e5c66e4b052cccba3dd348c7158b58b8a527dba9776c345"
+},
+"test/intermediate_algebra/1806.json": {
+"n_tokens": 84,
+"ids_sha256": "deef98d354fd41c68272ca9d7396d8e32522cbbf636ff0a75d6c0ae9963cefc8",
+"text_sha256": "aa5a1ba56b1de41bda027a79c701e4e01858f54e4a2f8e52f72ff89a37b317d4"
+},
+"test/precalculus/1291.json": {
+"n_tokens": 82,
+"ids_sha256": "ccdb3dcd7ac5f757c4a36d7d6819a74a8c4d692cec96ac7a4e1b066a0cd2f0b9",
+"text_sha256": "fbcdc94215d492baad35855146698aa17baa1a66c8423172f02545161459ca20"
+},
+"test/number_theory/928.json": {
+"n_tokens": 94,
+"ids_sha256": "8ca7eed9ee27afd446eea3061b6bd03ae7c871860d1ca828057246022264735d",
+"text_sha256": "2a56b551d91b15737c12bb567958b8d77541b016aa3dc45e71cac4834190f558"
+},
+"test/counting_and_probability/761.json": {
+"n_tokens": 81,
+"ids_sha256": "bda74b77abbd0c666725caca0ac61f1bea416a541eb2f6477051cdcae6ed298e",
+"text_sha256": "7d82efd0c67c5e2458bdb8f6058235678f4fbc30f5e687e26ffaeb8ad24dc2a6"
+},
+"test/prealgebra/1572.json": {
+"n_tokens": 72,
+"ids_sha256": "64a00ce9b7720a7121321fc3f9b1dfde901447cd745f847eefb4d37f7a8acee8",
+"text_sha256": "c1096ff6e7d0d2aa456d4c28873da713df8870b23efff9bd662dcb93d50a465a"
+},
+"test/number_theory/132.json": {
+"n_tokens": 57,
+"ids_sha256": "767b9ca29b8e3477af6cc36e9cdf4035589e85a544473473cc3b44d64941c10f",
+"text_sha256": "98eab473606ca181790e8919c47922429470f65ebccfe8691626dca57176bbc4"
+},
+"test/algebra/1960.json": {
+"n_tokens": 79,
+"ids_sha256": "bc18732e7bc958e4f70ce295071cbdce206e7e8bdf7d80b500afdb4578fe2c84",
+"text_sha256": "7744eed08e8bf82607d7ca06001c320e201299ea99fa58d4cf3d806daf489bc8"
+},
+"test/precalculus/398.json": {
+"n_tokens": 106,
+"ids_sha256": "4c3d7bae085af92eb0b005d633ded73d4031af803da9d6edbe08af6a05ff178a",
+"text_sha256": "7b8501e47655856379f5a25a32b8298843deae8883cbefce67e9964e15e71e82"
+},
+"test/intermediate_algebra/1797.json": {
+"n_tokens": 103,
+"ids_sha256": "e3092686488a40cc293b15aa42c6e90e471722a6789c8e2bcbf250419cad6b79",
+"text_sha256": "81d8400fed9db497703e06aefb8cc87eaa3c119e414a2089429db50aa4c691a2"
+},
+"test/prealgebra/65.json": {
+"n_tokens": 76,
+"ids_sha256": "2855360b4952f358fdc93cc83172f1637a9df388a4754070f3b236df8d33975b",
+"text_sha256": "ed4863efd052fd8f2f33b9710d8865ceef93f742c564255fdfb9f2b6e4185593"
+},
+"test/prealgebra/1227.json": {
+"n_tokens": 122,
+"ids_sha256": "c8d1bd18def2bee162f5f07d4b052b42103644d60b0eab16245e1e59660cd6c6",
+"text_sha256": "a1ccdb9274a41d6e65488ad0879a72f93ef6741d2e774925f9e47dcb8ac57e9b"
+},
+"test/intermediate_algebra/2146.json": {
+"n_tokens": 115,
+"ids_sha256": "852996a4aa03a3622ad79244e077ff945c8d49f52e7c353ac2c2c33c3165e13d",
+"text_sha256": "f27d37287835eb50a0e250bd3dfe1e66048de7abd79406dc7444c8cd2044902f"
+},
+"test/algebra/2680.json": {
+"n_tokens": 64,
+"ids_sha256": "9bb739fd415f3d0a3f7edeed5c13944c630a7334ff358f1c8662cb8c4c12561a",
+"text_sha256": "ceb4af3131d07c12429fde8f4928378f666e15a7352764feeb458df0dc21173c"
+},
+"test/algebra/2391.json": {
+"n_tokens": 79,
+"ids_sha256": "7389a61f6dc4dddf5f769eaea6f60758fcd2e11d6324306df9092739ddc0ecbd",
+"text_sha256": "699d6960d48dc7eef91a37f09443e48e089625137358e186a87a253192d5bccd"
+},
+"test/number_theory/769.json": {
+"n_tokens": 69,
+"ids_sha256": "7d0b8de02489799403dfe35286c31af7498b0db3703f5acc2efc7f50c87eff93",
+"text_sha256": "f02de58fe91e2d60e377f621a2c752776dbb40e2f63d9ec1089e54d1ef609bd6"
+},
+"test/precalculus/681.json": {
+"n_tokens": 62,
+"ids_sha256": "fad1b4e52d4f1927c69af150c70418962cc7b76374056f46faea0aaff563b67f",
+"text_sha256": "8a8a02b167551a1df6cf246f6d217e70539c95322e101fc498d066db653ba6fe"
+},
+"test/algebra/776.json": {
+"n_tokens": 99,
+"ids_sha256": "2683919eb6ee5c4f119a46eb5b189bd4743cb40c51b381242d2728c7272b8c13",
+"text_sha256": "b02afe7ce3a1e23477a8bfcd4669d9c87f6693d373e11a81fc1a041db70c8157"
+},
+"test/algebra/1796.json": {
+"n_tokens": 76,
+"ids_sha256": "1e01c0b6cd747e33f2016ec19010e09a6229670fea5a56a040ef29156095a6d5",
+"text_sha256": "2c25a37c055d52ad1ebf6c90bb07d31743628ae812ff5f767258dd9174de5645"
+},
+"test/precalculus/145.json": {
+"n_tokens": 127,
+"ids_sha256": "2a56df69744bc7fb8c63ad880677b1611a847501e1225f13c196886e0c18f361",
+"text_sha256": "b78fbcf0060361bf32ae13a87580779b06fe570314f257c85cc947ccdbceedff"
+},
+"test/precalculus/625.json": {
+"n_tokens": 98,
+"ids_sha256": "70b3035ad894165e9468d2c068797c6f8f572d5a68de904d81b4bb9e3933d892",
+"text_sha256": "944429f49416ca5fc5bd9b6ee68b1ad254b35460047cb0515050696d503adf2c"
+},
+"test/precalculus/1202.json": {
+"n_tokens": 146,
+"ids_sha256": "0038ead766d923c138d04560301fce9d6da9b7f20d825137eeddec7602b70514",
+"text_sha256": "427b13bb8be87c5523977ad08bc7bb123ff41ac89c9719f292c7fa61f425a6fd"
+},
+"test/intermediate_algebra/2015.json": {
+"n_tokens": 151,
+"ids_sha256": "db1cbe7bf401fd451bad52e6dab8f97c3dbcd51f9622dc03769e18108af81d5b",
+"text_sha256": "3c0f9afb70261dac91e4ff19b8255aae48a44df127ee57bb3199d2776a47bccc"
+},
+"test/number_theory/1002.json": {
+"n_tokens": 98,
+"ids_sha256": "f00b7976561322ed5720ccd348cb4abc99496df9eabac62e712814174d51a7fe",
+"text_sha256": "6655ba2778e3f55b69359e699c432207a6d37ff0284b5e4324df00a6ddfe2da5"
+},
+"test/algebra/1339.json": {
+"n_tokens": 81,
+"ids_sha256": "ce68951a4669c324fed28e4d7d1b9ea031dc6f0a721eebbfb4c38e4d4077ced5",
+"text_sha256": "4f1fee7fe3735847c8876bb1aa6f2cad165414d1869a2e7f637ae09fda256343"
+},
+"test/precalculus/1133.json": {
+"n_tokens": 120,
+"ids_sha256": "c5548b086039261ef0e72ce9107558257579446676ab031aa1126896709cd295",
+"text_sha256": "a0c478cd8f1214f9c9d54ee3de81c5b86d9d794877f850375a4453020e6deff7"
+},
+"test/geometry/843.json": {
+"n_tokens": 183,
+"ids_sha256": "32d9b70cec27ba0320526c589e3ec4c62024cbd56484457c575b32ba52cc932a",
+"text_sha256": "4d0d323e48f72ac2cecae63ce0124c65f6856c4171f0eded2c470e862935c51b"
+},
+"test/algebra/2743.json": {
+"n_tokens": 89,
+"ids_sha256": "3565353472597ac6afb3883a90dc09ebcd7eb6a965666c7e7c7b929a273b4112",
+"text_sha256": "814077a350b473d935ceb85b1a5f5b931b06b7d3128b9df5307fbdd83b989353"
+},
+"test/intermediate_algebra/121.json": {
+"n_tokens": 114,
+"ids_sha256": "24a87a8de7352b2c95a2af97d91aa764037677648334b4e2ee5aa49a18468602",
+"text_sha256": "d013fa903132262981fdb7c6f3bc9127dccd56f1286c4427a7aae81c141fef25"
+},
+"test/intermediate_algebra/1014.json": {
+"n_tokens": 78,
+"ids_sha256": "64688c184d764beea6dbc968169c5ef186b68c68ae99cdeba7498db62093959d",
+"text_sha256": "93c4e1ce519a9031268bb7bb0f5bda359dc61ad2d2aaf10e1cfaa9bd7a1c8a19"
+},
+"test/prealgebra/2019.json": {
+"n_tokens": 55,
+"ids_sha256": "f3176379cf29bbdf5f215105e13aaf16768132547b14e165268fb9c41725e52e",
+"text_sha256": "14d2e4a4334837274c045e5bf53f3ec395947ee0f7d1d806e0042197f1e32fd5"
+},
+"test/precalculus/499.json": {
+"n_tokens": 81,
+"ids_sha256": "7858cecdc85ff26752216f34d9652f8ab31f1b0c9560d346849540a26a84fa7b",
+"text_sha256": "35c75ab3e5713af70bfd7a8665a8039f2233b68bf548a69b0b35fc5fcf0ad079"
+},
+"test/intermediate_algebra/1462.json": {
+"n_tokens": 119,
+"ids_sha256": "3983a4272601049daf6f81c11f5dd591f7898e09601c78964070c07fff63ae6c",
+"text_sha256": "2c11b5ee4e964b42baadbed013c8f15ae9c3bc6eee88210e944368133684c267"
+},
+"test/number_theory/410.json": {
+"n_tokens": 57,
+"ids_sha256": "92dd1b144d01098a3814bf38616892fbad22dc558769278a4d34894ba5214e31",
+"text_sha256": "af9136190a89cbd1928b48d03c764ffac06a9f6786775afe1aa2129b9103dfb7"
+},
+"test/prealgebra/1640.json": {
+"n_tokens": 77,
+"ids_sha256": "b32fd9e89190f65102a69eae31c9e3d4789410f78998d48a4f62b1932b3fa790",
+"text_sha256": "a83b1db6e324129f0fbac56781e567d4b4c610a7bbab9eaa815f9e76cb3823f6"
+},
+"test/algebra/2043.json": {
+"n_tokens": 76,
+"ids_sha256": "88fb185d30e016c2780a23d9875a10f6818b680a7d068e95316a9ceba13954b6",
+"text_sha256": "da940a3a86e88675d2450d80f00b050faaa8682926cb03d1224aef725731f776"
+},
+"test/counting_and_probability/10.json": {
+"n_tokens": 82,
+"ids_sha256": "569cf5c7b5a6a4d7ae7a4c8983fcfd60638a24be59622df130343a1331456043",
+"text_sha256": "789ffed5c02bfba1008da6490ad53cdd71c15bf071445c2f7dcace374a6edb9d"
+},
+"test/algebra/1553.json": {
+"n_tokens": 138,
+"ids_sha256": "f62a1179962134553a8fdb293e98170011223a87e7c992175aa6eac14b0ad9e6",
+"text_sha256": "273c3d77930f40756ae035651ffad09fa78c822970275d51fc5c7690f913feee"
+},
+"test/number_theory/255.json": {
+"n_tokens": 71,
+"ids_sha256": "1edfd3a1b436080c949a73d22c305cfb8e2eb1e43fc8034abcee6f442bd2c9bb",
+"text_sha256": "92069615de25846d5627cb5bc0154ab57c286f2c6b2a922fa44c2453f0b61e76"
+},
+"test/intermediate_algebra/199.json": {
+"n_tokens": 62,
+"ids_sha256": "752dd44733ddc79b595f40350aab155efefa9ae707acac83c5defd6f3ebb7ca9",
+"text_sha256": "356c88bc1df54d8b0d80302ae7461779d5736e61e4d719b97cac18b9d3acfd08"
+},
+"test/algebra/2080.json": {
+"n_tokens": 63,
+"ids_sha256": "b2e0ba26062c9f58ab9d0380e86ffe11136cf554f9bd82fe0bb8f08f9fef22ef",
+"text_sha256": "be6335156e1d7527c0ebbf6cd088c1188b5c1510e4a610a65c126a4c570dd90c"
+},
+"test/prealgebra/2037.json": {
+"n_tokens": 95,
+"ids_sha256": "17b69cb9784cf7b6a3d9371dc5429394f9210bc295385a2cc227b93e4e1e42b5",
+"text_sha256": "d0cedad673a2f43c763efdf8b2b2d64b1758bcb895a7570113069ec45e2103a2"
+},
+"test/algebra/1343.json": {
+"n_tokens": 65,
+"ids_sha256": "d1c042355f5b82d1d2b81209e2a7b444cf3cdcca1e4c8ee3051dd03e066cb083",
+"text_sha256": "e40ca9f420b235e33a3226527460085b4ac7760c020102afdad4a60ddb37976c"
+},
+"test/algebra/668.json": {
+"n_tokens": 67,
+"ids_sha256": "143644c447e162f4d2ddab7b1421683ecbb553e07b6d767ba6915fd2f155b93f",
+"text_sha256": "1db6242da5bcca81fd526af14d8de8694864914630f1358d39fec734527c41ea"
+},
+"test/counting_and_probability/731.json": {
+"n_tokens": 221,
+"ids_sha256": "eb3cf6f573bf467925b90cd03bc83abae76ed1f3b163c80694f91c6a40cb2a44",
+"text_sha256": "bc4d108f9eaadee78b644815940a83c79cda6d9a4c44e2bac033098e6c77b35a"
+},
+"test/intermediate_algebra/1779.json": {
+"n_tokens": 275,
+"ids_sha256": "5d9e557859d38776e7eccb824c4f68683c41e9d885d0ada3f1e52a0fb5b6f17a",
+"text_sha256": "0fdf6f7c836ab2e91a45f71bc6d69a071839a1c600f5a9536e6b2bb93ae9cb3e"
+},
+"test/algebra/2430.json": {
+"n_tokens": 103,
+"ids_sha256": "fc30ce8377068cf0877bc83b78e181ffc456fef887779e74c3229eb90917453d",
+"text_sha256": "fd2ba3b2189463cffa1ea3e3f73c6b52577116dace358bd98dafa683417cc984"
+},
+"test/prealgebra/996.json": {
+"n_tokens": 84,
+"ids_sha256": "1b42395e4f2f8154ab43643a2541477e04850e7d614a42cd399c9063ffef6b7c",
+"text_sha256": "88775218770459def421dac91d636fb8e242887276792a7e784f822202cda1a4"
+},
+"test/number_theory/1000.json": {
+"n_tokens": 95,
+"ids_sha256": "9c350a4a2f3020113997cc4e67aed5911c58ddab9eee54cde5a3a16b75f2c5dd",
+"text_sha256": "73493c892e5fba05730ccf896712e0098dc30daf362719de9d7bdbd00839ecc4"
+},
+"test/algebra/2789.json": {
+"n_tokens": 70,
+"ids_sha256": "baff86ed28641db5b25c373eda3fb0518bf11a29debb64b5bd33733a392a7e9b",
+"text_sha256": "a0a56df3f991cc73795d5718174291263a2ec0ca8e9deb33439921ba79e7a090"
+},
+"test/number_theory/13.json": {
+"n_tokens": 77,
+"ids_sha256": "6f067ceb17b67cfefbdb739f43c55d7b31d685a262e477b17effde20a57a5dd5",
+"text_sha256": "45744b7de2119a40516a42ee5f6c1ccbfd3f645a51afbccafa4ddcd1066e949f"
+},
+"test/number_theory/459.json": {
+"n_tokens": 110,
+"ids_sha256": "5746c647b6e4a8c4b71bbe030db1b6b2a3cef0ee1e0ea6cefbb1029e83e191bb",
+"text_sha256": "b9c03d3d7fd4379feff8d84374d8abae0c62db23a9c787a94c4909bc91474ae1"
+},
+"test/algebra/1814.json": {
+"n_tokens": 89,
+"ids_sha256": "abd5ec9aaf2ec37596aad1de49309cbe5fae6e9272f6d116abe65e4709327f2f",
+"text_sha256": "25b757a8d2acf05f98dc304daf19fe60523756f4324b7d769b9b8c5a770eb26b"
+},
+"test/algebra/2476.json": {
+"n_tokens": 104,
+"ids_sha256": "c7e85b8756b7738b43a506b751171ea61c49993b706e9083da74c17801d45dd4",
+"text_sha256": "a5b431e2a783553155f93efb658edb084daad24577a6a945e52427d5e3cb8cc6"
+},
+"test/precalculus/323.json": {
+"n_tokens": 163,
+"ids_sha256": "5c47951f2c15e869e6937229304cd120a344b14507fbc34eda9996d794fe9583",
+"text_sha256": "71369727998793c2cba6fad172bba096168b0c8873a9b82209c470f786e09377"
+},
+"test/counting_and_probability/190.json": {
+"n_tokens": 60,
+"ids_sha256": "8d19636ad3ce7fe90d0afd467c32ff25fe40f66bc14e74aed89b28ef50da0459",
+"text_sha256": "b043e1852ecee1aff7b615ae57db65070be0419edac129501b36b98924c6177a"
+},
+"test/intermediate_algebra/1102.json": {
+"n_tokens": 85,
+"ids_sha256": "0b49468f7fe0d18cb6c85f422f117a54abd5fd34fd96ac13b99fb04042bcf14b",
+"text_sha256": "b7f7147ef5a85250827176ba660bfffadbf16aeaaf8cfcebfa33faebe38c601d"
+},
+"test/number_theory/342.json": {
+"n_tokens": 54,
+"ids_sha256": "af61663417fd5e1082729dc6871f2a21102659513553324bd8bbb046078032f4",
+"text_sha256": "f27e5ef4e546f719f66e9cd2ee079a6ef3cebf24edb5d051571f2a6d28f95577"
+},
+"test/prealgebra/805.json": {
+"n_tokens": 150,
+"ids_sha256": "fb168421af9b9c2422a0daf241ac011463d6d53d6154be44d681c0fb346b44a0",
+"text_sha256": "e68385966a34eeda465fffaef9798f5101a51161c08023df8c7af3ba8b77136e"
+},
+"test/algebra/2780.json": {
+"n_tokens": 120,
+"ids_sha256": "431c7015c6691e677b5ae9542f95b8a0c0a2de3a4ff9ca0486495ec2a7080e28",
+"text_sha256": "ba3669b839b0e887bc076d5aa4ceee74dc6a1c6ca57da4913fadd9717788f3b2"
+},
+"test/prealgebra/914.json": {
+"n_tokens": 203,
+"ids_sha256": "9fe6b6635d71a5bdd72dcf9b4aba36839e5d2adebf256534ea12a44fb0fd4fb8",
+"text_sha256": "6e98ed1ee7e2f3e79c7e1c8ba2b5fcc591d27722c5bbb722073226ed55af55a9"
+},
+"test/algebra/824.json": {
+"n_tokens": 139,
+"ids_sha256": "1ded01e31481423ab7f8bc2614dc5b15c18a379419be005bc39c520403a4647a",
+"text_sha256": "5ff4989f68a9c01ac59e13868c63cc3da1ce119610b45cad18b0e8958488998b"
+},
+"test/number_theory/679.json": {
+"n_tokens": 146,
+"ids_sha256": "3652b84e1a5011393bcf15283a098ddccbc2241d620b4399b842aad8eb845db8",
+"text_sha256": "d8d8f08af6e7234eb8ebffe4bfdbf8b9ca0015587c1994ef097a55c33682267d"
+},
+"test/algebra/1425.json": {
+"n_tokens": 68,
+"ids_sha256": "335d9ef7afceaff940d161865130580042e568e02c7a3af5cd698bf60d024a94",
+"text_sha256": "ebb50f3ee6484f998fc557e5b497cc73945efed9509c23b42afd172a99c69d36"
+},
+"test/intermediate_algebra/834.json": {
+"n_tokens": 79,
+"ids_sha256": "dfcc0ccd895841b3b3af5e18b6a6b7f5b111a20eddfa29ae9d580369b1bc25df",
+"text_sha256": "2bc88863d73762453253431305b5a7f36155ce3a9b8747813add4c5df29885ae"
+},
+"test/number_theory/72.json": {
+"n_tokens": 64,
+"ids_sha256": "f52230dbfa4e13c7dee70a86eba5e1e4a964e02a8a332bb340a2d7b8c06b37f8",
+"text_sha256": "545c9422e5afa8b3c1f71e05a39db00b127954f361e24c9f86fff6456e48f9fb"
+},
+"test/precalculus/703.json": {
+"n_tokens": 124,
+"ids_sha256": "5f2e4fee9562b729e596c79a79879249ec016d2bcca5fd4ce5d5b19ddd4aea1b",
+"text_sha256": "05c16fa7b305f640a919ee6adf5d923b89623612edd73334a5216dd42efec018"
+},
+"test/prealgebra/1114.json": {
+"n_tokens": 227,
+"ids_sha256": "913d90dff75bef84c559927bffa344e1b77f194b73e734dfc25a7c056be14b64",
+"text_sha256": "9a9cfaba90678ba2311c3b297ec43a6d63060ce7db99c071382ac6fe82a829e3"
+},
+"test/algebra/224.json": {
+"n_tokens": 74,
+"ids_sha256": "a078b340396b26bfdc9615deb24da6f0539879144f192d88fb7a15afc870933f",
+"text_sha256": "2fd11330fd317f9615a7e9efe6a49f2c5b2d4e5437b567d13f1d398fca1b0aa7"
+},
+"test/algebra/435.json": {
+"n_tokens": 57,
+"ids_sha256": "5f8217eae471a3af5cd91a04b13eb717263aa9d162b36edabeaa43f5ebc18942",
+"text_sha256": "3ba48d928014e2fb9729ad621a1874e4ad6e3b6017f5d48316c8592d61c7d1f1"
+},
+"test/intermediate_algebra/158.json": {
+"n_tokens": 91,
+"ids_sha256": "99ac2da2f1b6d69f7ef70df5ab7602f02595def543f15d48ce41dbffdeb5f5fb",
+"text_sha256": "9fdee468e5b3c645098bfe9eba4389775ef0f1a9196aa02bedec84ec6f65bb07"
+},
+"test/prealgebra/846.json": {
+"n_tokens": 96,
+"ids_sha256": "0bff95b0de43b8fb8746b56664e6cefd7f4e767ce9b337c190b7b74d40ace564",
+"text_sha256": "8ae68a636f87157ffb2174309ddb4f8410539211ec947294e4cabc37008846e8"
+},
+"test/algebra/2470.json": {
+"n_tokens": 75,
+"ids_sha256": "43863b7a33ec13418d03c54f3ab3427bbb6eb8ab4ce08b7d1044dfb4e9f03110",
+"text_sha256": "00de53478f8c051970fdd9686f8b8f036d2750792ae8e5fcbe41f69ef15e20a0"
+},
+"test/prealgebra/1930.json": {
+"n_tokens": 273,
+"ids_sha256": "f00100261326e9bc51b560a0f11c490cf80e228e49b416e5dd8caa1e4ac32e18",
+"text_sha256": "7081495a6fa94e2968fc8caa22142eab93df298839734c6177af3ff032c7cb57"
+},
+"test/intermediate_algebra/752.json": {
+"n_tokens": 98,
+"ids_sha256": "cf92dfb0906d5c11f599e006c05c55aadbea68f870d58c4a8fef744f1e1e14f2",
+"text_sha256": "4f49c1994ae3f0b4bbc6315ef828eb133df8262c5e36be345c8a7e489e75d61a"
+},
+"test/counting_and_probability/1003.json": {
+"n_tokens": 200,
+"ids_sha256": "4adec08c85a05d074831fac0ec2a259386364c8c302d54d85db10e814f0d7b09",
+"text_sha256": "d2c816b11ceeaf49f55fe8872a267dc59202a636765d7e0ce540e9ff37a7d092"
+},
+"test/prealgebra/1252.json": {
+"n_tokens": 104,
+"ids_sha256": "fc7f38f059ed705bc7f78fc06be4e3f5a07c89a5a03ba0d6297fe69b25872dbd",
+"text_sha256": "a80377b15d0a65266dc28ad4e0d93b096d764b97319d3990944e54340217ffc2"
+},
+"test/number_theory/22.json": {
+"n_tokens": 80,
+"ids_sha256": "fa97efe1f7b8ecf769f3fc21f5cfcec4bda5535ab9cf5710da00e608ce165818",
+"text_sha256": "e4549fa3c65106901184a111163a024e7a2eb5cd26df6352717947827415410b"
+},
+"test/intermediate_algebra/1279.json": {
+"n_tokens": 116,
+"ids_sha256": "3b8b7d5a4e81f3117e57ca195466448ab5ff55cca4373d37573999b9688c1f41",
+"text_sha256": "3e0e2bb9c02355bcd967f59da00601bc2cc245d3d12b664358666acea028c1e0"
+},
+"test/number_theory/1128.json": {
+"n_tokens": 86,
+"ids_sha256": "e49ca69e17a5e86619aeb6fc3557c2f39388738aca012761cdec0547e2d629f5",
+"text_sha256": "93bb348ef818d788fbdac090f67b346fad8410a274732655b70bef9d80246af2"
+},
+"test/precalculus/1252.json": {
+"n_tokens": 102,
+"ids_sha256": "eb65e307a7306ba003361d91d0bcb8d734e51e0763f12a241ad8236945d0cea1",
+"text_sha256": "443d5516a805e649e862796fe7d4a9880c70eb55c91fdb805e87951da0ace300"
+},
+"test/intermediate_algebra/1467.json": {
+"n_tokens": 144,
+"ids_sha256": "fa7e1c0a49059ef132335bf19e73f07167e5c6e3b0ff4ba9acd62f3a76a3171e",
+"text_sha256": "849fda3f67e8fb2810aa9e7b01bca0124445e4eb44c69cd0b15f72c0cc63f588"
+},
+"test/number_theory/1090.json": {
+"n_tokens": 95,
+"ids_sha256": "4760f6f7949a4c1f29611f27644554b84d991d0510acae0e3ee598879e9fb6ea",
+"text_sha256": "fd3fbaa8ff2a20f639abcbca1dfc9cd8c0df7cddcdf4805b710110544aae5909"
+},
+"test/precalculus/1082.json": {
+"n_tokens": 91,
+"ids_sha256": "5f37a863f108e48dd6173f04f4673901588a26838ccd26d05ddf98769c980393",
+"text_sha256": "f54cfe82babe3114e0a6b0f9d88610ae933fd69770d353437d668d05b85d344a"
+},
+"test/intermediate_algebra/101.json": {
+"n_tokens": 77,
+"ids_sha256": "e0934844422f6120b736e355cc595584bcffaeb2496ca86a34bd02d07d459041",
+"text_sha256": "d5d6d69db5e9222b378481158dda2a6c736d32f9fb43334c8efb3f3dc20e38de"
+},
+"test/counting_and_probability/199.json": {
+"n_tokens": 242,
+"ids_sha256": "b2f5249b766a8a95e4dc0c9c9f0f01d47f12759992522a17bf95b39ff36aa155",
+"text_sha256": "95780282157cbaf43fd3b0741b559e380905c0115c291d841883cf5e2aed1f59"
+},
+"test/geometry/477.json": {
+"n_tokens": 81,
+"ids_sha256": "925c8cd6f4fe7d1e17892672483e4656f6bb1ec0da83e2898fa8d516c3c112d5",
+"text_sha256": "836ea9ce7c079d476b03a6f367cbd1e1fc2322b83e7ebe9f68d43fcb57472f81"
+},
+"test/number_theory/239.json": {
+"n_tokens": 94,
+"ids_sha256": "f45a29a351d6925d5fd808bf5be753cfe58fc392dcc9c1e0274952bab4ad138e",
+"text_sha256": "3c9b5b253310e2c6d0b25ff83d208759ba504a84a2ad08f9dd2738bf8ac0c9b9"
+},
+"test/prealgebra/1203.json": {
+"n_tokens": 80,
+"ids_sha256": "82c84b05abbdd1fd0c09792c1f493ae9399444016dfc375cb5c8b005e0636d39",
+"text_sha256": "2b60089e86dddd4ba951cbf7e4153b9d313d07d3fd6f71988123c8e9729f9f84"
+},
+"test/intermediate_algebra/1365.json": {
+"n_tokens": 105,
+"ids_sha256": "f1bbb6062e1a059ad535f84b03f763bf823d278a80f9c8c02c1a7fb2ed8d05ec",
+"text_sha256": "7501c01e059459b7009e2c96c3e321a80d89e6830c4ddd8358cb49071e6eae36"
+},
+"test/intermediate_algebra/1350.json": {
+"n_tokens": 134,
+"ids_sha256": "fc38b4d355c6cc955fbf5df98c44c0ffd91bc5f4a0c9265548971a4a3bfb8231",
+"text_sha256": "311b6d2edd4f682c1fca5cf9805c6d50b6167dc8f5b605d87e84d4f800d9a20f"
+},
+"test/prealgebra/1128.json": {
+"n_tokens": 175,
+"ids_sha256": "81e56e3a3c18a727b7a3f9fa4f3db63e20f2f773791d9cf90bf78e710aef84e3",
+"text_sha256": "5f93c85b05e9f2449b152cce413f09eb5fb384f96e50cf55aab9b6c9d7781a5f"
+},
+"test/precalculus/356.json": {
+"n_tokens": 126,
+"ids_sha256": "9b1e2f02aba4a73b769e5240a5af4ced2e2a14735cd33034fa29e6bf37866706",
+"text_sha256": "36f3984c8977633c61e3f5705a8f00d9b8a5ab89559a84d0ee0eb4ace1d90492"
+},
+"test/algebra/2779.json": {
+"n_tokens": 108,
+"ids_sha256": "173b1d5cce228e810c10002fa485fd3e2b9afc0100de826a9a4e29098ea9a3ab",
+"text_sha256": "4ba68d3410831442929685ae7148018b2ba07494a54486be1607e99ea8b21969"
+},
+"test/intermediate_algebra/1930.json": {
+"n_tokens": 113,
+"ids_sha256": "67baaf49174d300003d898b025bf07ee01bdb13a33d9b206e9b39fd68e85731a",
+"text_sha256": "522785a619149ca4c41d0f78d2760d4fbec9d8562a2c9b2d72e836c8016307e0"
+},
+"test/intermediate_algebra/1981.json": {
+"n_tokens": 93,
+"ids_sha256": "b9b2b5d42a9f54b5eb308b2ec92354e23458d8218cec093308aece9c8952e179",
+"text_sha256": "c23574df804cb64bdd36f60ec2dc16228848d167663e288be2f71b0677a266aa"
+},
+"test/intermediate_algebra/1232.json": {
+"n_tokens": 74,
+"ids_sha256": "d550eefd2894231e6c38f689a83f782a327e9ee79c46f912ce27e1a05ea6abf1",
+"text_sha256": "4704b975bd0046c0ee7f0a9f3855af7507b5bd055986f4d14265fb35110832ab"
+},
+"test/geometry/561.json": {
+"n_tokens": 92,
+"ids_sha256": "6368270840e5528b219305addade72aa33d124d72291811c9d8a2e78ff200071",
+"text_sha256": "1e36254cd775272c1ec29a9956b06390526b5e8b64327afa1737a61c85cf3b57"
+},
+"test/intermediate_algebra/1508.json": {
+"n_tokens": 99,
+"ids_sha256": "273d69a1da572fe85557d01901322cd9fd687b822f6e787dda3dfa448333b686",
+"text_sha256": "1ac65e7ba20fa0a4ec7adfc673995ab14933a0312218b58e99096abad760ecd5"
+},
+"test/geometry/615.json": {
+"n_tokens": 99,
+"ids_sha256": "ef13bb55d42c1ef008fa267c66c493f0ec4368bee94e8d5a1093b3b562b926e1",
+"text_sha256": "37aa135efda20d07504ae39f86d34ae67fc56508e606ff353e5a609e4de4ec52"
+}
+}
+}

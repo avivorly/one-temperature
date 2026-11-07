@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code or these data, please cite the paper."
+title: "One Temperature to Rule Them All?"
+type: software
+version: 2.0.0
+license: MIT
+authors:
+  - given-names: Aviv
+    family-names: Orly
+    affiliation: "School of Physics and Astronomy, Tel Aviv University, Israel"
+  - given-names: Ori
+    family-names: Shem-Ur
+    affiliation: "School of Physics and Astronomy, Tel Aviv University, Israel"
+  - given-names: Yaron
+    family-names: Oz
+    affiliation: "School of Physics and Astronomy, Tel Aviv University, Israel"
+preferred-citation:
+  type: conference-paper
+  title: "One Temperature to Rule Them All?"
+  authors:
+    - given-names: Aviv
+      family-names: Orly
+      affiliation: "School of Physics and Astronomy, Tel Aviv University, Israel"
+    - given-names: Ori
+      family-names: Shem-Ur
+      affiliation: "School of Physics and Astronomy, Tel Aviv University, Israel"
+    - given-names: Yaron
+      family-names: Oz
+      affiliation: "School of Physics and Astronomy, Tel Aviv University, Israel"
+  conference:
+    name: "NeurIPS 2026"
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS 2026)"
+  year: 2026
