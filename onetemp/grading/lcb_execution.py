@@ -655,6 +655,8 @@ def reliability_guard(maximum_memory_bytes=None):
 
 # =======================================================================================
 # compute_code_generation_metrics.py, execution half (see the header for the edits)
+# Upstream's first line, kept:
+# borrowed and extended from https://github.com/Naman-ntc/codescratch/blob/main/evaluation/bigcode-evaluation-harness/lm_eval/tasks/custom_metrics/apps_custom_metrics/utils.py
 # =======================================================================================
 import os  # noqa: E402
 if hasattr(sys, "set_int_max_str_digits"):

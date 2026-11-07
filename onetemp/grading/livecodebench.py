@@ -221,6 +221,7 @@ class LcbData:
         raise SystemExit(f"question_id {qid!r} is in none of {', '.join(LCB_FILES)}")
 
 
+# Follows LiveCodeBench's CodeGenerationProblem (MIT license); see THIRD_PARTY_NOTICES.md.
 def evaluation_sample(row):
     """A dataset row -> LiveCodeBench's evaluation sample, built exactly as lcb_runner's CodeGenerationProblem
     (benchmarks/code_generation.py) builds it: the tests are public + private, in that order; fn_name is the

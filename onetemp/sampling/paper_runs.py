@@ -352,6 +352,10 @@ def stage_of(run, name):
 
 
 def main(argv):
+    if len(argv) > 1 and argv[1] in ("-h", "--help"):
+        print("usage: python -m onetemp.sampling.paper_runs [RUN]\n"
+              "  without RUN: list the paper's runs; with RUN: print that run's profile as JSON\n")
+        argv = argv[:1]
     if len(argv) > 1:
         print(json.dumps(get_run(argv[1]), indent=1))
         return

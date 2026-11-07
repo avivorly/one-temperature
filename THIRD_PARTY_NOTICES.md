@@ -9,7 +9,9 @@ notice is kept.
 - **File:** `onetemp/grading/lcb_execution.py`.
 - **Origin:** LiveCodeBench, <https://github.com/LiveCodeBench/LiveCodeBench>, commit
   `28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24` (2025-07-15): `lcb_runner/evaluation/testing_util.py` and parts of
-  `lcb_runner/evaluation/compute_code_generation_metrics.py`.
+  `lcb_runner/evaluation/compute_code_generation_metrics.py`. Upstream marks the latter as "borrowed and extended
+  from" <https://github.com/Naman-ntc/codescratch/blob/main/evaluation/bigcode-evaluation-harness/lm_eval/tasks/custom_metrics/apps_custom_metrics/utils.py>;
+  that line is kept in the file.
 - **Changes:** the two fixes of LiveCodeBench pull request #103 that the paper's evaluation ran with, a pinned
   multiprocessing start method, no progress bar, and a results function in place of the pass@k summary. None changes a
   verdict. The file's own header lists every change.

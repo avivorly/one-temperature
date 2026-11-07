@@ -43,8 +43,8 @@ The code that reads and checks the files:
 |---|---|
 | `onetemp/counts.py` | the one counts reader: rows, validation, question-by-setting tables, and a command line (section 7) |
 | `onetemp/data/check.py` | `python -m onetemp.data.check` (section 6) |
-| `onetemp/data/fitfree.py` | `python -m onetemp.data.fitfree` (section 8) |
-| `onetemp/data/convert.py` | `python -m onetemp.data.convert`, the converter that wrote `counts/` (section 9) |
+| `onetemp/data/fitfree.py` | `python -m onetemp.data.fitfree` (section 9) |
+| `onetemp/data/convert.py` | `python -m onetemp.data.convert`, the converter that wrote `counts/` (section 11) |
 
 ## 2. The counts.jsonl schema
 
