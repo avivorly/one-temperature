@@ -1,6 +1,6 @@
 # One Temperature to Rule Them All?
 
-Code and data for the NeurIPS 2026 paper *One Temperature to Rule Them All?*.
+Code and data for the NeurIPS 2026 paper *One Temperature to Rule Them All?* ([arXiv:2611.13077](https://arxiv.org/abs/2611.13077)).
 
 - For every question, the probability that one sample is correct depends on the sampling temperature: its
   **temperature profile**. We measured these profiles for four models on LiveCodeBench, MATH-500 and Hi-ToM,
@@ -569,7 +569,10 @@ python -m onetemp.robustness.fig4b merge --tally-dir results/fig4b_full/tallies 
   title     = {One Temperature to Rule Them All?},
   author    = {Orly, Aviv and Shem-Ur, Ori and Oz, Yaron},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS 2026)},
-  year      = {2026}
+  year      = {2026},
+  eprint    = {2611.13077},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
 }
 ```
 
